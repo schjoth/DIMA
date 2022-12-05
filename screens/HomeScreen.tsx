@@ -7,13 +7,6 @@ import { Text, View } from '../components/Themed';
 import { RootTabScreenProps } from '../types';
 
 export default function TabOneScreen({ navigation }: RootTabScreenProps<'TabOne'>) {
-  let [count, setCount] = useState(0);
-
-  const Separator = () => (
-    <View style={styles.separator} />
-  );
-
-
   return (
     <SafeAreaView style = {styles.container}>
 <View>
@@ -37,13 +30,6 @@ export default function TabOneScreen({ navigation }: RootTabScreenProps<'TabOne'
       </View>
       <View>
       <Button
-        title="Statistics"
-        color="#1DB954"
-        onPress={() => Alert.alert('Simple Button pressed') }
-      />
-      </View>
-      <View>
-      <Button
         title="Settings"
         color="#1DB954"
         onPress={() => Alert.alert('Simple Button pressed') }
@@ -57,13 +43,7 @@ export default function TabOneScreen({ navigation }: RootTabScreenProps<'TabOne'
       />
       </View>
       </View>
-
-  
-
-
-
     </SafeAreaView>
-
     
   );
 }
