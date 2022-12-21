@@ -4,7 +4,7 @@ import { Platform, StyleSheet } from 'react-native';
 import EditScreenInfo from '../components/EditScreenInfo';
 import { Text, View } from '../components/Themed';
 
-export default function ModalScreen() {
+const ModalScreen = () => {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Modal</Text>
@@ -33,3 +33,5 @@ const styles = StyleSheet.create({
     width: '80%',
   },
 });
+
+export default ModalScreen;

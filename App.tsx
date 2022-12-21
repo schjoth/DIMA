@@ -1,25 +1,30 @@
-import { StatusBar } from "expo-status-bar";
-import { SafeAreaProvider } from "react-native-safe-area-context";
 
-import useCachedResources from "./hooks/useCachedResources";
-import useColorScheme from "./hooks/useColorScheme";
-import Navigation from "./navigation";
-import AuthProvider from "./components/AuthContext";
+import * as React from 'react';
+import { View, Text } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import  HomeScreen from './screens/HomeScreen';
+import ModalScreen from './screens/ModalScreen';
 
-export default function App() {
-  const isLoadingComplete = useCachedResources();
-  const colorScheme = useColorScheme();
+type RootStackParamList = {
+  Home: undefined, // undefined because you aren't passing any params to the home screen
+  Modal: undefined,
+  Profile: { name: string }; 
+};
 
-  if (!isLoadingComplete) {
-    return null;
-  } else {
-    return (
-      <SafeAreaProvider>
-        <AuthProvider>
-          <Navigation colorScheme={colorScheme} />
-          <StatusBar />
-        </AuthProvider>
-      </SafeAreaProvider>
-    );
-  }
+const Stack = createNativeStackNavigator<RootStackParamList>();
+
+
+
+function App() {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Home" component={HomeScreen} /> 
+        <Stack.Screen name="Modal" component={ModalScreen} /> 
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
 }
+
+export default App;

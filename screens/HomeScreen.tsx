@@ -1,25 +1,34 @@
-import { StyleSheet, Button, Alert, SafeAreaView, Pressable } from 'react-native';
-import React from 'react';
+import { StyleSheet, Button, Alert, SafeAreaView, AppRegistry } from 'react-native';
+import { NativeRouter as Router, Route, Link } from "react-router-native";
+import * as React from 'react';
 import { useState } from 'react';
-
 import EditScreenInfo from '../components/EditScreenInfo';
 import { Text, View } from '../components/Themed';
-import { RootTabScreenProps } from '../types';
+import { createNativeStackNavigator } from '@react-navigation/native-stack'
+import { createRoot } from 'react-dom/client';
+import  ModalScreen  from './ModalScreen';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import { RootStackParamList } from '../types';
 
-export default function TabOneScreen({ navigation }: RootTabScreenProps<'TabOne'>) {
+
+type ProfileScreenNavigationProp = NativeStackNavigationProp<RootStackParamList>
+
+type Props = {
+  navigation: ProfileScreenNavigationProp;
+};
+
+const HomeScreen = ({navigation}: Props) => {
   return (
     <SafeAreaView style = {styles.container}>
 <View>
     <View style={styles.container}>
       <Text style={styles.title}>Welcome to spotiQuiz!</Text>
     </View>
-      <View>
-      <Button
+    <Button
         title="Play"
         color="#1DB954"
-        onPress={() => Alert.alert('Simple Button pressed') }
+        onPress={() => () => navigation.navigate('Modal')}
       />
-      </View>
 
       <View>
       <Button
@@ -68,4 +77,13 @@ const styles = StyleSheet.create({
     width: '80%',
     color: '#1DB954',
   },
+  header: {
+    fontSize: 20
+  },
+  subNavItem: {
+    padding: 5
+  },
 });
+
+
+export default HomeScreen;
