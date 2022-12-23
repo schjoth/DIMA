@@ -8,7 +8,7 @@ import ModalScreen from './screens/ModalScreen';
 
 type RootStackParamList = {
   Home: undefined, // undefined because you aren't passing any params to the home screen
-  Modal: undefined,
+  Modal: undefined, //Issue Is here i Think
   Profile: { name: string }; 
 };
 

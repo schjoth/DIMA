@@ -1,36 +1,105 @@
-import { StatusBar } from 'expo-status-bar';
-import { Platform, StyleSheet } from 'react-native';
+import {
+  StyleSheet,
+  Button,
+  Alert,
+  SafeAreaView,
+  AppRegistry,
+} from "react-native";
+import { NativeRouter as Router, Route, Link } from "react-router-native";
+import * as React from "react";
+import { useState } from "react";
+import EditScreenInfo from "../components/EditScreenInfo";
+import { Text, View } from "../components/Themed";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { createRoot } from "react-dom/client";
+import HomeScreen from "./ModalScreen";
+import { NativeStackNavigationProp } from "@react-navigation/native-stack";
+import { RootStackParamList } from "../types";
 
-import EditScreenInfo from '../components/EditScreenInfo';
-import { Text, View } from '../components/Themed';
+type ProfileScreenNavigationProp =
+  NativeStackNavigationProp<RootStackParamList>;
 
-const ModalScreen = () => {
+type Props = {
+  navigation: ProfileScreenNavigationProp;
+};
+/*Husk å endre i types.tsx linje 16*/
+
+const ModalScreen = ({ navigation }: Props) => {
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Modal</Text>
-      <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-      <EditScreenInfo path="/screens/ModalScreen.tsx" />
+    <SafeAreaView style={styles.container}>
+      <View>
+        <View style={styles.container}>
+          <Text style={styles.title}>Choose your quiz!</Text>
+        </View>
+        <Button
+          title="Classic (time limit)"
+          color="#1DB954"
+          onPress={() => navigation.navigate("Home")}
+        />
 
-      {/* Use a light status bar on iOS to account for the black space above the modal */}
-      <StatusBar style={Platform.OS === 'ios' ? 'light' : 'auto'} />
-    </View>
+        <View>
+          <Button
+            title="Best of 10"
+            color="#1DB954"
+            onPress={() => navigation.navigate("Home")}
+          />
+        </View>
+        <View>
+          <Button
+            title="Instant death"
+            color="#1DB954"
+            onPress={() => navigation.navigate("Home")}
+          />
+        </View>
+        <View>
+          <Button
+            title="30s preview"
+            color="#1DB954"
+            onPress={() => navigation.navigate("Home")}
+          />
+        </View>
+        <View>
+          <Button
+            title="Odd one out"
+            color="#1DB954"
+            onPress={() => navigation.navigate("Home")}
+          />
+        </View>
+        <View>
+          <Button
+            title="Back"
+            color="#D9D9D9"
+            onPress={() => navigation.navigate("Home")}
+          />
+        </View>
+      </View>
+    </SafeAreaView>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "#000",
   },
   title: {
     fontSize: 20,
-    fontWeight: 'bold',
+    fontWeight: "bold",
+    color: "#1DB954",
   },
   separator: {
     marginVertical: 30,
     height: 1,
-    width: '80%',
+    width: "80%",
+    color: "#1DB954",
+  },
+  header: {
+    fontSize: 20,
+  },
+  subNavItem: {
+    padding: 5,
   },
 });
 
