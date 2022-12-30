@@ -1,55 +1,41 @@
-import { StyleSheet, Button, Alert, SafeAreaView } from "react-native";
+import { StyleSheet, Alert, SafeAreaView } from "react-native";
 import React, { useContext, useEffect } from "react";
-
-// import EditScreenInfo from "../components/EditScreenInfo";
-import { Text, View } from "../components/Themed";
+import { View } from "../components/Themed";
 import { RootTabScreenProps } from "../types";
 import { AuthContext } from "../components/AuthContext";
+import CustomButton from "../components/CustomButton";
+import WelcomeTitle from "../components/WelcomeTitle";
 
 export default function TabOneScreen({
 	navigation,
 }: RootTabScreenProps<"TabOne">) {
 	const { userToken } = useContext(AuthContext);
-
 	useEffect(() => {
 		if (!userToken) navigation.navigate("Login");
 	}, [userToken]);
 
 	return (
 		<SafeAreaView style={styles.container}>
-			<View>
-				<View style={styles.container}>
-					<Text style={styles.title}>Welcome to spotiQuiz!</Text>
-				</View>
-				<View>
-					<Button
-						title="Play"
-						color="#1DB954"
-						onPress={() => Alert.alert("Simple Button pressed")}
-					/>
-				</View>
-
-				<View>
-					<Button
-						title="Scoreboard"
-						color="#1DB954"
-						onPress={() => Alert.alert("Simple Button pressed")}
-					/>
-				</View>
-				<View>
-					<Button
-						title="Settings"
-						color="#1DB954"
-						onPress={() => Alert.alert("Simple Button pressed")}
-					/>
-				</View>
-				<View>
-					<Button
-						title="Log out "
-						color="#D9D9D9"
-						onPress={() => Alert.alert("Simple Button pressed")}
-					/>
-				</View>
+			<View style={styles.navigation}>
+				<WelcomeTitle />
+				<CustomButton
+					variant="play"
+					title="Play"
+					onPress={() => Alert.alert("Simple Button pressed")}
+				/>
+				<CustomButton
+					title="Scoreboard"
+					onPress={() => Alert.alert("Simple Button pressed")}
+				/>
+				<CustomButton
+					title="Settings"
+					onPress={() => Alert.alert("Simple Button pressed")}
+				/>
+				<CustomButton
+					title="Log out"
+					variant="secondary"
+					onPress={() => Alert.alert("Simple Button pressed")}
+				/>
 			</View>
 		</SafeAreaView>
 	);
@@ -62,15 +48,17 @@ const styles = StyleSheet.create({
 		justifyContent: "center",
 		backgroundColor: "#000",
 	},
-	title: {
-		fontSize: 20,
-		fontWeight: "bold",
-		color: "#1DB954",
+	navigation: {
+		display: "flex",
+		alignItems: "center",
+		justifyContent: "space-between",
+		height: 300,
+		backgroundColor: "#000",
+		width: "100%",
 	},
-	separator: {
-		marginVertical: 30,
-		height: 1,
-		width: "80%",
-		color: "#1DB954",
+	playButton: {},
+	button: {
+		backgroundColor: "#1DB954",
+		borderRadius: 30,
 	},
 });
