@@ -5,11 +5,12 @@ import { RootTabScreenProps } from "../types";
 import { AuthContext } from "../components/AuthContext";
 import CustomButton from "../components/CustomButton";
 import WelcomeTitle from "../components/WelcomeTitle";
+import { GameMode } from "../components/game/enums";
 
 export default function TabOneScreen({
 	navigation,
 }: RootTabScreenProps<"TabOne">) {
-	const { userToken } = useContext(AuthContext);
+	const { userToken, setUserToken } = useContext(AuthContext);
 	useEffect(() => {
 		if (!userToken) navigation.navigate("Login");
 	}, [userToken]);
@@ -21,7 +22,12 @@ export default function TabOneScreen({
 				<CustomButton
 					variant="play"
 					title="Play"
-					onPress={() => Alert.alert("Simple Button pressed")}
+					onPress={() =>
+						navigation.navigate({
+							name: "Game",
+							params: { mode: GameMode.Default },
+						})
+					}
 				/>
 				<CustomButton
 					title="Scoreboard"
@@ -34,7 +40,7 @@ export default function TabOneScreen({
 				<CustomButton
 					title="Log out"
 					variant="secondary"
-					onPress={() => Alert.alert("Simple Button pressed")}
+					onPress={() => setUserToken("")}
 				/>
 			</View>
 		</SafeAreaView>

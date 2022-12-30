@@ -19,7 +19,6 @@ import useColorScheme from "../hooks/useColorScheme";
 import ModalScreen from "../screens/ModalScreen";
 import NotFoundScreen from "../screens/NotFoundScreen";
 import HomeScreen from "../screens/HomeScreen";
-// import TabTwoScreen from '../screens/TabTwoScreen';
 import {
 	RootStackParamList,
 	RootTabParamList,
@@ -27,6 +26,7 @@ import {
 } from "../types";
 import LinkingConfiguration from "./LinkingConfiguration";
 import LoginScreen from "../screens/LoginScreen";
+import GameScreen from "../screens/GameScreen";
 
 export default function Navigation({
 	colorScheme,
@@ -63,6 +63,7 @@ function RootNavigator() {
 				options={{ title: "Oops!" }}
 			/>
 			<Stack.Screen name="Login" component={LoginScreen} />
+			<Stack.Screen name="Game" component={GameScreen} />
 			<Stack.Group screenOptions={{ presentation: "modal" }}>
 				<Stack.Screen name="Modal" component={ModalScreen} />
 			</Stack.Group>
