@@ -15,6 +15,7 @@ import { createRoot } from "react-dom/client";
 import HomeScreen from "./ModalScreen";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { RootStackParamList } from "../types";
+import styles from "../styles/styles";
 
 type ProfileScreenNavigationProp =
   NativeStackNavigationProp<RootStackParamList>;
@@ -77,30 +78,5 @@ const ModalScreen = ({ navigation }: Props) => {
   );
 };
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: "#000",
-  },
-  title: {
-    fontSize: 20,
-    fontWeight: "bold",
-    color: "#1DB954",
-  },
-  separator: {
-    marginVertical: 30,
-    height: 1,
-    width: "80%",
-    color: "#1DB954",
-  },
-  header: {
-    fontSize: 20,
-  },
-  subNavItem: {
-    padding: 5,
-  },
-});
 
 export default ModalScreen;
