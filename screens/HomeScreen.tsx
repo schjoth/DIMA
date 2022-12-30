@@ -1,21 +1,20 @@
-import {
-	StyleSheet,
-	Button,
-	Alert,
-	SafeAreaView,
-	Pressable,
-} from "react-native";
-import React from "react";
-import { useState } from "react";
+import { StyleSheet, Button, Alert, SafeAreaView } from "react-native";
+import React, { useContext, useEffect } from "react";
 
-import EditScreenInfo from "../components/EditScreenInfo";
+// import EditScreenInfo from "../components/EditScreenInfo";
 import { Text, View } from "../components/Themed";
 import { RootTabScreenProps } from "../types";
-import SpotifyLogin from "../components/SpotifyLogin";
+import { AuthContext } from "../components/AuthContext";
 
 export default function TabOneScreen({
 	navigation,
 }: RootTabScreenProps<"TabOne">) {
+	const { userToken } = useContext(AuthContext);
+
+	useEffect(() => {
+		if (!userToken) navigation.navigate("Login");
+	}, [userToken]);
+
 	return (
 		<SafeAreaView style={styles.container}>
 			<View>
@@ -52,8 +51,6 @@ export default function TabOneScreen({
 					/>
 				</View>
 			</View>
-
-			<SpotifyLogin />
 		</SafeAreaView>
 	);
 }
