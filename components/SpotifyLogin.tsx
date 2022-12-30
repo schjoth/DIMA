@@ -1,5 +1,6 @@
 import React from "react";
-import { Linking, Pressable, Text } from "react-native";
+import { Linking } from "react-native";
+import CustomButton from "./CustomButton";
 
 const SpotifyLogin = () => {
 	const client_id = "d760e0ff5af14deab0c1384a48669a74",
@@ -10,13 +11,10 @@ const SpotifyLogin = () => {
 	const uri = `https://accounts.spotify.com/authorize?client_id=${client_id}&redirect_uri=${redirect_uri}&response_type=${response_type}`;
 
 	return (
-		<Pressable
-			onPress={() => {
-				Linking.openURL(uri);
-			}}
-		>
-			<Text style={{ color: "#fff" }}>Log in with Spotify</Text>
-		</Pressable>
+		<CustomButton
+			onPress={() => Linking.openURL(uri)}
+			title={"Log in with Spotify"}
+		/>
 	);
 };
 
