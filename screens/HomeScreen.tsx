@@ -29,6 +29,7 @@ const HomeScreen = ({ navigation }: Props) => {
         <View style={styles.container}>
           <Text style={styles.title}>Welcome to spotiQuiz!</Text>
         </View>
+
         <Button
           title="Play"
           color="#1DB954"
@@ -44,14 +45,7 @@ const HomeScreen = ({ navigation }: Props) => {
         </View>
         <View>
           <Button
-            title="Settings"
-            color="#1DB954"
-            onPress={() => navigation.navigate("Settings")}
-          />
-        </View>
-        <View>
-          <Button
-            title="Log out "
+            title="Log out"
             color="#D9D9D9"
             onPress={() => Alert.alert("Simple Button pressed")}
           />

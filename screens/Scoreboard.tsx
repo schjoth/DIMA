@@ -24,12 +24,12 @@ import {
             <View style={styles.container}>
                 <Text style={styles.title}>Scoreboard</Text>
             <View style={styles.rankContainer}>
-                <View style={styles.rank}>#1</View>
-                <View style={styles.rank}>#2</View>
-                <View style={styles.rank}>#3</View>
-                <View style={styles.rank}>#4</View>
-                <View style={styles.rank}>#5</View>
-                <View style={styles.rank}>#6</View>
+                <Text style={styles.rank}>#1</Text>
+                <Text style={styles.rank}>#2</Text>
+                <Text style={styles.rank}>#3</Text>
+                <Text style={styles.rank}>#4</Text>
+                <Text style={styles.rank}>#5</Text>
+                <Text style={styles.rank}>#6</Text>
             </View>
           </View>
 
