@@ -1,71 +1,70 @@
-import { StyleSheet, Button, Alert, SafeAreaView, Pressable } from 'react-native';
-import React from 'react';
-import { useState } from 'react';
+import { StyleSheet, Alert, SafeAreaView } from "react-native";
+import React, { useContext, useEffect } from "react";
+import { View } from "../components/Themed";
+import { RootTabScreenProps } from "../types";
+import { AuthContext } from "../components/AuthContext";
+import CustomButton from "../components/CustomButton";
+import WelcomeTitle from "../components/WelcomeTitle";
+import { GameMode } from "../components/game/enums";
 
-import EditScreenInfo from '../components/EditScreenInfo';
-import { Text, View } from '../components/Themed';
-import { RootTabScreenProps } from '../types';
+export default function TabOneScreen({
+	navigation,
+}: RootTabScreenProps<"TabOne">) {
+	const { userToken, setUserToken } = useContext(AuthContext);
+	useEffect(() => {
+		if (!userToken) navigation.navigate("Login");
+	}, [userToken]);
 
-export default function TabOneScreen({ navigation }: RootTabScreenProps<'TabOne'>) {
-  return (
-    <SafeAreaView style = {styles.container}>
-<View>
-    <View style={styles.container}>
-      <Text style={styles.title}>Welcome to spotiQuiz!</Text>
-    </View>
-      <View>
-      <Button
-        title="Play"
-        color="#1DB954"
-        onPress={() => Alert.alert('Simple Button pressed') }
-      />
-      </View>
-
-      <View>
-      <Button
-        title="Scoreboard"
-        color="#1DB954"
-        onPress={() => Alert.alert('Simple Button pressed') }
-      />
-      </View>
-      <View>
-      <Button
-        title="Settings"
-        color="#1DB954"
-        onPress={() => Alert.alert('Simple Button pressed') }
-      />
-      </View>
-      <View>
-    <Button
-        title="Log out "
-        color="#D9D9D9"
-        onPress={() => Alert.alert('Simple Button pressed') }
-      />
-      </View>
-      </View>
-    </SafeAreaView>
-    
-  );
+	return (
+		<SafeAreaView style={styles.container}>
+			<View style={styles.navigation}>
+				<WelcomeTitle />
+				<CustomButton
+					variant="play"
+					title="Play"
+					onPress={() =>
+						navigation.navigate({
+							name: "Game",
+							params: { mode: GameMode.Default },
+						})
+					}
+				/>
+				<CustomButton
+					title="Scoreboard"
+					onPress={() => Alert.alert("Simple Button pressed")}
+				/>
+				<CustomButton
+					title="Settings"
+					onPress={() => Alert.alert("Simple Button pressed")}
+				/>
+				<CustomButton
+					title="Log out"
+					variant="secondary"
+					onPress={() => setUserToken("")}
+				/>
+			</View>
+		</SafeAreaView>
+	);
 }
 
-
-
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: '#000',
-  },
-  title: {
-    fontSize: 20,
-    fontWeight: 'bold',
-    color: '#1DB954',
-  },
-  separator: {
-    marginVertical: 30,
-    height: 1,
-    width: '80%',
-    color: '#1DB954',
-  },
+	container: {
+		flex: 1,
+		alignItems: "center",
+		justifyContent: "center",
+		backgroundColor: "#000",
+	},
+	navigation: {
+		display: "flex",
+		alignItems: "center",
+		justifyContent: "space-between",
+		height: 300,
+		backgroundColor: "#000",
+		width: "100%",
+	},
+	playButton: {},
+	button: {
+		backgroundColor: "#1DB954",
+		borderRadius: 30,
+	},
 });
