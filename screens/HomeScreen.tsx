@@ -6,6 +6,7 @@ import { AuthContext } from "../components/AuthContext";
 import CustomButton from "../components/CustomButton";
 import WelcomeTitle from "../components/WelcomeTitle";
 import { GameMode } from "../components/game/enums";
+import { getPlaylist } from "../api/questions";
 
 export default function TabOneScreen({
 	navigation,
@@ -14,6 +15,8 @@ export default function TabOneScreen({
 	useEffect(() => {
 		if (!userToken) navigation.navigate("Login");
 	}, [userToken]);
+
+	useEffect(() => {getPlaylist(userToken)}, [userToken]);
 
 	return (
 		<SafeAreaView style={styles.container}>
