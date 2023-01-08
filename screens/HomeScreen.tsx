@@ -1,12 +1,21 @@
 import { StyleSheet, Alert, SafeAreaView, View } from "react-native";
-import React from "react";
+import React, { useEffect } from "react";
 import CustomButton from "../components/CustomButton";
 import WelcomeTitle from "../components/WelcomeTitle";
 import { RootStackScreenProps } from "../types";
+import { AuthContext } from "../components/AuthContext";
 
 type Props = RootStackScreenProps<"Home">;
 
 const HomeScreen = ({ navigation }: Props) => {
+	const { userToken, setUserToken } = React.useContext(AuthContext);
+
+	useEffect(() => {
+		if (userToken === "") {
+			navigation.navigate("Login");
+		}
+	}, [userToken]);
+
 	return (
 		<SafeAreaView style={styles.container}>
 			<View style={styles.navigation}>
@@ -24,7 +33,7 @@ const HomeScreen = ({ navigation }: Props) => {
 				<CustomButton
 					variant="secondary"
 					title="Log out"
-					onPress={() => Alert.alert("Simple Button pressed")}
+					onPress={() => setUserToken("")}
 				/>
 			</View>
 		</SafeAreaView>
