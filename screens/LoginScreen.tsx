@@ -8,24 +8,44 @@ import { View, Text } from "../components/Themed";
 const LoginScreen = ({ navigation }: RootStackScreenProps<"Login">) => {
 	const { userToken, setUserToken } = useContext(AuthContext);
 
-	useEffect(() => {
+	const handleLoginMobile = () => {
 		let timeout: NodeJS.Timeout;
-		const listener = Linking.addEventListener("url", (e) => {
-			const token = e?.url
+		const listener = Linking.addEventListener("url", ({ url }) => {
+			const token = url
 				?.split("#")[1]
-				.split("&")
+				?.split("&")
 				.find((item) => item.startsWith("access_token="))
 				?.split("=")[1];
 
-			// if token exists, update context and navigate to root
 			if (token) {
 				setUserToken(token || "");
 				timeout = setTimeout(() => navigation.navigate("Root"), 1500);
 			}
 		});
+
+		return () => {
+			listener.remove();
+			clearTimeout(timeout);
+		};
+	};
+
+	useEffect(() => {
+		let timeout: NodeJS.Timeout;
+		const webToken = window?.location?.hash
+			?.substring(1)
+			.split("&")
+			.find((item) => item.startsWith("access_token="))
+			?.split("=")[1];
+
+		if (webToken) {
+			setUserToken(webToken || "");
+			timeout = setTimeout(() => navigation.navigate("Root"), 1500);
+		} else {
+			return handleLoginMobile();
+		}
+
 		return () => {
 			clearTimeout(timeout);
-			// Linking.removeSubscription(listener);
 		};
 	}, []);
 
