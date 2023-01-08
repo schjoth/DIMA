@@ -1,10 +1,17 @@
-import React, { useCallback, useEffect, useMemo, useState } from "react";
+import React, {
+	useCallback,
+	useContext,
+	useEffect,
+	useMemo,
+	useState,
+} from "react";
 import { fetchQuestions } from "../api/questions";
 import { GameMode } from "../components/game/enums";
 import Question from "../components/game/Question";
 import { QuestionData, Questions } from "../components/game/types";
 import { Text } from "react-native";
 import { RootStackScreenProps } from "../types";
+import { AuthContext } from "../components/AuthContext";
 
 const GameScreen: React.FC<RootStackScreenProps<"Game">> = ({
 	navigation,
@@ -18,9 +25,10 @@ const GameScreen: React.FC<RootStackScreenProps<"Game">> = ({
 		() => questions[questionIndex],
 		[questions, questionIndex]
 	);
+	const { clientToken, userToken } = useContext(AuthContext);
 
 	useEffect(() => {
-		fetchQuestions().then((questions) => {
+		fetchQuestions({ clientToken, userToken }).then((questions) => {
 			console.log("test", questions);
 			setQuestions(questions);
 		});

@@ -1,9 +1,16 @@
 import { Questions } from "../components/game/types";
 
-export const fetchQuestions = async (): Promise<Questions> => {
+type Credentials = {
+	clientToken: string;
+	userToken: string;
+};
+
+export const fetchQuestions = async ({
+	clientToken,
+	userToken,
+}: Credentials): Promise<Questions> => {
 	//TODO: Implement logic here
 
-	console.log("hei");
 	let req = Promise.resolve([
 		{
 			question: "Who made this song?",
