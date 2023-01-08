@@ -21,21 +21,21 @@ const ModalScreen = ({ navigation }: Props) => {
 				<Text style={styles.title}>Choose your quiz!</Text>
 			</View>
 			<CustomButton
-				title="Classic (time limit)"
+				title="Classic"
 				onPress={() =>
 					navigation.navigate({
 						name: "Game",
-						params: { mode: GameMode.Default },
+						params: { mode: GameMode.Classic },
 					})
 				}
 			/>
 
 			<CustomButton
-				title="Best of 10"
+				title="Rush"
 				onPress={() =>
 					navigation.navigate({
 						name: "Game",
-						params: { mode: GameMode.Default },
+						params: { mode: GameMode.Rush },
 					})
 				}
 			/>
@@ -44,7 +44,7 @@ const ModalScreen = ({ navigation }: Props) => {
 				onPress={() =>
 					navigation.navigate({
 						name: "Game",
-						params: { mode: GameMode.Default },
+						params: { mode: GameMode.InstantDeath },
 					})
 				}
 			/>
@@ -53,7 +53,7 @@ const ModalScreen = ({ navigation }: Props) => {
 				onPress={() =>
 					navigation.navigate({
 						name: "Game",
-						params: { mode: GameMode.Default },
+						params: { mode: GameMode.Preview },
 					})
 				}
 			/>
@@ -62,7 +62,7 @@ const ModalScreen = ({ navigation }: Props) => {
 				onPress={() =>
 					navigation.navigate({
 						name: "Game",
-						params: { mode: GameMode.Default },
+						params: { mode: GameMode.OddOneOut },
 					})
 				}
 			/>

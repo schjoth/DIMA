@@ -5,5 +5,9 @@ export enum AnswerStatus {
 
 //support for multiple game modes
 export enum GameMode {
-	Default = "DEFAULT",
+	Classic = "BESTOF10",
+	Rush = "TIMELIMIT",
+	InstantDeath = "INSTANTDEATH",
+	Preview = "PREVIEW",
+	OddOneOut = "ODDONEOUT",
 }
