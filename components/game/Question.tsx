@@ -1,5 +1,6 @@
 import React, { FC, useMemo, useState } from "react";
 import { View, Text, StyleSheet } from "react-native";
+import { black, green } from "../../styles/styles";
 import CustomButton from "../CustomButton";
 import Answer from "./Answer";
 import { AnswerStatus } from "./enums";
@@ -73,7 +74,7 @@ const Question: FC<QuestionProps> = ({
 
 const styles = StyleSheet.create({
 	container: {
-		backgroundColor: "#000",
+		backgroundColor: black,
 		height: "100%",
 		width: "100%",
 		display: "flex",
@@ -88,7 +89,7 @@ const styles = StyleSheet.create({
 		justifyContent: "center",
 	},
 	question: {
-		color: "#0f0",
+		color: green,
 	},
 	hint: {
 		paddingTop: 20,
