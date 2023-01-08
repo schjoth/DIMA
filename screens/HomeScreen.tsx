@@ -1,57 +1,51 @@
-import {
-  StyleSheet,
-  Button,
-  Alert,
-  SafeAreaView,
-  AppRegistry,
-} from "react-native";
-import { NativeRouter as Router, Route, Link } from "react-router-native";
-import * as React from "react";
-import { useState } from "react";
-import EditScreenInfo from "../components/EditScreenInfo";
-import { Text, View } from "../components/Themed";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { NativeStackNavigationProp } from "@react-navigation/native-stack";
-import { RootStackParamList } from "../types";
-import styles from "../styles/styles";
+import { StyleSheet, Alert, SafeAreaView, View } from "react-native";
+import React from "react";
+import CustomButton from "../components/CustomButton";
+import WelcomeTitle from "../components/WelcomeTitle";
+import { RootStackScreenProps } from "../types";
 
-type ProfileScreenNavigationProp =
-  NativeStackNavigationProp<RootStackParamList>;
-
-type Props = {
-  navigation: ProfileScreenNavigationProp;
-};
+type Props = RootStackScreenProps<"Home">;
 
 const HomeScreen = ({ navigation }: Props) => {
-  return (
-    <SafeAreaView style={styles.container}>
-      <View>
-        <View style={styles.container}>
-          <Text style={styles.title}>Welcome to spotiQuiz!</Text>
-        </View>
+	return (
+		<SafeAreaView style={styles.container}>
+			<View style={styles.navigation}>
+				<WelcomeTitle />
+				<CustomButton
+					variant="play"
+					title="Play"
+					onPress={() => navigation.navigate("Modal")}
+				/>
 
-        <Button
-          title="Play"
-          color="#1DB954"
-          onPress={() => navigation.navigate("Modal")}
-        />
-
-        <View>
-          <Button
-            title="Scoreboard"
-            color="#1DB954"
-            onPress={() => navigation.navigate("Scoreboard")}
-          />
-        </View>
-        <View>
-          <Button
-            title="Log out"
-            color="#D9D9D9"
-            onPress={() => Alert.alert("Simple Button pressed")}
-          />
-        </View>
-      </View>
-    </SafeAreaView>
-  );
+				<CustomButton
+					title="Scoreboard"
+					onPress={() => navigation.navigate("Scoreboard")}
+				/>
+				<CustomButton
+					variant="secondary"
+					title="Log out"
+					onPress={() => Alert.alert("Simple Button pressed")}
+				/>
+			</View>
+		</SafeAreaView>
+	);
 };
+
+const styles = StyleSheet.create({
+	container: {
+		flex: 1,
+		alignItems: "center",
+		justifyContent: "center",
+		backgroundColor: "#000",
+	},
+	navigation: {
+		display: "flex",
+		alignItems: "center",
+		justifyContent: "space-between",
+		height: 300,
+		backgroundColor: "#000",
+		width: "100%",
+	},
+});
+
 export default HomeScreen;

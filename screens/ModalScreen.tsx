@@ -1,82 +1,78 @@
-import {
-  StyleSheet,
-  Button,
-  Alert,
-  SafeAreaView,
-  AppRegistry,
-} from "react-native";
-import { NativeRouter as Router, Route, Link } from "react-router-native";
-import * as React from "react";
-import { useState } from "react";
-import EditScreenInfo from "../components/EditScreenInfo";
+import { SafeAreaView } from "react-native";
 import { Text, View } from "../components/Themed";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { createRoot } from "react-dom/client";
-import HomeScreen from "./ModalScreen";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { RootStackParamList } from "../types";
 import styles from "../styles/styles";
+import { GameMode } from "../components/game/enums";
+import CustomButton from "../components/CustomButton";
 
 type ProfileScreenNavigationProp =
-  NativeStackNavigationProp<RootStackParamList>;
+	NativeStackNavigationProp<RootStackParamList>;
 
 type Props = {
-  navigation: ProfileScreenNavigationProp;
+	navigation: ProfileScreenNavigationProp;
 };
 /*Husk å endre i types.tsx linje 16*/
 
 const ModalScreen = ({ navigation }: Props) => {
-  return (
-    <SafeAreaView style={styles.container}>
-      <View>
-        <View style={styles.container}>
-          <Text style={styles.title}>Choose your quiz!</Text>
-        </View>
-        <Button
-          title="Classic (time limit)"
-          color="#1DB954"
-          onPress={() => navigation.navigate("Home")}
-        />
+	return (
+		<SafeAreaView style={styles.container}>
+			<View style={styles.container}>
+				<Text style={styles.title}>Choose your quiz!</Text>
+			</View>
+			<CustomButton
+				title="Classic (time limit)"
+				onPress={() =>
+					navigation.navigate({
+						name: "Game",
+						params: { mode: GameMode.Default },
+					})
+				}
+			/>
 
-        <View>
-          <Button
-            title="Best of 10"
-            color="#1DB954"
-            onPress={() => navigation.navigate("Home")}
-          />
-        </View>
-        <View>
-          <Button
-            title="Instant death"
-            color="#1DB954"
-            onPress={() => navigation.navigate("Home")}
-          />
-        </View>
-        <View>
-          <Button
-            title="30s preview"
-            color="#1DB954"
-            onPress={() => navigation.navigate("Home")}
-          />
-        </View>
-        <View>
-          <Button
-            title="Odd one out"
-            color="#1DB954"
-            onPress={() => navigation.navigate("Home")}
-          />
-        </View>
-        <View>
-          <Button
-            title="Back"
-            color="#D9D9D9"
-            onPress={() => navigation.navigate("Home")}
-          />
-        </View>
-      </View>
-    </SafeAreaView>
-  );
+			<CustomButton
+				title="Best of 10"
+				onPress={() =>
+					navigation.navigate({
+						name: "Game",
+						params: { mode: GameMode.Default },
+					})
+				}
+			/>
+			<CustomButton
+				title="Instant death"
+				onPress={() =>
+					navigation.navigate({
+						name: "Game",
+						params: { mode: GameMode.Default },
+					})
+				}
+			/>
+			<CustomButton
+				title="30s preview"
+				onPress={() =>
+					navigation.navigate({
+						name: "Game",
+						params: { mode: GameMode.Default },
+					})
+				}
+			/>
+			<CustomButton
+				title="Odd one out"
+				onPress={() =>
+					navigation.navigate({
+						name: "Game",
+						params: { mode: GameMode.Default },
+					})
+				}
+			/>
+			<CustomButton
+				title="Back"
+				variant="secondary"
+				onPress={() => navigation.navigate("Home")}
+			/>
+		</SafeAreaView>
+	);
 };
-
 
 export default ModalScreen;
