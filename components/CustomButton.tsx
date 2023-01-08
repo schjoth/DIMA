@@ -29,6 +29,7 @@ const styles = StyleSheet.create({
 		width: "100%",
 		minWidth: 100,
 		maxWidth: 200,
+		alignSelf: "center",
 	},
 	text: {
 		fontWeight: "600",

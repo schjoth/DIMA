@@ -34,7 +34,6 @@ const GameScreen: React.FC<RootStackScreenProps<"Game">> = ({
 
 	useEffect(() => {
 		fetchQuestions({ clientToken, userToken }).then((questions) => {
-			console.log("test", questions);
 			setQuestions(questions);
 		});
 	}, []);

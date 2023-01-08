@@ -100,6 +100,7 @@ const styles = StyleSheet.create({
 		display: "flex",
 		height: 200,
 		justifyContent: "space-between",
+		alignItems: "center",
 	},
 });
 

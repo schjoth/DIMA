@@ -20,6 +20,7 @@ export type RootStackParamList = {
 	Scoreboard: undefined;
 	Settings: undefined;
 	NotFound: undefined;
+	Result: { score: number; mode: GameMode };
 };
 
 export type RootStackScreenProps<Screen extends keyof RootStackParamList> =
