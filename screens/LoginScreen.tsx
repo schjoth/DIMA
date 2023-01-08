@@ -19,7 +19,7 @@ const LoginScreen = ({ navigation }: RootStackScreenProps<"Login">) => {
 
 			if (token) {
 				setUserToken(token || "");
-				timeout = setTimeout(() => navigation.navigate("Root"), 1500);
+				timeout = setTimeout(() => navigation.navigate("Home"), 1500);
 			}
 		});
 

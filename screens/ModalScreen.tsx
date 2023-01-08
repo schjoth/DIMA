@@ -1,35 +1,78 @@
-import { StatusBar } from 'expo-status-bar';
-import { Platform, StyleSheet } from 'react-native';
+import { SafeAreaView } from "react-native";
+import { Text, View } from "../components/Themed";
+import { NativeStackNavigationProp } from "@react-navigation/native-stack";
+import { RootStackParamList } from "../types";
+import styles from "../styles/styles";
+import { GameMode } from "../components/game/enums";
+import CustomButton from "../components/CustomButton";
 
-import EditScreenInfo from '../components/EditScreenInfo';
-import { Text, View } from '../components/Themed';
+type ProfileScreenNavigationProp =
+	NativeStackNavigationProp<RootStackParamList>;
 
-export default function ModalScreen() {
-  return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Modal</Text>
-      <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-      <EditScreenInfo path="/screens/ModalScreen.tsx" />
+type Props = {
+	navigation: ProfileScreenNavigationProp;
+};
+/*Husk å endre i types.tsx linje 16*/
 
-      {/* Use a light status bar on iOS to account for the black space above the modal */}
-      <StatusBar style={Platform.OS === 'ios' ? 'light' : 'auto'} />
-    </View>
-  );
-}
+const ModalScreen = ({ navigation }: Props) => {
+	return (
+		<SafeAreaView style={styles.container}>
+			<View style={styles.container}>
+				<Text style={styles.title}>Choose your quiz!</Text>
+			</View>
+			<CustomButton
+				title="Classic (time limit)"
+				onPress={() =>
+					navigation.navigate({
+						name: "Game",
+						params: { mode: GameMode.Default },
+					})
+				}
+			/>
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  title: {
-    fontSize: 20,
-    fontWeight: 'bold',
-  },
-  separator: {
-    marginVertical: 30,
-    height: 1,
-    width: '80%',
-  },
-});
+			<CustomButton
+				title="Best of 10"
+				onPress={() =>
+					navigation.navigate({
+						name: "Game",
+						params: { mode: GameMode.Default },
+					})
+				}
+			/>
+			<CustomButton
+				title="Instant death"
+				onPress={() =>
+					navigation.navigate({
+						name: "Game",
+						params: { mode: GameMode.Default },
+					})
+				}
+			/>
+			<CustomButton
+				title="30s preview"
+				onPress={() =>
+					navigation.navigate({
+						name: "Game",
+						params: { mode: GameMode.Default },
+					})
+				}
+			/>
+			<CustomButton
+				title="Odd one out"
+				onPress={() =>
+					navigation.navigate({
+						name: "Game",
+						params: { mode: GameMode.Default },
+					})
+				}
+			/>
+			<CustomButton
+				title="Back"
+				variant="secondary"
+				onPress={() => navigation.navigate("Home")}
+			/>
+		</SafeAreaView>
+	);
+};
+
+export default ModalScreen;

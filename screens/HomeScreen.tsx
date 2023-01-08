@@ -1,20 +1,12 @@
-import { StyleSheet, Alert, SafeAreaView } from "react-native";
-import React, { useContext, useEffect } from "react";
-import { View } from "../components/Themed";
-import { RootTabScreenProps } from "../types";
-import { AuthContext } from "../components/AuthContext";
+import { StyleSheet, Alert, SafeAreaView, View } from "react-native";
+import React from "react";
 import CustomButton from "../components/CustomButton";
 import WelcomeTitle from "../components/WelcomeTitle";
-import { GameMode } from "../components/game/enums";
+import { RootStackScreenProps } from "../types";
 
-export default function TabOneScreen({
-	navigation,
-}: RootTabScreenProps<"TabOne">) {
-	const { userToken, setUserToken } = useContext(AuthContext);
-	useEffect(() => {
-		if (!userToken) navigation.navigate("Login");
-	}, [userToken]);
+type Props = RootStackScreenProps<"Home">;
 
+const HomeScreen = ({ navigation }: Props) => {
 	return (
 		<SafeAreaView style={styles.container}>
 			<View style={styles.navigation}>
@@ -22,30 +14,22 @@ export default function TabOneScreen({
 				<CustomButton
 					variant="play"
 					title="Play"
-					onPress={() =>
-						navigation.navigate({
-							name: "Game",
-							params: { mode: GameMode.Default },
-						})
-					}
+					onPress={() => navigation.navigate("Modal")}
 				/>
+
 				<CustomButton
 					title="Scoreboard"
-					onPress={() => Alert.alert("Simple Button pressed")}
+					onPress={() => navigation.navigate("Scoreboard")}
 				/>
 				<CustomButton
-					title="Settings"
-					onPress={() => Alert.alert("Simple Button pressed")}
-				/>
-				<CustomButton
-					title="Log out"
 					variant="secondary"
-					onPress={() => setUserToken("")}
+					title="Log out"
+					onPress={() => Alert.alert("Simple Button pressed")}
 				/>
 			</View>
 		</SafeAreaView>
 	);
-}
+};
 
 const styles = StyleSheet.create({
 	container: {
@@ -62,9 +46,6 @@ const styles = StyleSheet.create({
 		backgroundColor: "#000",
 		width: "100%",
 	},
-	playButton: {},
-	button: {
-		backgroundColor: "#1DB954",
-		borderRadius: 30,
-	},
 });
+
+export default HomeScreen;
