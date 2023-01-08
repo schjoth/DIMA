@@ -11,8 +11,8 @@ const LoginScreen = ({ navigation }: RootStackScreenProps<"Login">) => {
 	useEffect(() => {
 		let timeout: NodeJS.Timeout;
 		const listener = Linking.addEventListener("url", (e) => {
-			const token = e.url
-				.split("#")[1]
+			const token = e?.url
+				?.split("#")[1]
 				.split("&")
 				.find((item) => item.startsWith("access_token="))
 				?.split("=")[1];

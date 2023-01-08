@@ -1,14 +1,14 @@
 import axios from "axios";
 const Buffer = require("buffer").Buffer;
 
-export const authorize = () => {
+export const authorize = async () => {
 	let token: string = "";
 	const auth = new Buffer.from(
 		`${"d760e0ff5af14deab0c1384a48669a74"}:${"fc3afdaaae5d43e1ad37028019958240"}`,
 		"utf-8"
 	).toString("base64");
 
-	axios({
+	await axios({
 		method: "post",
 		url: "https://accounts.spotify.com/api/token",
 		headers: {
@@ -25,5 +25,5 @@ export const authorize = () => {
 			console.log(error);
 		});
 
-	return { clientToken: token };
+	return token;
 };

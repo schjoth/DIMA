@@ -1,4 +1,11 @@
-import { createContext, FC, ReactInstance, ReactNode, useState } from "react";
+import {
+	createContext,
+	FC,
+	ReactInstance,
+	ReactNode,
+	useEffect,
+	useState,
+} from "react";
 import { authorize } from "../api/auth";
 
 export type AuthState = {
@@ -16,8 +23,14 @@ const defaultState: AuthState = {
 export const AuthContext = createContext<AuthState>(defaultState);
 
 const AuthProvider = ({ children }: { children: ReactNode }) => {
-	const { clientToken } = authorize();
+	const [clientToken, setclientToken] = useState<string>("");
 	const [userToken, setUserToken] = useState<string>("");
+
+	useEffect(() => {
+		authorize().then((clientToken) => {
+			setclientToken(clientToken);
+		});
+	}, []);
 
 	return (
 		<AuthContext.Provider value={{ clientToken, userToken, setUserToken }}>
