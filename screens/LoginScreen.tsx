@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from "react";
 import { RootStackScreenProps } from "../types";
-import { StyleSheet } from "react-native";
+import { Linking, StyleSheet } from "react-native";
 import { AuthContext } from "../components/AuthContext";
 import SpotifyLogin from "../components/SpotifyLogin";
 import { View, Text } from "../components/Themed";
@@ -9,23 +9,24 @@ const LoginScreen = ({ navigation }: RootStackScreenProps<"Login">) => {
 	const { userToken, setUserToken } = useContext(AuthContext);
 
 	useEffect(() => {
-		// get token from spotify
-		let token;
-		// const token = window.location.hash
-		// 	.substring(1)
-		// 	.split("&")
-		// 	.find((item) => item.startsWith("access_token="))
-		// 	?.split("=")[1];
-
 		let timeout: NodeJS.Timeout;
+		const listener = Linking.addEventListener("url", (e) => {
+			const token = e?.url
+				?.split("#")[1]
+				.split("&")
+				.find((item) => item.startsWith("access_token="))
+				?.split("=")[1];
 
-		// if token exists, update context and navigate to root
-		if (token) {
-			setUserToken(token || "");
-			timeout = setTimeout(() => navigation.navigate("Home"), 1500);
-		}
-
-		return () => timeout && clearTimeout(timeout);
+			// if token exists, update context and navigate to root
+			if (token) {
+				setUserToken(token || "");
+				timeout = setTimeout(() => navigation.navigate("Home"), 1500);
+			}
+		});
+		return () => {
+			clearTimeout(timeout);
+			// Linking.removeSubscription(listener);
+		};
 	}, []);
 
 	return (
