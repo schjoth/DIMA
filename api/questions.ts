@@ -1,4 +1,5 @@
 import { Questions } from "../components/game/types";
+import { authorize } from "./auth";
 
 type Credentials = {
 	clientToken: string;
@@ -10,6 +11,21 @@ export const fetchQuestions = async ({
 	userToken,
 }: Credentials): Promise<Questions> => {
 	//TODO: Implement logic here
+
+
+	 const getTopTracks = async (token: String) => {
+		const settings = {
+		headers: {'Authorization': 'Bearer ' + token}
+		}
+		console.log(token);
+		const response = await fetch(`https://api.spotify.com/v1/me/top/tracks?time_range=long_term&limit=10&offset=5`, settings);
+		const data = await response.json()
+		return data;
+		}
+
+		const topTracks = getTopTracks(userToken);
+		console.log(topTracks);
+
 
 	let req = Promise.resolve([
 		{
