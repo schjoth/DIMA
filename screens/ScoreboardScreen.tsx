@@ -19,7 +19,7 @@ const ScoreboardScreen = ({ navigation }: Props) => {
 	return (
 		<SafeAreaView style={styles.container}>
 			<View>
-				<Scoreboard scores={[10, 8, 7, 6, 5]} highlightIndex={2} />
+				<Scoreboard highscores={[10, 8, 7, 6, 5]} highlightIndex={2} />
 
 				<CustomButton
 					title="Back"

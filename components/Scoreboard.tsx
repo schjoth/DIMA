@@ -1,18 +1,22 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
+import { Highscores } from "../storage/highscores";
 import styles, { black, green, offWhite } from "../styles/styles";
 
 interface ScoreboardProps {
-	scores: number[];
+	highscores: Highscores;
 	highlightIndex?: number;
 }
 
-const Scoreboard: React.FC<ScoreboardProps> = ({ scores, highlightIndex }) => {
+const Scoreboard: React.FC<ScoreboardProps> = ({
+	highscores,
+	highlightIndex,
+}) => {
 	return (
 		<View style={styles.container}>
 			<Text style={styles.title}>Scoreboard</Text>
 			<View style={localStyles.rankContainer}>
-				{scores.map((score, index) => (
+				{highscores.map((score, index) => (
 					<View
 						key={index}
 						style={[
