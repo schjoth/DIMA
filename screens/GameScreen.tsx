@@ -48,12 +48,18 @@ const GameScreen: React.FC<RootStackScreenProps<"Game">> = ({
 		navigation.navigate("Result", { mode, score });
 	}, [mode, score]);
 
-	const onAnswer = useCallback((status: AnswerStatus) => {
-		if (status === AnswerStatus.Correct) {
-			console.log("Correct!");
-			setScore((score) => score + 1);
-		}
-	}, []);
+	const onAnswer = useCallback(
+		(status: AnswerStatus) => {
+			if (status === AnswerStatus.Correct) {
+				setScore((score) => score + 1);
+			} else {
+				if (mode === GameMode.InstantDeath) {
+					gameOver();
+				}
+			}
+		},
+		[gameOver, mode]
+	);
 
 	const nextQuestion = useCallback(() => {
 		if (isFinalQuestion) {
