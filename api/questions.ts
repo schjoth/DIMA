@@ -32,11 +32,11 @@ export const fetchQuestions = async ({
 		return data;
 		}
 
-		const topTracks = getTopTracks(userToken);
+		const topTracks =  await getTopTracks(userToken);
 		//console.log(topTracks);
 
-	const getSongInfo = () =>{
-		let items = new Array(song.items);
+	const getSongInfo = () => {
+		let items = new Array(topTracks.items);
 		let songs = new Array();
 		//console.log(items);
 		items.forEach((item) => 
@@ -62,20 +62,13 @@ export const fetchQuestions = async ({
 				artists: artistNames,
 				albumName: i.album.name,
 			})
-			//console.log(i.name);
-			//console.log(i.album.name);
-			//console.log(artistNames);
 
-
-			
 			const infosong = convertData(i);
 			console.log(infosong);
 			songs.push(infosong);
 			artistNames = "";
 		})
-		
 		})
-		
 		return songs;
 	}
 
