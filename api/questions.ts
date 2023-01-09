@@ -138,7 +138,7 @@ export const fetchQuestions = async ({
 		},
 		{
 			question: "Who made " + randomSong6.track + "?",
-			hint: randomSong6,
+			hint: randomSong6.albumName,
 			answers: wrongAnswers6,
 			correctAnswer: randomSong6.artists
 		},
