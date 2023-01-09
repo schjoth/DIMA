@@ -8,7 +8,8 @@ import { QuestionData } from "./types";
 
 interface QuestionProps {
 	data: QuestionData;
-	nextQuestion: (result: AnswerStatus) => void;
+	nextQuestion: () => void;
+	onAnswer: (answer: AnswerStatus) => void;
 	isFinalQuestion?: boolean;
 	index: number;
 }
@@ -16,6 +17,7 @@ interface QuestionProps {
 const Question: FC<QuestionProps> = ({
 	data,
 	nextQuestion,
+	onAnswer,
 	isFinalQuestion = false,
 	index,
 }) => {
@@ -32,15 +34,12 @@ const Question: FC<QuestionProps> = ({
 				? AnswerStatus.Correct
 				: AnswerStatus.Incorrect;
 
+		onAnswer(status);
 		setResult(status);
 		return status;
 	};
 
 	const [result, setResult] = useState<AnswerStatus>();
-	const handleNextQuestion = useMemo(
-		() => () => result ? nextQuestion(result) : undefined,
-		[result, nextQuestion]
-	);
 
 	return (
 		<View style={styles.container}>
@@ -65,7 +64,7 @@ const Question: FC<QuestionProps> = ({
 
 			<CustomButton
 				title={isFinalQuestion ? "Finish" : "Next question"}
-				onPress={handleNextQuestion}
+				onPress={nextQuestion}
 				disabled={!result}
 			/>
 		</View>

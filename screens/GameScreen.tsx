@@ -6,7 +6,7 @@ import React, {
 	useState,
 } from "react";
 import { fetchQuestions } from "../api/questions";
-import { GameMode } from "../components/game/enums";
+import { AnswerStatus, GameMode } from "../components/game/enums";
 import Question from "../components/game/Question";
 import { QuestionData, Questions } from "../components/game/types";
 import { RootStackScreenProps } from "../types";
@@ -27,24 +27,32 @@ const GameScreen: React.FC<RootStackScreenProps<"Game">> = ({
 		() => questions[questionIndex],
 		[questions, questionIndex]
 	);
-	const { clientToken, userToken } = useContext(AuthContext);
 
-	//only used for rush mode
+	const [score, setScore] = useState<number>(0);
+	//only used for Rush mode
 	const [remainingTime, setRemainingTime] = useState<number>(60);
 
+	const { clientToken, userToken } = useContext(AuthContext);
 	useEffect(() => {
 		fetchQuestions({ clientToken, userToken }).then((questions) => {
 			setQuestions(questions);
 		});
 	}, []);
 
-	const isFinalQuestion =
-		questionIndex === questions.length - 1 && mode !== GameMode.Rush;
+	const isFinalQuestion = useMemo(
+		() => questionIndex === questions.length - 1 && mode !== GameMode.Rush,
+		[questionIndex, questions.length, mode]
+	);
 
 	const gameOver = useCallback(() => {
-		//TODO navigatie to result page
-		//TODO save score
-		return alert("Game is over");
+		navigation.navigate("Result", { mode, score });
+	}, [mode, score]);
+
+	const onAnswer = useCallback((status: AnswerStatus) => {
+		if (status === AnswerStatus.Correct) {
+			console.log("Correct!");
+			setScore((score) => score + 1);
+		}
 	}, []);
 
 	const nextQuestion = useCallback(() => {
@@ -52,7 +60,7 @@ const GameScreen: React.FC<RootStackScreenProps<"Game">> = ({
 			return gameOver();
 		}
 		return setQuestionIndex((index) => index + 1);
-	}, [questionIndex, questions.length]);
+	}, [questionIndex, questions.length, gameOver, isFinalQuestion]);
 
 	//Reduce timer for rush mode
 	useEffect(() => {
@@ -94,6 +102,7 @@ const GameScreen: React.FC<RootStackScreenProps<"Game">> = ({
 				index={questionIndex}
 				data={currentQuestion}
 				nextQuestion={nextQuestion}
+				onAnswer={onAnswer}
 				isFinalQuestion={isFinalQuestion}
 			/>
 		</View>
