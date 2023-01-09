@@ -1,20 +1,15 @@
 import { SafeAreaView } from "react-native";
 import { Text, View } from "../components/Themed";
-import { NativeStackNavigationProp } from "@react-navigation/native-stack";
-import { RootStackParamList } from "../types";
+import { RootStackScreenProps } from "../types";
 import styles from "../styles/styles";
 import { GameMode } from "../components/game/enums";
 import CustomButton from "../components/CustomButton";
+import { FC } from "react";
 
-type ProfileScreenNavigationProp =
-	NativeStackNavigationProp<RootStackParamList>;
-
-type Props = {
-	navigation: ProfileScreenNavigationProp;
-};
-/*Husk å endre i types.tsx linje 16*/
-
-const ModalScreen = ({ navigation }: Props) => {
+const SelectGameModeScreen: FC<RootStackScreenProps<"SelectGameMode">> = ({
+	navigation,
+	route: { params: redirectTo },
+}) => {
 	return (
 		<SafeAreaView style={styles.container}>
 			<View style={styles.container}>
@@ -24,7 +19,7 @@ const ModalScreen = ({ navigation }: Props) => {
 				title="Classic"
 				onPress={() =>
 					navigation.navigate({
-						name: "Game",
+						name: redirectTo.redirectTo,
 						params: { mode: GameMode.Classic },
 					})
 				}
@@ -34,7 +29,7 @@ const ModalScreen = ({ navigation }: Props) => {
 				title="Rush"
 				onPress={() =>
 					navigation.navigate({
-						name: "Game",
+						name: redirectTo.redirectTo,
 						params: { mode: GameMode.Rush },
 					})
 				}
@@ -43,7 +38,7 @@ const ModalScreen = ({ navigation }: Props) => {
 				title="Instant death"
 				onPress={() =>
 					navigation.navigate({
-						name: "Game",
+						name: redirectTo.redirectTo,
 						params: { mode: GameMode.InstantDeath },
 					})
 				}
@@ -52,7 +47,7 @@ const ModalScreen = ({ navigation }: Props) => {
 				title="30s preview"
 				onPress={() =>
 					navigation.navigate({
-						name: "Game",
+						name: redirectTo.redirectTo,
 						params: { mode: GameMode.Preview },
 					})
 				}
@@ -61,7 +56,7 @@ const ModalScreen = ({ navigation }: Props) => {
 				title="Odd one out"
 				onPress={() =>
 					navigation.navigate({
-						name: "Game",
+						name: redirectTo.redirectTo,
 						params: { mode: GameMode.OddOneOut },
 					})
 				}
@@ -75,4 +70,4 @@ const ModalScreen = ({ navigation }: Props) => {
 	);
 };
 
-export default ModalScreen;
+export default SelectGameModeScreen;

@@ -23,12 +23,22 @@ const HomeScreen = ({ navigation }: Props) => {
 				<CustomButton
 					variant="play"
 					title="Play"
-					onPress={() => navigation.navigate("Modal")}
+					onPress={() =>
+						navigation.navigate({
+							name: "SelectGameMode",
+							params: { redirectTo: "Game" },
+						})
+					}
 				/>
 
 				<CustomButton
 					title="Scoreboard"
-					onPress={() => navigation.navigate("Scoreboard")}
+					onPress={() =>
+						navigation.navigate({
+							name: "SelectGameMode",
+							params: { redirectTo: "Scoreboard" },
+						})
+					}
 				/>
 				<CustomButton
 					variant="secondary"

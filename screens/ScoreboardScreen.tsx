@@ -1,25 +1,43 @@
-import { StyleSheet, Button, SafeAreaView } from "react-native";
-import * as React from "react";
+import { SafeAreaView } from "react-native";
 import { Text, View } from "../components/Themed";
-import { NativeStackNavigationProp } from "@react-navigation/native-stack";
-import { RootStackParamList } from "../types";
+import { RootStackScreenProps } from "../types";
+import { FC, useEffect, useState } from "react";
 import styles from "../styles/styles";
 import Scoreboard from "../components/Scoreboard";
 import CustomButton from "../components/CustomButton";
+import { fetchHighscores, Highscores } from "../storage/highscores";
 
-type ProfileScreenNavigationProp =
-	NativeStackNavigationProp<RootStackParamList>;
+const ScoreboardScreen: FC<RootStackScreenProps<"Scoreboard">> = ({
+	navigation,
+	route: {
+		params: { mode },
+	},
+}) => {
+	const [highscores, setHighscores] = useState<Highscores>();
 
-type Props = {
-	navigation: ProfileScreenNavigationProp;
-};
-/*Husk å endre i types.tsx linje 16*/
+	useEffect(() => {
+		fetchHighscores(mode).then((highscores) => {
+			setHighscores(highscores);
+		});
+	}, []);
 
-const ScoreboardScreen = ({ navigation }: Props) => {
+	if (!highscores) {
+		return (
+			<View style={styles.container}>
+				<Text style={styles.title}>Loading...</Text>
+				<CustomButton
+					variant="secondary"
+					onPress={() => navigation.navigate("Home")}
+					title="Continue"
+				/>
+			</View>
+		);
+	}
+
 	return (
 		<SafeAreaView style={styles.container}>
 			<View>
-				<Scoreboard highscores={[10, 8, 7, 6, 5]} highlightIndex={2} />
+				<Scoreboard highscores={highscores} />
 
 				<CustomButton
 					title="Back"

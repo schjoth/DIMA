@@ -15,10 +15,11 @@ declare global {
 export type RootStackParamList = {
 	Home: undefined;
 	Login: undefined;
-	Modal: undefined;
+	SelectGameMode: {
+		redirectTo: keyof Pick<RootStackParamList, "Game" | "Scoreboard">;
+	};
 	Game: { mode: GameMode };
-	Scoreboard: undefined;
-	Settings: undefined;
+	Scoreboard: { mode: GameMode };
 	NotFound: undefined;
 	Result: { score: number; mode: GameMode };
 };
