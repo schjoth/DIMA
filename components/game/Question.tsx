@@ -1,5 +1,6 @@
 import React, { FC, useMemo, useState } from "react";
 import { View, Text, StyleSheet } from "react-native";
+import { black, green } from "../../styles/styles";
 import CustomButton from "../CustomButton";
 import Answer from "./Answer";
 import { AnswerStatus } from "./enums";
@@ -7,7 +8,8 @@ import { QuestionData } from "./types";
 
 interface QuestionProps {
 	data: QuestionData;
-	nextQuestion: (result: AnswerStatus) => void;
+	nextQuestion: () => void;
+	onAnswer: (answer: AnswerStatus) => void;
 	isFinalQuestion?: boolean;
 	index: number;
 }
@@ -15,6 +17,7 @@ interface QuestionProps {
 const Question: FC<QuestionProps> = ({
 	data,
 	nextQuestion,
+	onAnswer,
 	isFinalQuestion = false,
 	index,
 }) => {
@@ -31,15 +34,12 @@ const Question: FC<QuestionProps> = ({
 				? AnswerStatus.Correct
 				: AnswerStatus.Incorrect;
 
+		onAnswer(status);
 		setResult(status);
 		return status;
 	};
 
 	const [result, setResult] = useState<AnswerStatus>();
-	const handleNextQuestion = useMemo(
-		() => () => result ? nextQuestion(result) : undefined,
-		[result, nextQuestion]
-	);
 
 	return (
 		<View style={styles.container}>
@@ -64,7 +64,7 @@ const Question: FC<QuestionProps> = ({
 
 			<CustomButton
 				title={isFinalQuestion ? "Finish" : "Next question"}
-				onPress={handleNextQuestion}
+				onPress={nextQuestion}
 				disabled={!result}
 			/>
 		</View>
@@ -73,7 +73,7 @@ const Question: FC<QuestionProps> = ({
 
 const styles = StyleSheet.create({
 	container: {
-		backgroundColor: "#000",
+		backgroundColor: black,
 		height: "100%",
 		width: "100%",
 		display: "flex",
@@ -88,7 +88,7 @@ const styles = StyleSheet.create({
 		justifyContent: "center",
 	},
 	question: {
-		color: "#0f0",
+		color: green,
 	},
 	hint: {
 		paddingTop: 20,
@@ -99,6 +99,7 @@ const styles = StyleSheet.create({
 		display: "flex",
 		height: 200,
 		justifyContent: "space-between",
+		alignItems: "center",
 	},
 });
 
