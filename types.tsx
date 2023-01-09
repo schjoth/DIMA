@@ -3,11 +3,6 @@
  * https://reactnavigation.org/docs/typescript/
  */
 
-import { BottomTabScreenProps } from "@react-navigation/bottom-tabs";
-import {
-	CompositeScreenProps,
-	NavigatorScreenParams,
-} from "@react-navigation/native";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { GameMode } from "./components/game/enums";
 
@@ -18,23 +13,16 @@ declare global {
 }
 
 export type RootStackParamList = {
-	Root: NavigatorScreenParams<RootTabParamList> | undefined;
-	Modal: undefined;
+	Home: undefined;
 	Login: undefined;
+	SelectGameMode: {
+		redirectTo: keyof Pick<RootStackParamList, "Game" | "Scoreboard">;
+	};
 	Game: { mode: GameMode };
+	Scoreboard: { mode: GameMode };
 	NotFound: undefined;
+	Result: { score: number; mode: GameMode };
 };
 
 export type RootStackScreenProps<Screen extends keyof RootStackParamList> =
 	NativeStackScreenProps<RootStackParamList, Screen>;
-
-export type RootTabParamList = {
-	TabOne: undefined;
-	TabTwo: undefined;
-};
-
-export type RootTabScreenProps<Screen extends keyof RootTabParamList> =
-	CompositeScreenProps<
-		BottomTabScreenProps<RootTabParamList, Screen>,
-		NativeStackScreenProps<RootStackParamList>
-	>;

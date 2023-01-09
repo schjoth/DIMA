@@ -1,18 +1,19 @@
-import { StyleSheet, Alert, SafeAreaView } from "react-native";
-import React, { useContext, useEffect } from "react";
-import { View } from "../components/Themed";
-import { RootTabScreenProps } from "../types";
-import { AuthContext } from "../components/AuthContext";
+import { StyleSheet, Alert, SafeAreaView, View } from "react-native";
+import React, { useEffect } from "react";
 import CustomButton from "../components/CustomButton";
 import WelcomeTitle from "../components/WelcomeTitle";
-import { GameMode } from "../components/game/enums";
+import { RootStackScreenProps } from "../types";
+import { AuthContext } from "../components/AuthContext";
 
-export default function TabOneScreen({
-	navigation,
-}: RootTabScreenProps<"TabOne">) {
-	const { userToken, setUserToken } = useContext(AuthContext);
+type Props = RootStackScreenProps<"Home">;
+
+const HomeScreen = ({ navigation }: Props) => {
+	const { userToken, setUserToken } = React.useContext(AuthContext);
+
 	useEffect(() => {
-		if (!userToken) navigation.navigate("Login");
+		if (userToken === "") {
+			navigation.navigate("Login");
+		}
 	}, [userToken]);
 
 	return (
@@ -24,28 +25,30 @@ export default function TabOneScreen({
 					title="Play"
 					onPress={() =>
 						navigation.navigate({
-							name: "Game",
-							params: { mode: GameMode.Default },
+							name: "SelectGameMode",
+							params: { redirectTo: "Game" },
+						})
+					}
+				/>
+
+				<CustomButton
+					title="Scoreboard"
+					onPress={() =>
+						navigation.navigate({
+							name: "SelectGameMode",
+							params: { redirectTo: "Scoreboard" },
 						})
 					}
 				/>
 				<CustomButton
-					title="Scoreboard"
-					onPress={() => Alert.alert("Simple Button pressed")}
-				/>
-				<CustomButton
-					title="Settings"
-					onPress={() => Alert.alert("Simple Button pressed")}
-				/>
-				<CustomButton
-					title="Log out"
 					variant="secondary"
+					title="Log out"
 					onPress={() => setUserToken("")}
 				/>
 			</View>
 		</SafeAreaView>
 	);
-}
+};
 
 const styles = StyleSheet.create({
 	container: {
@@ -62,9 +65,6 @@ const styles = StyleSheet.create({
 		backgroundColor: "#000",
 		width: "100%",
 	},
-	playButton: {},
-	button: {
-		backgroundColor: "#1DB954",
-		borderRadius: 30,
-	},
 });
+
+export default HomeScreen;
