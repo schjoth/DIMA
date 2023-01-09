@@ -19,26 +19,22 @@ export const fetchQuestions = async ({
 	clientToken,
 	userToken,
 }: Credentials): Promise<Questions> => {
-	//TODO: Implement logic here
 
 
 	 const getTopTracks = async (token: String) => {
 		const settings = {
 		headers: {'Authorization': 'Bearer ' + token}
 		}
-		//console.log(token);
 		const response = await fetch(`https://api.spotify.com/v1/me/top/tracks?time_range=long_term&limit=20&offset=5`, settings);
 		const data = await response.json()
 		return data;
 		}
 
 		const topTracks =  await getTopTracks(userToken);
-		//console.log(topTracks);
 
 	const getSongInfo = () => {
 		let items = new Array(topTracks.items);
 		let songs = new Array();
-		//console.log(items);
 		items.forEach((item) => 
 		{
 		item.forEach(i =>{
@@ -49,7 +45,6 @@ export const fetchQuestions = async ({
 				if (i.artists.length > 1){
 					artistNames = artistNames + ",";
 				}
-				//console.log(artistNames);
 			})
 			const convertData = (i: {
 					album: {
