@@ -25,7 +25,7 @@ export const fetchQuestions = async ({
 		const settings = {
 		headers: {'Authorization': 'Bearer ' + token}
 		}
-		const response = await fetch(`https://api.spotify.com/v1/me/top/tracks?time_range=long_term&limit=20&offset=5`, settings);
+		const response = await fetch(`https://api.spotify.com/v1/me/top/tracks?time_range=long_term&limit=50&offset=5`, settings);
 		const data = await response.json()
 		return data;
 		}
@@ -68,48 +68,79 @@ export const fetchQuestions = async ({
 	}
 
 	const test = getSongInfo();
-	console.log(test);
-	
-		
+
+	const getRandomSongAndRemove = () => {
+		let randomSong = test[Math.floor(Math.random())*test.length];
+		for( var i = 0; i < test.length; i++){ 
+			if ( test[i] === randomSong) { 
+				test.splice(i, 1); 
+			}
+		}
+		return randomSong;
+	}
+
+
+	const getWrongAnswers = () => {
+		let wrongAnswers = [test[Math.floor(Math.random()*test.length)].artists, 
+							test[Math.floor(Math.random()*test.length)].artists,
+							test[Math.floor(Math.random()*test.length)].artists]
+		return wrongAnswers;
+	}
+
+
+
+	const randomSong = getRandomSongAndRemove();
+	const wrongAnswers = getWrongAnswers();
+	const randomSong2 = getRandomSongAndRemove();
+	const wrongAnswers2 = getWrongAnswers();
+	const randomSong3 = getRandomSongAndRemove();
+	const wrongAnswers3 = getWrongAnswers();
+	const randomSong4 = getRandomSongAndRemove();
+	const wrongAnswers4 = getWrongAnswers();
+	const randomSong5 = getRandomSongAndRemove();
+	const wrongAnswers5 = getWrongAnswers();
+	const randomSong6 = getRandomSongAndRemove();
+	const wrongAnswers6 = getWrongAnswers();
+ 
 
 
 
 	let req = Promise.resolve([
 		{
-			question: "Who made this song?",
-			hint: "Ferrari",
-			answers: ["wrong1", "wrong2", "wrong3"],
-			correctAnswer: "correct",
+			question: "Who made " + randomSong.track + "?",
+			hint: randomSong.albumName,
+			answers: wrongAnswers,
+			correctAnswer: randomSong.artists,
 		},
 		{
-			question: "Who made this song?",
-			hint: "Radioactive",
-			answers: ["wrong1", "wrong2", "wrong3"],
-			correctAnswer: "correct",
+			question: "Who made " + randomSong2.track + "?",
+			hint: randomSong2.albumName,
+			answers: wrongAnswers2,
+			correctAnswer: randomSong2.artists
 		},
 		{
-			question: "Who made this song?",
-			hint: "Telephone",
-			answers: ["wrong1", "wrong2", "wrong3"],
-			correctAnswer: "correct",
+			question: "Who made " + randomSong3.track + "?",
+			hint: randomSong3.albumName,
+			answers: wrongAnswers3,
+			correctAnswer: randomSong3.artists
 		},
 		{
-			question: "Who made this song?",
-			hint: "Mi fai impazzire",
-			answers: ["wrong1", "wrong2", "wrong3"],
-			correctAnswer: "correct",
+			question: "Who made " + randomSong4.track + "?",
+			hint: randomSong4.albumName,
+			answers: wrongAnswers4,
+			correctAnswer: randomSong4.artists
 		},
 		{
-			question: "Who made this song?",
-			hint: "Penger til grava",
-			answers: ["wrong1", "wrong2", "wrong3"],
-			correctAnswer: "correct",
+			question: "Who made " + randomSong5.track + "?",
+			hint: randomSong5.albumName,
+			answers: wrongAnswers5,
+			correctAnswer: randomSong5.artists
 		},
 		{
-			question: "Who made this song?",
-			hint: "Mockingbird",
-			answers: ["wrong1", "wrong2", "wrong3"],
-			correctAnswer: "correct",
+			question: "Who made " + randomSong6.track + "?",
+			hint: randomSong6,
+			answers: wrongAnswers6,
+			correctAnswer: randomSong6.artists
 		},
 	] as Questions);
 
