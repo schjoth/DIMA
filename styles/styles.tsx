@@ -24,12 +24,14 @@ const styles = StyleSheet.create({
 		fontWeight: "bold",
 		color: green,
 	},
-	// separator: {
-	// 	marginVertical: 30,
-	// 	height: 1,
-	// 	width: "80%",
-	// 	color: green,
-	// },
+	navigation: {
+		display: "flex",
+		alignItems: "center",
+		justifyContent: "space-between",
+		height: 300,
+		backgroundColor: black,
+		width: "100%",
+	},
 	header: {
 		fontSize: 20,
 	},

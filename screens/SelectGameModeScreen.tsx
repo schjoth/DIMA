@@ -12,55 +12,62 @@ const SelectGameModeScreen: FC<RootStackScreenProps<"SelectGameMode">> = ({
 }) => {
 	return (
 		<SafeAreaView style={styles.container}>
-			<View style={styles.container}>
-				<Text style={styles.title}>Choose your quiz!</Text>
-			</View>
-			<CustomButton
-				title="Classic"
-				onPress={() =>
-					navigation.navigate({
-						name: redirectTo.redirectTo,
-						params: { mode: GameMode.Classic },
-					})
-				}
-			/>
+			<Text style={styles.title}>Choose your quiz!</Text>
 
-			<CustomButton
-				title="Rush"
-				onPress={() =>
-					navigation.navigate({
-						name: redirectTo.redirectTo,
-						params: { mode: GameMode.Rush },
-					})
-				}
-			/>
-			<CustomButton
-				title="Instant death"
-				onPress={() =>
-					navigation.navigate({
-						name: redirectTo.redirectTo,
-						params: { mode: GameMode.InstantDeath },
-					})
-				}
-			/>
-			<CustomButton
-				title="30s preview"
-				onPress={() =>
-					navigation.navigate({
-						name: redirectTo.redirectTo,
-						params: { mode: GameMode.Preview },
-					})
-				}
-			/>
-			<CustomButton
-				title="Odd one out"
-				onPress={() =>
-					navigation.navigate({
-						name: redirectTo.redirectTo,
-						params: { mode: GameMode.OddOneOut },
-					})
-				}
-			/>
+			<View
+				style={{
+					...styles.navigation,
+					height: 280,
+					paddingVertical: 30,
+				}}
+			>
+				<CustomButton
+					title="Classic"
+					onPress={() =>
+						navigation.navigate({
+							name: redirectTo.redirectTo,
+							params: { mode: GameMode.Classic },
+						})
+					}
+				/>
+
+				<CustomButton
+					title="Rush"
+					onPress={() =>
+						navigation.navigate({
+							name: redirectTo.redirectTo,
+							params: { mode: GameMode.Rush },
+						})
+					}
+				/>
+				<CustomButton
+					title="Instant death"
+					onPress={() =>
+						navigation.navigate({
+							name: redirectTo.redirectTo,
+							params: { mode: GameMode.InstantDeath },
+						})
+					}
+				/>
+				<CustomButton
+					title="30s preview"
+					onPress={() =>
+						navigation.navigate({
+							name: redirectTo.redirectTo,
+							params: { mode: GameMode.Preview },
+						})
+					}
+				/>
+				<CustomButton
+					title="Odd one out"
+					onPress={() =>
+						navigation.navigate({
+							name: redirectTo.redirectTo,
+							params: { mode: GameMode.OddOneOut },
+						})
+					}
+				/>
+			</View>
 			<CustomButton
 				title="Back"
 				variant="secondary"

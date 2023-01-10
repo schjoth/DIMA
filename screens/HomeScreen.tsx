@@ -4,6 +4,7 @@ import CustomButton from "../components/CustomButton";
 import WelcomeTitle from "../components/WelcomeTitle";
 import { RootStackScreenProps } from "../types";
 import { AuthContext } from "../components/AuthContext";
+import styles from "../styles/styles";
 
 type Props = RootStackScreenProps<"Home">;
 
@@ -49,22 +50,5 @@ const HomeScreen = ({ navigation }: Props) => {
 		</SafeAreaView>
 	);
 };
-
-const styles = StyleSheet.create({
-	container: {
-		flex: 1,
-		alignItems: "center",
-		justifyContent: "center",
-		backgroundColor: "#000",
-	},
-	navigation: {
-		display: "flex",
-		alignItems: "center",
-		justifyContent: "space-between",
-		height: 300,
-		backgroundColor: "#000",
-		width: "100%",
-	},
-});
 
 export default HomeScreen;
