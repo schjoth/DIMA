@@ -5,8 +5,6 @@ export type Song = {
 };
 
 export const convertToSong = (rawData: any): Song => {
-	console.log(rawData.artists);
-
 	return {
 		track: rawData.name,
 		artists: rawData.artists.map((artist: any) => artist.name),
