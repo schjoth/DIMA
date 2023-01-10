@@ -1,3 +1,4 @@
+import { QuestionTypes } from "../components/game/enums";
 import { Questions } from "../components/game/types";
 import { convertToSong, Song } from "./data";
 import { pickRandomSongs } from "./utils";
@@ -73,8 +74,8 @@ export const fetchQuestions = async ({
 	};
 
 	const questions: Questions = songs.map((song) => ({
-		question: `Who made ${song.track}?`,
-		hint: song.artists[0],
+		question: QuestionTypes.WhoMadeThisSong,
+		hint: song.track,
 		answers: getWrongAnswers(song),
 		correctAnswer: song.artists[0],
 	}));

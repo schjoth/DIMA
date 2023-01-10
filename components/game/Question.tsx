@@ -45,10 +45,7 @@ const Question: FC<QuestionProps> = ({
 		<View style={styles.container}>
 			<View style={styles.questionContainer}>
 				<Text style={styles.question}>{question}</Text>
-				<Text style={styles.hint}>
-					#{index}
-					{hint}
-				</Text>
+				<Text style={styles.hint}>{hint}</Text>
 			</View>
 
 			<View style={styles.answers}>
