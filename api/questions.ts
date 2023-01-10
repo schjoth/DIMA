@@ -34,10 +34,9 @@ const getUserFavorites = async ({
 			`https://api.spotify.com/v1/me/top/${type}?time_range=${timeRange}&limit=${limit}&offset=${offset}`,
 			settings
 		);
+		const rawData = await response.json();
 
-		if (response) {
-			const rawData = await response.json();
-
+		if (rawData) {
 			// this only supports track and not for artists
 			return rawData.items.map((song: any) => convertToSong(song));
 		}
