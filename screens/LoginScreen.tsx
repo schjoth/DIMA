@@ -36,8 +36,6 @@ const LoginScreen = ({ navigation }: RootStackScreenProps<"Login">) => {
 			.split("&")
 			.find((item) => item.startsWith("access_token="))
 			?.split("=")[1];
-			console.log(webToken)
-
 
 		if (webToken) {
 			setUserToken(webToken || "");
