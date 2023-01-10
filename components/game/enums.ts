@@ -11,3 +11,7 @@ export enum GameMode {
 	Preview = "PREVIEW",
 	OddOneOut = "ODDONEOUT",
 }
+
+export enum QuestionTypes {
+	WhoMadeThisSong = "Who made this song?",
+}
