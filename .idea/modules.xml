@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/DIMA.iml" filepath="$PROJECT_DIR$/.idea/DIMA.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/WidgetApp.iml" filepath="$PROJECT_DIR$/.idea/WidgetApp.iml" />
     </modules>
   </component>
 </project>

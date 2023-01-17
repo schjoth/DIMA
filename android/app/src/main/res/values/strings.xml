@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">SpotiQuiz</string>
+    <string name="appwidget_text">EXAMPLE</string>
+    <string name="add_widget">Add widget</string>
+    <string name="app_widget_description">Widget for the SpotiQuiz app</string>
+    <string name="play_button">Press to play the game</string>
+    <string name="top1_mode">Top1 mode</string>
+    <string name="top2_mode">Top2 mode</string>
+    <string name="top3_mode">Top3 mode</string>
+    <string name="fake_mode1">Time Limit</string>
+    <string name="fake_mode2">Instant Death</string>
+    <string name="fake_mode3">Best of 10</string>
+    <string name="top1_score">Top1 score</string>
+    <string name="top2_score">Top2 score</string>
+    <string name="top3_score">Top3 score</string>
+    <string name="fake_score1">25</string>
+    <string name="fake_score2">14</string>
+    <string name="fake_score3">9</string>
+
+</resources>

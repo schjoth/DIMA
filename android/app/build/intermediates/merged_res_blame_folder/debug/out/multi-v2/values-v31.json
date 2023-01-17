@@ -1,0 +1,47 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.widgetapp-mergeDebugResources-23:/values-v31/values-v31.xml",
+            "map": [
+                {
+                    "source": "D:\\Programs\\GitRepos\\WidgetApp\\WidgetApp\\android\\app\\src\\main\\res\\values-v31\\themes.xml",
+                    "from": {
+                        "startLines": "6",
+                        "startColumns": "4",
+                        "startOffsets": "250",
+                        "endLines": "9",
+                        "endColumns": "12",
+                        "endOffsets": "554"
+                    },
+                    "to": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "5",
+                        "endColumns": "12",
+                        "endOffsets": "359"
+                    }
+                },
+                {
+                    "source": "D:\\Programs\\GitRepos\\WidgetApp\\WidgetApp\\android\\app\\src\\main\\res\\values-v31\\styles.xml",
+                    "from": {
+                        "startLines": "23,16,2,9",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "1119,757,17,374",
+                        "endLines": "28,21,7,14",
+                        "endColumns": "12,12,12,12",
+                        "endOffsets": "1488,1113,368,751"
+                    },
+                    "to": {
+                        "startLines": "6,12,18,24",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "364,738,1099,1455",
+                        "endLines": "11,17,23,29",
+                        "endColumns": "12,12,12,12",
+                        "endOffsets": "733,1094,1450,1832"
+                    }
+                }
+            ]
+        }
+    ]
+}

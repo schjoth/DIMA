@@ -1,0 +1,26 @@
+[
+    {
+        "merged": "C:\\Users\\carim\\.gradle\\daemon\\7.5.1\\com.widgetapp-mergeDebugResources-24:\\layout\\preview_my_widget.xml",
+        "source": "C:\\Users\\carim\\.gradle\\daemon\\7.5.1\\com.widgetapp-main-27:\\layout\\preview_my_widget.xml"
+    },
+    {
+        "merged": "C:\\Users\\carim\\.gradle\\daemon\\7.5.1\\com.widgetapp-mergeDebugResources-24:\\layout\\my_widget3x3.xml",
+        "source": "C:\\Users\\carim\\.gradle\\daemon\\7.5.1\\com.widgetapp-main-27:\\layout\\my_widget3x3.xml"
+    },
+    {
+        "merged": "com.widgetapp-mergeDebugResources-24:/layout/my_widget3x3.xml",
+        "source": "com.widgetapp-main-27:/layout/my_widget3x3.xml"
+    },
+    {
+        "merged": "C:\\Users\\carim\\.gradle\\daemon\\7.5.1\\com.widgetapp-mergeDebugResources-24:\\layout\\my_widget5x2.xml",
+        "source": "C:\\Users\\carim\\.gradle\\daemon\\7.5.1\\com.widgetapp-main-27:\\layout\\my_widget5x2.xml"
+    },
+    {
+        "merged": "C:\\Users\\carim\\.gradle\\daemon\\7.5.1\\com.widgetapp-mergeDebugResources-24:\\layout\\my_widget3x2.xml",
+        "source": "C:\\Users\\carim\\.gradle\\daemon\\7.5.1\\com.widgetapp-main-27:\\layout\\my_widget3x2.xml"
+    },
+    {
+        "merged": "C:\\Users\\carim\\.gradle\\daemon\\7.5.1\\com.widgetapp-mergeDebugResources-24:\\layout\\my_widget.xml",
+        "source": "C:\\Users\\carim\\.gradle\\daemon\\7.5.1\\com.widgetapp-main-27:\\layout\\my_widget.xml"
+    }
+]

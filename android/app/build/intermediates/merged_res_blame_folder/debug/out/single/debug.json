@@ -1,0 +1,146 @@
+[
+    {
+        "merged": "C:\\Users\\carim\\.gradle\\daemon\\7.5.1\\com.widgetapp-merged_res-25:\\font_inter.xml.flat",
+        "source": "C:\\Users\\carim\\.gradle\\daemon\\7.5.1\\com.widgetapp-main-27:\\font\\inter.xml"
+    },
+    {
+        "merged": "C:\\Users\\carim\\.gradle\\daemon\\7.5.1\\com.widgetapp-merged_res-25:\\mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\carim\\.gradle\\daemon\\7.5.1\\com.widgetapp-main-27:\\mipmap-mdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\carim\\.gradle\\daemon\\7.5.1\\com.widgetapp-merged_res-25:\\mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\carim\\.gradle\\daemon\\7.5.1\\com.widgetapp-main-27:\\mipmap-xhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\carim\\.gradle\\daemon\\7.5.1\\com.widgetapp-merged_res-25:\\mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\carim\\.gradle\\daemon\\7.5.1\\com.widgetapp-main-27:\\mipmap-xxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\carim\\.gradle\\daemon\\7.5.1\\com.widgetapp-merged_res-25:\\drawable_my_widget_background.xml.flat",
+        "source": "C:\\Users\\carim\\.gradle\\daemon\\7.5.1\\com.widgetapp-main-27:\\drawable\\my_widget_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\carim\\.gradle\\daemon\\7.5.1\\com.widgetapp-merged_res-25:\\mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\carim\\.gradle\\daemon\\7.5.1\\com.widgetapp-main-27:\\mipmap-xxhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\carim\\.gradle\\daemon\\7.5.1\\com.widgetapp-merged_res-25:\\drawable-mdpi_my_widget_inner_background.xml.flat",
+        "source": "C:\\Users\\carim\\.gradle\\daemon\\7.5.1\\com.widgetapp-debug-26:\\drawable-mdpi\\my_widget_inner_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\carim\\.gradle\\daemon\\7.5.1\\com.widgetapp-merged_res-25:\\mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\carim\\.gradle\\daemon\\7.5.1\\com.widgetapp-main-27:\\mipmap-xxxhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\carim\\.gradle\\daemon\\7.5.1\\com.widgetapp-merged_res-25:\\layout_my_widget5x2.xml.flat",
+        "source": "C:\\Users\\carim\\.gradle\\daemon\\7.5.1\\com.widgetapp-main-27:\\layout\\my_widget5x2.xml"
+    },
+    {
+        "merged": "C:\\Users\\carim\\.gradle\\daemon\\7.5.1\\com.widgetapp-merged_res-25:\\mipmap-anydpi-v26_spotify_button.xml.flat",
+        "source": "C:\\Users\\carim\\.gradle\\daemon\\7.5.1\\com.widgetapp-debug-26:\\mipmap-anydpi-v26\\spotify_button.xml"
+    },
+    {
+        "merged": "C:\\Users\\carim\\.gradle\\daemon\\7.5.1\\com.widgetapp-merged_res-25:\\drawable_radius.xml.flat",
+        "source": "C:\\Users\\carim\\.gradle\\daemon\\7.5.1\\com.widgetapp-main-27:\\drawable\\radius.xml"
+    },
+    {
+        "merged": "C:\\Users\\carim\\.gradle\\daemon\\7.5.1\\com.widgetapp-merged_res-25:\\mipmap-hdpi_spotify_button_background.png.flat",
+        "source": "C:\\Users\\carim\\.gradle\\daemon\\7.5.1\\com.widgetapp-debug-26:\\mipmap-hdpi\\spotify_button_background.png"
+    },
+    {
+        "merged": "C:\\Users\\carim\\.gradle\\daemon\\7.5.1\\com.widgetapp-merged_res-25:\\mipmap-hdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\carim\\.gradle\\daemon\\7.5.1\\com.widgetapp-main-27:\\mipmap-hdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\carim\\.gradle\\daemon\\7.5.1\\com.widgetapp-merged_res-25:\\layout_my_widget3x2.xml.flat",
+        "source": "C:\\Users\\carim\\.gradle\\daemon\\7.5.1\\com.widgetapp-main-27:\\layout\\my_widget3x2.xml"
+    },
+    {
+        "merged": "C:\\Users\\carim\\.gradle\\daemon\\7.5.1\\com.widgetapp-merged_res-25:\\drawable-nodpi_example_appwidget_preview.png.flat",
+        "source": "C:\\Users\\carim\\.gradle\\daemon\\7.5.1\\com.widgetapp-main-27:\\drawable-nodpi\\example_appwidget_preview.png"
+    },
+    {
+        "merged": "C:\\Users\\carim\\.gradle\\daemon\\7.5.1\\com.widgetapp-merged_res-25:\\mipmap-xxxhdpi_spotify_button_foreground.png.flat",
+        "source": "C:\\Users\\carim\\.gradle\\daemon\\7.5.1\\com.widgetapp-debug-26:\\mipmap-xxxhdpi\\spotify_button_foreground.png"
+    },
+    {
+        "merged": "C:\\Users\\carim\\.gradle\\daemon\\7.5.1\\com.widgetapp-merged_res-25:\\mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\carim\\.gradle\\daemon\\7.5.1\\com.widgetapp-main-27:\\mipmap-xhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\carim\\.gradle\\daemon\\7.5.1\\com.widgetapp-merged_res-25:\\layout_my_widget.xml.flat",
+        "source": "C:\\Users\\carim\\.gradle\\daemon\\7.5.1\\com.widgetapp-main-27:\\layout\\my_widget.xml"
+    },
+    {
+        "merged": "C:\\Users\\carim\\.gradle\\daemon\\7.5.1\\com.widgetapp-merged_res-25:\\mipmap-mdpi_spotify_button_background.png.flat",
+        "source": "C:\\Users\\carim\\.gradle\\daemon\\7.5.1\\com.widgetapp-debug-26:\\mipmap-mdpi\\spotify_button_background.png"
+    },
+    {
+        "merged": "C:\\Users\\carim\\.gradle\\daemon\\7.5.1\\com.widgetapp-merged_res-25:\\mipmap-xxxhdpi_spotify_button_background.png.flat",
+        "source": "C:\\Users\\carim\\.gradle\\daemon\\7.5.1\\com.widgetapp-debug-26:\\mipmap-xxxhdpi\\spotify_button_background.png"
+    },
+    {
+        "merged": "C:\\Users\\carim\\.gradle\\daemon\\7.5.1\\com.widgetapp-merged_res-25:\\mipmap-xxhdpi_spotify_button_foreground.png.flat",
+        "source": "C:\\Users\\carim\\.gradle\\daemon\\7.5.1\\com.widgetapp-debug-26:\\mipmap-xxhdpi\\spotify_button_foreground.png"
+    },
+    {
+        "merged": "C:\\Users\\carim\\.gradle\\daemon\\7.5.1\\com.widgetapp-merged_res-25:\\mipmap-xxhdpi_spotify_button_background.png.flat",
+        "source": "C:\\Users\\carim\\.gradle\\daemon\\7.5.1\\com.widgetapp-debug-26:\\mipmap-xxhdpi\\spotify_button_background.png"
+    },
+    {
+        "merged": "C:\\Users\\carim\\.gradle\\daemon\\7.5.1\\com.widgetapp-merged_res-25:\\mipmap-mdpi_spotify_button_foreground.png.flat",
+        "source": "C:\\Users\\carim\\.gradle\\daemon\\7.5.1\\com.widgetapp-debug-26:\\mipmap-mdpi\\spotify_button_foreground.png"
+    },
+    {
+        "merged": "C:\\Users\\carim\\.gradle\\daemon\\7.5.1\\com.widgetapp-merged_res-25:\\mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\carim\\.gradle\\daemon\\7.5.1\\com.widgetapp-main-27:\\mipmap-xxxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\carim\\.gradle\\daemon\\7.5.1\\com.widgetapp-merged_res-25:\\drawable-v21_app_widget_inner_view_background.xml.flat",
+        "source": "C:\\Users\\carim\\.gradle\\daemon\\7.5.1\\com.widgetapp-main-27:\\drawable-v21\\app_widget_inner_view_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\carim\\.gradle\\daemon\\7.5.1\\com.widgetapp-merged_res-25:\\mipmap-hdpi_spotify_button_foreground.png.flat",
+        "source": "C:\\Users\\carim\\.gradle\\daemon\\7.5.1\\com.widgetapp-debug-26:\\mipmap-hdpi\\spotify_button_foreground.png"
+    },
+    {
+        "merged": "C:\\Users\\carim\\.gradle\\daemon\\7.5.1\\com.widgetapp-merged_res-25:\\xml_my_widget_info.xml.flat",
+        "source": "C:\\Users\\carim\\.gradle\\daemon\\7.5.1\\com.widgetapp-main-27:\\xml\\my_widget_info.xml"
+    },
+    {
+        "merged": "C:\\Users\\carim\\.gradle\\daemon\\7.5.1\\com.widgetapp-merged_res-25:\\drawable_rn_edit_text_material.xml.flat",
+        "source": "C:\\Users\\carim\\.gradle\\daemon\\7.5.1\\com.widgetapp-main-27:\\drawable\\rn_edit_text_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\carim\\.gradle\\daemon\\7.5.1\\com.widgetapp-merged_res-25:\\mipmap-mdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\carim\\.gradle\\daemon\\7.5.1\\com.widgetapp-main-27:\\mipmap-mdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\carim\\.gradle\\daemon\\7.5.1\\com.widgetapp-merged_res-25:\\drawable-v21_app_widget_background.xml.flat",
+        "source": "C:\\Users\\carim\\.gradle\\daemon\\7.5.1\\com.widgetapp-main-27:\\drawable-v21\\app_widget_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\carim\\.gradle\\daemon\\7.5.1\\com.widgetapp-merged_res-25:\\layout_my_widget3x3.xml.flat",
+        "source": "C:\\Users\\carim\\.gradle\\daemon\\7.5.1\\com.widgetapp-main-27:\\layout\\my_widget3x3.xml"
+    },
+    {
+        "merged": "C:\\Users\\carim\\.gradle\\daemon\\7.5.1\\com.widgetapp-merged_res-25:\\mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\carim\\.gradle\\daemon\\7.5.1\\com.widgetapp-main-27:\\mipmap-hdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "com.widgetapp-merged_res-25:/layout_my_widget3x3.xml.flat",
+        "source": "com.widgetapp-main-27:/layout/my_widget3x3.xml"
+    },
+    {
+        "merged": "C:\\Users\\carim\\.gradle\\daemon\\7.5.1\\com.widgetapp-merged_res-25:\\mipmap-xhdpi_spotify_button_background.png.flat",
+        "source": "C:\\Users\\carim\\.gradle\\daemon\\7.5.1\\com.widgetapp-debug-26:\\mipmap-xhdpi\\spotify_button_background.png"
+    },
+    {
+        "merged": "C:\\Users\\carim\\.gradle\\daemon\\7.5.1\\com.widgetapp-merged_res-25:\\layout_preview_my_widget.xml.flat",
+        "source": "C:\\Users\\carim\\.gradle\\daemon\\7.5.1\\com.widgetapp-main-27:\\layout\\preview_my_widget.xml"
+    },
+    {
+        "merged": "C:\\Users\\carim\\.gradle\\daemon\\7.5.1\\com.widgetapp-merged_res-25:\\mipmap-xhdpi_spotify_button_foreground.png.flat",
+        "source": "C:\\Users\\carim\\.gradle\\daemon\\7.5.1\\com.widgetapp-debug-26:\\mipmap-xhdpi\\spotify_button_foreground.png"
+    }
+]
