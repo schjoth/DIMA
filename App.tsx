@@ -1,47 +1,65 @@
-import * as React from "react";
-import { NavigationContainer } from "@react-navigation/native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import HomeScreen from "./screens/HomeScreen";
-import Scoreboard from "./screens/ScoreboardScreen";
-import { SafeAreaProvider } from "react-native-safe-area-context";
-import AuthProvider from "./components/AuthContext";
-import GameScreen from "./screens/GameScreen";
-import { RootStackParamList } from "./types";
-import LoginScreen from "./screens/LoginScreen";
-import ResultScreen from "./screens/ResultScreen";
-import SelectGameModeScreen from "./screens/SelectGameModeScreen";
+import React, {useState} from 'react';import {View, TextInput, Button, StyleSheet, NativeModules} from 'react-native';
+//import SharedGroupPreferences from 'react-native-shared-group-preferences';
+const group = 'group.asap';
+const SharedStorage = NativeModules.SharedStorage;
 
-const Stack = createNativeStackNavigator<RootStackParamList>();
+const App = () => {
+    const [type, setType] = useState('');
+    const [value, setValue] = useState('');
+    const widgetData = { type, value };
+    const handleSubmit = async () => {
+        if (type == '' || value == ''){
+            return;
+        }
+        /* try {
+            // iOS
+            await SharedGroupPreferences.setItem('widgetKey', widgetData, group);
+        } catch (error) {
+            console.log({error});
+        } */
+        // Android
+        //SharedStorage.set(JSON.stringify(type), JSON.stringify(value));
+        SharedStorage.set(type, value);
+    };
 
-function App() {
-	return (
-		<SafeAreaProvider>
-			<AuthProvider>
-				<NavigationContainer>
-					<Stack.Navigator>
-						<Stack.Screen name="Home" component={HomeScreen} />
-						<Stack.Screen
-							name="Login"
-							component={LoginScreen}
-							options={{
-								headerBackVisible: false,
-							}}
-						/>
-						<Stack.Screen name="Game" component={GameScreen} />
-						<Stack.Screen
-							name="Scoreboard"
-							component={Scoreboard}
-						/>
-						<Stack.Screen
-							name="SelectGameMode"
-							component={SelectGameModeScreen}
-						/>
-						<Stack.Screen name="Result" component={ResultScreen} />
-					</Stack.Navigator>
-				</NavigationContainer>
-			</AuthProvider>
-		</SafeAreaProvider>
-	);
-}
+    return (
+        <View style={styles.container}>
+        <Button
+        title="Initialize Storage"
+        color="#1DB954"
+        onPress={() => SharedStorage.initStorage() } />
+        <TextInput style={styles.input}
+        onChangeText={newText => setType(newText)}
+        value={type}
+        returnKeyType="send"
+        onEndEditing={handleSubmit}
+        placeholder="Enter view identifier."/>
+        <TextInput style={styles.input}
+        onChangeText={newText => setValue(newText)}
+        value={value}
+        returnKeyType="send"
+        onEndEditing={handleSubmit}
+        placeholder="Enter the value."/>
+        <Button
+        title="Update widget"
+        color="#1DB954"
+        onPress={() => SharedStorage.updateWidget() } />
+        </View>
+    );
+};
 
 export default App;
+
+const styles = StyleSheet.create({
+    container: {
+        marginTop: '50%',
+        paddingHorizontal: 24,
+    },
+    input: {
+        width: '100%',
+        borderBottomWidth: 1,
+        fontSize: 20,
+        minHeight: 40,
+    },
+
+});

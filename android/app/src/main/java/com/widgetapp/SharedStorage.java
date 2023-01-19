@@ -57,12 +57,12 @@ public class SharedStorage extends ReactContextBaseJavaModule {
         for (Map.Entry<String,?> entry : test.entrySet()) {
             editor.remove(entry.getKey());
         }
-        editor.putString("top1_mode", "");
-        editor.putString("top1_score", "");
-        editor.putString("top2_mode", "");
-        editor.putString("top2_score", "");
-        editor.putString("top3_mode", "");
-        editor.putString("top3_score", "");
+        editor.putString("top1_mode", "top1_mode");
+        editor.putString("top1_score", "top1_score");
+        editor.putString("top2_mode", "top2_mode");
+        editor.putString("top2_score", "top2_score");
+        editor.putString("top3_mode", "top3_mode");
+        editor.putString("top3_score", "top3_score");
         editor.apply();
     }
 

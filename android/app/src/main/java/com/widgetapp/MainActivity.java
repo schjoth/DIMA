@@ -1,4 +1,5 @@
 package com.widgetapp;
+import expo.modules.ReactActivityDelegateWrapper;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -18,7 +19,7 @@ public class MainActivity extends ReactActivity {
    */
   @Override
   protected String getMainComponentName() {
-    return "WidgetApp";
+    return "dima";
   }
 
   /**
@@ -28,7 +29,7 @@ public class MainActivity extends ReactActivity {
    */
   @Override
   protected ReactActivityDelegate createReactActivityDelegate() {
-    return new MainActivityDelegate(this, getMainComponentName());
+    return new ReactActivityDelegateWrapper(this, BuildConfig.IS_NEW_ARCHITECTURE_ENABLED, new MainActivityDelegate(this, getMainComponentName()));
   }
 
   public static class MainActivityDelegate extends ReactActivityDelegate {

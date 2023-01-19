@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "dima",
+    "name": "SpotiQuiz",
     "slug": "dima",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -29,6 +29,11 @@
     },
     "web": {
       "favicon": "./assets/images/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "0cd03cae-61f8-4538-b28d-757fb62e5c8a"
+      }
     }
   }
 }
