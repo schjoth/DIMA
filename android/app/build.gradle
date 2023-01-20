@@ -260,16 +260,16 @@ dependencies {
 
     implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
 
-    debugImplementation("com.facebook.flipper:flipper:0.176.1") {
+    debugImplementation('com.facebook.flipper:flipper:0.177.0') {
         exclude group:'com.facebook.fbjni'
     }
 
-    debugImplementation("com.facebook.flipper:flipper-network-plugin:0.176.1") {
+    debugImplementation('com.facebook.flipper:flipper-network-plugin:0.177.0') {
         exclude group:'com.facebook.flipper'
         exclude group:'com.squareup.okhttp3', module:'okhttp'
     }
 
-    debugImplementation("com.facebook.flipper:flipper-fresco-plugin:0.176.1") {
+    debugImplementation('com.facebook.flipper:flipper-fresco-plugin:0.177.0') {
         exclude group:'com.facebook.flipper'
     }
 

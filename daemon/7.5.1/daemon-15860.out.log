@@ -1,0 +1,543 @@
+2023-01-20T15:00:43.357+0100 [DEBUG] [org.gradle.launcher.daemon.bootstrap.DaemonMain] Assuming the daemon was started with following jvm opts: [-XX:MaxMetaspaceSize=512m, --add-opens, java.base/java.util=ALL-UNNAMED, --add-opens, java.base/java.lang=ALL-UNNAMED, --add-opens, java.base/java.lang.invoke=ALL-UNNAMED, --add-opens, java.base/java.util=ALL-UNNAMED, --add-opens, java.prefs/java.util.prefs=ALL-UNNAMED, --add-opens, java.prefs/java.util.prefs=ALL-UNNAMED, --add-opens, java.base/java.nio.charset=ALL-UNNAMED, --add-opens, java.base/java.net=ALL-UNNAMED, --add-opens, java.base/java.util.concurrent.atomic=ALL-UNNAMED, -Xmx2048m, -Dfile.encoding=windows-1252, -Duser.country=US, -Duser.language=en, -Duser.variant]
+2023-01-20T15:00:43.643+0100 [DEBUG] [org.gradle.internal.nativeintegration.services.NativeServices] Native-platform posix files integration is not available. Continuing with fallback.
+2023-01-20T15:00:43.672+0100 [INFO] [org.gradle.launcher.daemon.server.Daemon] start() called on daemon - DefaultDaemonContext[uid=1710de4e-ddee-4787-9017-505cc0c0a667,javaHome=C:\Program Files\Java\jdk-17,daemonRegistryDir=D:\Programs\GitRepos\DIMA\daemon,pid=15860,idleTimeout=10800000,priority=NORMAL,daemonOpts=-XX:MaxMetaspaceSize=512m,--add-opens,java.base/java.util=ALL-UNNAMED,--add-opens,java.base/java.lang=ALL-UNNAMED,--add-opens,java.base/java.lang.invoke=ALL-UNNAMED,--add-opens,java.base/java.util=ALL-UNNAMED,--add-opens,java.prefs/java.util.prefs=ALL-UNNAMED,--add-opens,java.prefs/java.util.prefs=ALL-UNNAMED,--add-opens,java.base/java.nio.charset=ALL-UNNAMED,--add-opens,java.base/java.net=ALL-UNNAMED,--add-opens,java.base/java.util.concurrent.atomic=ALL-UNNAMED,-Xmx2048m,-Dfile.encoding=windows-1252,-Duser.country=US,-Duser.language=en,-Duser.variant]
+2023-01-20T15:00:43.871+0100 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Adding IP addresses for network interface Software Loopback Interface 1
+2023-01-20T15:00:43.875+0100 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Is this a loopback interface? true
+2023-01-20T15:00:43.875+0100 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Adding loopback address /127.0.0.1
+2023-01-20T15:00:43.876+0100 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Adding loopback address /0:0:0:0:0:0:0:1
+2023-01-20T15:00:43.877+0100 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Adding IP addresses for network interface Microsoft 6to4 Adapter
+2023-01-20T15:00:43.881+0100 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Is this a loopback interface? false
+2023-01-20T15:00:43.882+0100 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Adding IP addresses for network interface WAN Miniport (Network Monitor)
+2023-01-20T15:00:43.885+0100 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Is this a loopback interface? false
+2023-01-20T15:00:43.886+0100 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Adding IP addresses for network interface WAN Miniport (IP)-WFP Native MAC Layer LightWeight Filter-0000
+2023-01-20T15:00:43.889+0100 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Is this a loopback interface? false
+2023-01-20T15:00:43.890+0100 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Adding IP addresses for network interface Microsoft IP-HTTPS Platform Adapter
+2023-01-20T15:00:43.893+0100 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Is this a loopback interface? false
+2023-01-20T15:00:43.893+0100 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Adding IP addresses for network interface WAN Miniport (PPTP)
+2023-01-20T15:00:43.897+0100 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Is this a loopback interface? false
+2023-01-20T15:00:43.897+0100 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Adding IP addresses for network interface WAN Miniport (IKEv2)
+2023-01-20T15:00:43.900+0100 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Is this a loopback interface? false
+2023-01-20T15:00:43.901+0100 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Adding IP addresses for network interface WAN Miniport (L2TP)
+2023-01-20T15:00:43.905+0100 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Is this a loopback interface? false
+2023-01-20T15:00:43.905+0100 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Adding IP addresses for network interface ASIX AX88772B USB2.0 to Fast Ethernet Adapter
+2023-01-20T15:00:43.908+0100 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Is this a loopback interface? false
+2023-01-20T15:00:43.909+0100 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Adding IP addresses for network interface Realtek 8822CE Wireless LAN 802.11ac PCI-E NIC
+2023-01-20T15:00:43.912+0100 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Is this a loopback interface? false
+2023-01-20T15:00:43.913+0100 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Adding remote address /192.168.1.140
+2023-01-20T15:00:43.913+0100 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Adding remote address /2001:b07:add:d574:9c77:d239:9ed9:5502
+2023-01-20T15:00:43.914+0100 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Adding remote address /2001:b07:add:d574:2850:43d9:8b10:4379
+2023-01-20T15:00:43.914+0100 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Adding remote address /2001:b07:add:d574:3c29:e426:688e:1f38
+2023-01-20T15:00:43.914+0100 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Adding remote address /2001:b07:add:d574:8522:839b:fee:ef02
+2023-01-20T15:00:43.914+0100 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Adding remote address /fe80:0:0:0:daa4:c9ba:847:8ec4%wlan0
+2023-01-20T15:00:43.915+0100 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Adding IP addresses for network interface WAN Miniport (IP)
+2023-01-20T15:00:43.919+0100 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Is this a loopback interface? false
+2023-01-20T15:00:43.920+0100 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Adding IP addresses for network interface WAN Miniport (SSTP)
+2023-01-20T15:00:43.923+0100 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Is this a loopback interface? false
+2023-01-20T15:00:43.924+0100 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Adding IP addresses for network interface Bluetooth Device (Personal Area Network)
+2023-01-20T15:00:43.927+0100 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Is this a loopback interface? false
+2023-01-20T15:00:43.928+0100 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Adding remote address /fe80:0:0:0:f572:f51:3806:ba09%eth4
+2023-01-20T15:00:43.928+0100 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Adding IP addresses for network interface Microsoft Teredo Tunneling Adapter
+2023-01-20T15:00:43.931+0100 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Is this a loopback interface? false
+2023-01-20T15:00:43.932+0100 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Adding IP addresses for network interface Microsoft Kernel Debug Network Adapter
+2023-01-20T15:00:43.935+0100 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Is this a loopback interface? false
+2023-01-20T15:00:43.935+0100 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Adding IP addresses for network interface Microsoft Wi-Fi Direct Virtual Adapter
+2023-01-20T15:00:43.938+0100 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Is this a loopback interface? false
+2023-01-20T15:00:43.939+0100 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Adding remote address /fe80:0:0:0:1f1f:f87d:2ddd:c54a%wlan1
+2023-01-20T15:00:43.939+0100 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Adding IP addresses for network interface Microsoft Wi-Fi Direct Virtual Adapter #2
+2023-01-20T15:00:43.942+0100 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Is this a loopback interface? false
+2023-01-20T15:00:43.943+0100 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Adding remote address /fe80:0:0:0:8f1b:5676:44eb:1c82%wlan2
+2023-01-20T15:00:43.943+0100 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Adding IP addresses for network interface WAN Miniport (PPPOE)
+2023-01-20T15:00:43.946+0100 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Is this a loopback interface? false
+2023-01-20T15:00:43.946+0100 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Adding IP addresses for network interface WAN Miniport (IP)-QoS Packet Scheduler-0000
+2023-01-20T15:00:43.949+0100 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Is this a loopback interface? false
+2023-01-20T15:00:43.950+0100 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Adding IP addresses for network interface WAN Miniport (IPv6)
+2023-01-20T15:00:43.954+0100 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Is this a loopback interface? false
+2023-01-20T15:00:43.955+0100 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Adding IP addresses for network interface WAN Miniport (IPv6)-WFP Native MAC Layer LightWeight Filter-0000
+2023-01-20T15:00:43.959+0100 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Is this a loopback interface? false
+2023-01-20T15:00:43.960+0100 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Adding IP addresses for network interface WAN Miniport (IPv6)-QoS Packet Scheduler-0000
+2023-01-20T15:00:43.964+0100 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Is this a loopback interface? false
+2023-01-20T15:00:43.964+0100 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Adding IP addresses for network interface WAN Miniport (Network Monitor)-WFP Native MAC Layer LightWeight Filter-0000
+2023-01-20T15:00:43.968+0100 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Is this a loopback interface? false
+2023-01-20T15:00:43.969+0100 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Adding IP addresses for network interface WAN Miniport (Network Monitor)-QoS Packet Scheduler-0000
+2023-01-20T15:00:43.972+0100 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Is this a loopback interface? false
+2023-01-20T15:00:43.972+0100 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Adding IP addresses for network interface Realtek 8822CE Wireless LAN 802.11ac PCI-E NIC-WFP Native MAC Layer LightWeight Filter-0000
+2023-01-20T15:00:43.975+0100 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Is this a loopback interface? false
+2023-01-20T15:00:43.976+0100 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Adding IP addresses for network interface Realtek 8822CE Wireless LAN 802.11ac PCI-E NIC-Virtual WiFi Filter Driver-0000
+2023-01-20T15:00:43.979+0100 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Is this a loopback interface? false
+2023-01-20T15:00:43.980+0100 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Adding IP addresses for network interface Realtek 8822CE Wireless LAN 802.11ac PCI-E NIC-Native WiFi Filter Driver-0000
+2023-01-20T15:00:43.983+0100 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Is this a loopback interface? false
+2023-01-20T15:00:43.983+0100 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Adding IP addresses for network interface Realtek 8822CE Wireless LAN 802.11ac PCI-E NIC-QoS Packet Scheduler-0000
+2023-01-20T15:00:43.988+0100 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Is this a loopback interface? false
+2023-01-20T15:00:43.989+0100 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Adding IP addresses for network interface Realtek 8822CE Wireless LAN 802.11ac PCI-E NIC-WFP 802.3 MAC Layer LightWeight Filter-0000
+2023-01-20T15:00:43.993+0100 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Is this a loopback interface? false
+2023-01-20T15:00:43.994+0100 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Adding IP addresses for network interface Microsoft Wi-Fi Direct Virtual Adapter-WFP Native MAC Layer LightWeight Filter-0000
+2023-01-20T15:00:43.998+0100 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Is this a loopback interface? false
+2023-01-20T15:00:43.999+0100 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Adding IP addresses for network interface Microsoft Wi-Fi Direct Virtual Adapter-Native WiFi Filter Driver-0000
+2023-01-20T15:00:44.003+0100 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Is this a loopback interface? false
+2023-01-20T15:00:44.004+0100 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Adding IP addresses for network interface Microsoft Wi-Fi Direct Virtual Adapter-QoS Packet Scheduler-0000
+2023-01-20T15:00:44.007+0100 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Is this a loopback interface? false
+2023-01-20T15:00:44.007+0100 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Adding IP addresses for network interface Microsoft Wi-Fi Direct Virtual Adapter-WFP 802.3 MAC Layer LightWeight Filter-0000
+2023-01-20T15:00:44.011+0100 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Is this a loopback interface? false
+2023-01-20T15:00:44.011+0100 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Adding IP addresses for network interface Microsoft Wi-Fi Direct Virtual Adapter #2-WFP Native MAC Layer LightWeight Filter-0000
+2023-01-20T15:00:44.015+0100 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Is this a loopback interface? false
+2023-01-20T15:00:44.015+0100 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Adding IP addresses for network interface Microsoft Wi-Fi Direct Virtual Adapter #2-Native WiFi Filter Driver-0000
+2023-01-20T15:00:44.019+0100 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Is this a loopback interface? false
+2023-01-20T15:00:44.019+0100 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Adding IP addresses for network interface Microsoft Wi-Fi Direct Virtual Adapter #2-QoS Packet Scheduler-0000
+2023-01-20T15:00:44.023+0100 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Is this a loopback interface? false
+2023-01-20T15:00:44.023+0100 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Adding IP addresses for network interface Microsoft Wi-Fi Direct Virtual Adapter #2-WFP 802.3 MAC Layer LightWeight Filter-0000
+2023-01-20T15:00:44.027+0100 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Is this a loopback interface? false
+2023-01-20T15:00:44.027+0100 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Adding IP addresses for network interface Hyper-V Virtual Switch Extension Adapter
+2023-01-20T15:00:44.030+0100 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Is this a loopback interface? false
+2023-01-20T15:00:44.031+0100 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Adding IP addresses for network interface Hyper-V Virtual Switch Extension Adapter-Hyper-V Virtual Switch Extension Filter-0000
+2023-01-20T15:00:44.034+0100 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Is this a loopback interface? false
+2023-01-20T15:00:44.035+0100 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Adding IP addresses for network interface Hyper-V Virtual Ethernet Adapter
+2023-01-20T15:00:44.038+0100 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Is this a loopback interface? false
+2023-01-20T15:00:44.039+0100 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Adding remote address /172.18.64.1
+2023-01-20T15:00:44.039+0100 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Adding remote address /fe80:0:0:0:551a:a69d:30cb:e7ef%eth14
+2023-01-20T15:00:44.039+0100 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Adding IP addresses for network interface Hyper-V Virtual Ethernet Adapter-WFP Native MAC Layer LightWeight Filter-0000
+2023-01-20T15:00:44.043+0100 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Is this a loopback interface? false
+2023-01-20T15:00:44.043+0100 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Adding IP addresses for network interface Hyper-V Virtual Ethernet Adapter-QoS Packet Scheduler-0000
+2023-01-20T15:00:44.046+0100 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Is this a loopback interface? false
+2023-01-20T15:00:44.047+0100 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Adding IP addresses for network interface Hyper-V Virtual Ethernet Adapter-WFP 802.3 MAC Layer LightWeight Filter-0000
+2023-01-20T15:00:44.050+0100 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Is this a loopback interface? false
+2023-01-20T15:00:44.098+0100 [DEBUG] [org.gradle.internal.remote.internal.inet.TcpIncomingConnector] Listening on [d7c56aeb-be83-4cac-8bac-afa66a8135d6 port:63066, addresses:[localhost/127.0.0.1]].
+2023-01-20T15:00:44.115+0100 [DEBUG] [org.gradle.launcher.daemon.server.Daemon] Daemon starting at: Fri Jan 20 15:00:44 CET 2023, with address: [d7c56aeb-be83-4cac-8bac-afa66a8135d6 port:63066, addresses:[localhost/127.0.0.1]]
+2023-01-20T15:00:44.115+0100 [INFO] [org.gradle.launcher.daemon.server.DaemonRegistryUpdater] Advertising the daemon address to the clients: [d7c56aeb-be83-4cac-8bac-afa66a8135d6 port:63066, addresses:[localhost/127.0.0.1]]
+2023-01-20T15:00:44.116+0100 [DEBUG] [org.gradle.launcher.daemon.server.DaemonRegistryUpdater] Advertised daemon context: DefaultDaemonContext[uid=1710de4e-ddee-4787-9017-505cc0c0a667,javaHome=C:\Program Files\Java\jdk-17,daemonRegistryDir=D:\Programs\GitRepos\DIMA\daemon,pid=15860,idleTimeout=10800000,priority=NORMAL,daemonOpts=-XX:MaxMetaspaceSize=512m,--add-opens,java.base/java.util=ALL-UNNAMED,--add-opens,java.base/java.lang=ALL-UNNAMED,--add-opens,java.base/java.lang.invoke=ALL-UNNAMED,--add-opens,java.base/java.util=ALL-UNNAMED,--add-opens,java.prefs/java.util.prefs=ALL-UNNAMED,--add-opens,java.prefs/java.util.prefs=ALL-UNNAMED,--add-opens,java.base/java.nio.charset=ALL-UNNAMED,--add-opens,java.base/java.net=ALL-UNNAMED,--add-opens,java.base/java.util.concurrent.atomic=ALL-UNNAMED,-Xmx2048m,-Dfile.encoding=windows-1252,-Duser.country=US,-Duser.language=en,-Duser.variant]
+2023-01-20T15:00:44.117+0100 [DEBUG] [org.gradle.launcher.daemon.registry.PersistentDaemonRegistry] Storing daemon address: [d7c56aeb-be83-4cac-8bac-afa66a8135d6 port:63066, addresses:[localhost/127.0.0.1]], context: DefaultDaemonContext[uid=1710de4e-ddee-4787-9017-505cc0c0a667,javaHome=C:\Program Files\Java\jdk-17,daemonRegistryDir=D:\Programs\GitRepos\DIMA\daemon,pid=15860,idleTimeout=10800000,priority=NORMAL,daemonOpts=-XX:MaxMetaspaceSize=512m,--add-opens,java.base/java.util=ALL-UNNAMED,--add-opens,java.base/java.lang=ALL-UNNAMED,--add-opens,java.base/java.lang.invoke=ALL-UNNAMED,--add-opens,java.base/java.util=ALL-UNNAMED,--add-opens,java.prefs/java.util.prefs=ALL-UNNAMED,--add-opens,java.prefs/java.util.prefs=ALL-UNNAMED,--add-opens,java.base/java.nio.charset=ALL-UNNAMED,--add-opens,java.base/java.net=ALL-UNNAMED,--add-opens,java.base/java.util.concurrent.atomic=ALL-UNNAMED,-Xmx2048m,-Dfile.encoding=windows-1252,-Duser.country=US,-Duser.language=en,-Duser.variant]
+2023-01-20T15:00:44.141+0100 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Waiting to acquire exclusive lock on daemon addresses registry.
+2023-01-20T15:00:44.150+0100 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Lock acquired on daemon addresses registry.
+2023-01-20T15:00:44.163+0100 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on daemon addresses registry.
+2023-01-20T15:00:44.165+0100 [LIFECYCLE] [org.gradle.launcher.daemon.server.Daemon] Daemon server started.
+2023-01-20T15:00:44.169+0100 [DEBUG] [org.gradle.launcher.daemon.bootstrap.DaemonStartupCommunication] Completed writing the daemon greeting. Closing streams...
+2023-01-20T15:00:44.182+0100 [DEBUG] [org.gradle.launcher.daemon.server.Daemon] stopOnExpiration() called on daemon
+2023-01-20T15:00:44.184+0100 [DEBUG] [org.gradle.launcher.daemon.server.Daemon] awaitExpiration() called on daemon
+2023-01-20T15:00:44.185+0100 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] daemon is running. Sleeping until state changes.
+2023-01-20T15:00:44.209+0100 [DEBUG] [org.gradle.internal.remote.internal.inet.TcpIncomingConnector] Accepted connection from /127.0.0.1:63067 to /127.0.0.1:63066.
+2023-01-20T15:00:44.398+0100 [DEBUG] [org.gradle.launcher.daemon.server.SynchronizedDispatchConnection] thread 22: received class org.gradle.launcher.daemon.protocol.Build
+2023-01-20T15:00:44.398+0100 [DEBUG] [org.gradle.launcher.daemon.server.DefaultDaemonConnection] thread 22: Received non-IO message from client: Build{id=a082e338-d5f4-44e4-860f-1096447b9093, currentDir=D:\Programs\GitRepos\DIMA\android}
+2023-01-20T15:00:44.399+0100 [INFO] [org.gradle.launcher.daemon.server.DefaultIncomingConnectionHandler] Received command: Build{id=a082e338-d5f4-44e4-860f-1096447b9093, currentDir=D:\Programs\GitRepos\DIMA\android}.
+2023-01-20T15:00:44.400+0100 [DEBUG] [org.gradle.launcher.daemon.server.DefaultIncomingConnectionHandler] Starting executing command: Build{id=a082e338-d5f4-44e4-860f-1096447b9093, currentDir=D:\Programs\GitRepos\DIMA\android} with connection: socket connection from /127.0.0.1:63066 to /127.0.0.1:63067.
+2023-01-20T15:00:44.406+0100 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] Command execution: started DaemonCommandExecution[command = Build{id=a082e338-d5f4-44e4-860f-1096447b9093, currentDir=D:\Programs\GitRepos\DIMA\android}, connection = DefaultDaemonConnection: socket connection from /127.0.0.1:63066 to /127.0.0.1:63067] after 0.0 minutes of idle
+2023-01-20T15:00:44.406+0100 [INFO] [org.gradle.launcher.daemon.server.DaemonRegistryUpdater] Marking the daemon as busy, address: [d7c56aeb-be83-4cac-8bac-afa66a8135d6 port:63066, addresses:[localhost/127.0.0.1]]
+2023-01-20T15:00:44.407+0100 [DEBUG] [org.gradle.launcher.daemon.registry.PersistentDaemonRegistry] Marking busy by address: [d7c56aeb-be83-4cac-8bac-afa66a8135d6 port:63066, addresses:[localhost/127.0.0.1]]
+2023-01-20T15:00:44.408+0100 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Waiting to acquire exclusive lock on daemon addresses registry.
+2023-01-20T15:00:44.409+0100 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Lock acquired on daemon addresses registry.
+2023-01-20T15:00:44.411+0100 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on daemon addresses registry.
+2023-01-20T15:00:44.412+0100 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] resetting idle timer
+2023-01-20T15:00:44.412+0100 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] daemon is running. Sleeping until state changes.
+2023-01-20T15:00:44.413+0100 [INFO] [org.gradle.launcher.daemon.server.exec.StartBuildOrRespondWithBusy] Daemon is about to start building Build{id=a082e338-d5f4-44e4-860f-1096447b9093, currentDir=D:\Programs\GitRepos\DIMA\android}. Dispatching build started information...
+2023-01-20T15:00:44.413+0100 [DEBUG] [org.gradle.launcher.daemon.server.SynchronizedDispatchConnection] thread 24: dispatching org.gradle.launcher.daemon.protocol.BuildStarted@5719fd4
+2023-01-20T15:00:44.416+0100 [DEBUG] [org.gradle.launcher.daemon.server.exec.EstablishBuildEnvironment] Configuring env variables: [USERDOMAIN_ROAMINGPROFILE, WT_SESSION, JetBrains Rider, PROCESSOR_LEVEL, NVM_SYMLINK, ALLUSERSPROFILE, PROCESSOR_ARCHITECTURE, ANDROID_HOME, PSModulePath, SystemDrive, VULKAN_SDK, =ExitCode, USERNAME, JDK_HOME, ProgramFiles(x86), PATHEXT, DriverData, ProgramData, ProgramW6432, HOMEPATH, PROCESSOR_IDENTIFIER, VK_SDK_PATH, ProgramFiles, PUBLIC, windir, OneDriveCommercial, LOCALAPPDATA, USERDOMAIN, LOGONSERVER, JAVA_HOME, PROMPT, CABAL_DIR, WT_PROFILE_ID, OneDrive, =C:, APPDATA, GHCUP_INSTALL_BASE_PREFIX, CommonProgramFiles, Path, OS, COMPUTERNAME, NVM_HOME, PROCESSOR_REVISION, CommonProgramW6432, ComSpec, =D:, TEMP, SystemRoot, HOMEDRIVE, USERPROFILE, TMP, WSLENV, CommonProgramFiles(x86), NUMBER_OF_PROCESSORS, IDEA_INITIAL_DIRECTORY]
+2023-01-20T15:00:44.424+0100 [DEBUG] [org.gradle.launcher.daemon.server.SynchronizedDispatchConnection] thread 22: received class org.gradle.launcher.daemon.protocol.CloseInput
+2023-01-20T15:00:44.424+0100 [DEBUG] [org.gradle.launcher.daemon.server.DefaultDaemonConnection] thread 22: Received IO message from client: org.gradle.launcher.daemon.protocol.CloseInput@fdc1d8
+2023-01-20T15:00:44.428+0100 [DEBUG] [org.gradle.launcher.daemon.server.exec.LogToClient] About to start relaying all logs to the client via the connection.
+2023-01-20T15:00:44.428+0100 [INFO] [org.gradle.launcher.daemon.server.exec.LogToClient] The client will now receive all logging from the daemon (pid: 15860). The daemon log file: D:\Programs\GitRepos\DIMA\daemon\7.5.1\daemon-15860.out.log
+2023-01-20T15:00:44.431+0100 [INFO] [org.gradle.launcher.daemon.server.exec.LogAndCheckHealth] Starting build in new daemon [memory: 2 GiB]
+2023-01-20T15:00:44.433+0100 [INFO] [org.gradle.launcher.daemon.server.exec.ForwardClientInput] Closing daemon's stdin at end of input.
+2023-01-20T15:00:44.434+0100 [INFO] [org.gradle.launcher.daemon.server.exec.ForwardClientInput] The daemon will no longer process any standard input.
+2023-01-20T15:00:44.440+0100 [DEBUG] [org.gradle.launcher.daemon.server.exec.ExecuteBuild] The daemon has started executing the build.
+2023-01-20T15:00:44.441+0100 [DEBUG] [org.gradle.launcher.daemon.server.exec.ExecuteBuild] Executing build with daemon context: DefaultDaemonContext[uid=1710de4e-ddee-4787-9017-505cc0c0a667,javaHome=C:\Program Files\Java\jdk-17,daemonRegistryDir=D:\Programs\GitRepos\DIMA\daemon,pid=15860,idleTimeout=10800000,priority=NORMAL,daemonOpts=-XX:MaxMetaspaceSize=512m,--add-opens,java.base/java.util=ALL-UNNAMED,--add-opens,java.base/java.lang=ALL-UNNAMED,--add-opens,java.base/java.lang.invoke=ALL-UNNAMED,--add-opens,java.base/java.util=ALL-UNNAMED,--add-opens,java.prefs/java.util.prefs=ALL-UNNAMED,--add-opens,java.prefs/java.util.prefs=ALL-UNNAMED,--add-opens,java.base/java.nio.charset=ALL-UNNAMED,--add-opens,java.base/java.net=ALL-UNNAMED,--add-opens,java.base/java.util.concurrent.atomic=ALL-UNNAMED,-Xmx2048m,-Dfile.encoding=windows-1252,-Duser.country=US,-Duser.language=en,-Duser.variant]
+
+Using expo modules
+  - [32mexpo-application[0m (5.0.1)
+  - [32mexpo-constants[0m (14.0.2)
+  - [32mexpo-error-recovery[0m (4.0.1)
+  - [32mexpo-file-system[0m (15.1.1)
+  - [32mexpo-font[0m (11.0.1)
+  - [32mexpo-keep-awake[0m (11.0.1)
+  - [32mexpo-modules-core[0m (1.1.1)
+  - [32mexpo-splash-screen[0m (0.17.5)
+  - [32mexpo-system-ui[0m (2.0.1)
+  - [32mexpo-web-browser[0m (12.0.0)
+
+
+The Kotlin Gradle plugin was loaded multiple times in different subprojects, which is not supported and may break the build. 
+This might happen in subprojects that apply the Kotlin plugins with the Gradle 'plugins { ... }' DSL if they specify explicit versions, even if the versions are equal.
+Please add the Kotlin plugin to the common parent project or the root project, then remove the versions in the subprojects.
+If the parent project does not need the plugin, add 'apply false' to the plugin line.
+See: https://docs.gradle.org/current/userguide/plugins.html#sec:subprojects_plugins_dsl
+The Kotlin plugin was loaded in the following projects: ':expo', ':expo-modules-core'
+C/C++: CMake Error at C:/Users/carim/AppData/Local/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeDetermineCompilerId.cmake:828 (file):
+C/C++:   file STRINGS file
+C/C++:   "D:/Programs/GitRepos/DIMA/node_modules/expo-modules-core/android/.cxx/Debug/1z6p6l57/x86/CMakeFiles/3.22.1-g37088a8-dirty/CompilerIdC/CMakeCCompilerId-df1eb046.o.tmp"
+C/C++:   cannot be read.
+C/C++: Call Stack (most recent call first):
+C/C++:   C:/Users/carim/AppData/Local/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeDetermineCompilerId.cmake:11 (CMAKE_DETERMINE_COMPILER_ID_CHECK)
+C/C++:   C:/Users/carim/AppData/Local/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeDetermineCompilerId.cmake:59 (__determine_compiler_id_test)
+C/C++:   C:/Users/carim/AppData/Local/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)
+C/C++:   CMakeLists.txt:3 (project)
+C/C++: CMake Error at C:/Users/carim/AppData/Local/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeDetermineCompilerId.cmake:926 (file):
+C/C++:   file failed to open for reading (No such file or directory):
+C/C++:     D:/Programs/GitRepos/DIMA/node_modules/expo-modules-core/android/.cxx/Debug/1z6p6l57/x86/CMakeFiles/3.22.1-g37088a8-dirty/CompilerIdC/CMakeCCompilerId-df1eb046.o.tmp
+C/C++: Call Stack (most recent call first):
+C/C++:   C:/Users/carim/AppData/Local/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeDetermineCompilerId.cmake:11 (CMAKE_DETERMINE_COMPILER_ID_CHECK)
+C/C++:   C:/Users/carim/AppData/Local/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeDetermineCompilerId.cmake:59 (__determine_compiler_id_test)
+C/C++:   C:/Users/carim/AppData/Local/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)
+C/C++:   CMakeLists.txt:3 (project)
+C/C++: CMake Error at C:/Users/carim/AppData/Local/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeDetermineCompilerId.cmake:929 (string):
+C/C++:   string begin index: 1 is out of range 0 - 0
+C/C++: Call Stack (most recent call first):
+C/C++:   C:/Users/carim/AppData/Local/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeDetermineCompilerId.cmake:11 (CMAKE_DETERMINE_COMPILER_ID_CHECK)
+C/C++:   C:/Users/carim/AppData/Local/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeDetermineCompilerId.cmake:59 (__determine_compiler_id_test)
+C/C++:   C:/Users/carim/AppData/Local/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)
+C/C++:   CMakeLists.txt:3 (project)
+C/C++: CMake Error at C:/Users/carim/AppData/Local/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeDetermineCompilerId.cmake:937 (math):
+C/C++:   math cannot parse the expression: " * 16 + ": syntax error, unexpected
+C/C++:   exp_TIMES (2).
+C/C++: Call Stack (most recent call first):
+C/C++:   C:/Users/carim/AppData/Local/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeDetermineCompilerId.cmake:11 (CMAKE_DETERMINE_COMPILER_ID_CHECK)
+C/C++:   C:/Users/carim/AppData/Local/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeDetermineCompilerId.cmake:59 (__determine_compiler_id_test)
+C/C++:   C:/Users/carim/AppData/Local/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)
+C/C++:   CMakeLists.txt:3 (project)
+C/C++: CMake Error at C:/Users/carim/AppData/Local/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeDetermineCompilerId.cmake:939 (file):
+C/C++:   file failed to open for reading (No such file or directory):
+C/C++:     D:/Programs/GitRepos/DIMA/node_modules/expo-modules-core/android/.cxx/Debug/1z6p6l57/x86/CMakeFiles/3.22.1-g37088a8-dirty/CompilerIdC/CMakeCCompilerId-df1eb046.o.tmp
+C/C++: Call Stack (most recent call first):
+C/C++:   C:/Users/carim/AppData/Local/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeDetermineCompilerId.cmake:11 (CMAKE_DETERMINE_COMPILER_ID_CHECK)
+C/C++:   C:/Users/carim/AppData/Local/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeDetermineCompilerId.cmake:59 (__determine_compiler_id_test)
+C/C++:   C:/Users/carim/AppData/Local/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)
+C/C++:   CMakeLists.txt:3 (project)
+C/C++: CMake Error at C:/Users/carim/AppData/Local/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeDetermineCompilerId.cmake:980 (file):
+C/C++:   file failed to open for reading (No such file or directory):
+C/C++:     D:/Programs/GitRepos/DIMA/node_modules/expo-modules-core/android/.cxx/Debug/1z6p6l57/x86/CMakeFiles/3.22.1-g37088a8-dirty/CompilerIdC/CMakeCCompilerId-df1eb046.o.tmp
+C/C++: Call Stack (most recent call first):
+C/C++:   C:/Users/carim/AppData/Local/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeDetermineCompilerId.cmake:11 (CMAKE_DETERMINE_COMPILER_ID_CHECK)
+C/C++:   C:/Users/carim/AppData/Local/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeDetermineCompilerId.cmake:59 (__determine_compiler_id_test)
+C/C++:   C:/Users/carim/AppData/Local/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)
+C/C++:   CMakeLists.txt:3 (project)
+C/C++: CMake Error at C:/Users/carim/AppData/Local/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeTestCCompiler.cmake:69 (message):
+C/C++:   The C compiler
+C/C++:     "C:/Users/carim/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/bin/clang.exe"
+C/C++:   is not able to compile a simple test program.
+C/C++:   It fails with the following output:
+C/C++:     Change Dir: D:/Programs/GitRepos/DIMA/node_modules/expo-modules-core/android/.cxx/Debug/1z6p6l57/x86/CMakeFiles/CMakeTmp
+C/C++:     
+C/C++:     Run Build Command(s):C:\Users\carim\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_163f3 && ninja: error: unknown target 'cmTC_163f3'
+C/C++:     
+C/C++:     
+C/C++:   
+C/C++:   CMake will not be able to correctly generate this project.
+C/C++: Call Stack (most recent call first):
+C/C++:   CMakeLists.txt:3 (project)
+[CXX1429] error when building with cmake using D:\Programs\GitRepos\DIMA\node_modules\expo-modules-core\android\CMakeLists.txt: -- The C compiler identification is Clang 14.0.6
+-- The C compiler identification is Clang 14.0.6
+-- The CXX compiler identification is Clang 14.0.6
+-- The CXX compiler identification is Clang 14.0.6
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - failed
+-- Check for working C compiler: C:/Users/carim/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/bin/clang.exe
+-- Detecting C compiler ABI info - failed
+-- Check for working C compiler: C:/Users/carim/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/bin/clang.exe
+-- Check for working C compiler: C:/Users/carim/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/bin/clang.exe - broken
+-- Configuring incomplete, errors occurred!
+See also "D:/Programs/GitRepos/DIMA/node_modules/expo-modules-core/android/.cxx/Debug/1z6p6l57/x86/CMakeFiles/CMakeOutput.log".
+See also "D:/Programs/GitRepos/DIMA/node_modules/expo-modules-core/android/.cxx/Debug/1z6p6l57/x86/CMakeFiles/CMakeError.log".
+-- Check for working C compiler: C:/Users/carim/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/bin/clang.exe - broken
+-- Configuring incomplete, errors occurred!
+See also "D:/Programs/GitRepos/DIMA/node_modules/expo-modules-core/android/.cxx/Debug/1z6p6l57/x86/CMakeFiles/CMakeOutput.log".
+See also "D:/Programs/GitRepos/DIMA/node_modules/expo-modules-core/android/.cxx/Debug/1z6p6l57/x86/CMakeFiles/CMakeError.log".
+
+C++ build system [configure] failed while executing:
+    @echo off
+    "C:\\Users\\carim\\AppData\\Local\\Android\\Sdk\\cmake\\3.22.1\\bin\\cmake.exe" ^
+      "-HD:\\Programs\\GitRepos\\DIMA\\node_modules\\expo-modules-core\\android" ^
+      "-DCMAKE_SYSTEM_NAME=Android" ^
+      "-DCMAKE_EXPORT_COMPILE_COMMANDS=ON" ^
+      "-DCMAKE_SYSTEM_VERSION=31" ^
+      "-DANDROID_PLATFORM=android-31" ^
+      "-DANDROID_ABI=x86" ^
+      "-DCMAKE_ANDROID_ARCH_ABI=x86" ^
+      "-DANDROID_NDK=C:\\Users\\carim\\AppData\\Local\\Android\\Sdk\\ndk\\25.1.8937393" ^
+      "-DCMAKE_ANDROID_NDK=C:\\Users\\carim\\AppData\\Local\\Android\\Sdk\\ndk\\25.1.8937393" ^
+      "-DCMAKE_TOOLCHAIN_FILE=C:\\Users\\carim\\AppData\\Local\\Android\\Sdk\\ndk\\25.1.8937393\\build\\cmake\\android.toolchain.cmake" ^
+      "-DCMAKE_MAKE_PROGRAM=C:\\Users\\carim\\AppData\\Local\\Android\\Sdk\\cmake\\3.22.1\\bin\\ninja.exe" ^
+      "-DCMAKE_LIBRARY_OUTPUT_DIRECTORY=D:\\Programs\\GitRepos\\DIMA\\node_modules\\expo-modules-core\\android\\build\\intermediates\\cxx\\Debug\\1z6p6l57\\obj\\x86" ^
+      "-DCMAKE_RUNTIME_OUTPUT_DIRECTORY=D:\\Programs\\GitRepos\\DIMA\\node_modules\\expo-modules-core\\android\\build\\intermediates\\cxx\\Debug\\1z6p6l57\\obj\\x86" ^
+      "-DCMAKE_BUILD_TYPE=Debug" ^
+      "-DCMAKE_FIND_ROOT_PATH=D:\\Programs\\GitRepos\\DIMA\\node_modules\\expo-modules-core\\android\\.cxx\\Debug\\1z6p6l57\\prefab\\x86\\prefab" ^
+      "-BD:\\Programs\\GitRepos\\DIMA\\node_modules\\expo-modules-core\\android\\.cxx\\Debug\\1z6p6l57\\x86" ^
+      -GNinja ^
+      "-DANDROID_STL=c++_shared" ^
+      "-DREACT_NATIVE_DIR=D:\\Programs\\GitRepos\\DIMA\\node_modules\\react-native" ^
+      "-DREACT_NATIVE_SO_DIR=D:\\Programs\\GitRepos\\DIMA\\node_modules\\expo-modules-core\\android\\build/react/jni" ^
+      "-DREACT_NATIVE_TARGET_VERSION=71" ^
+      "-DBOOST_VERSION=1_76_0" ^
+      "-DUSE_HERMES=false" ^
+      "-DHERMES_HEADER_DIR=null" ^
+      "-DIS_NEW_ARCHITECTURE_ENABLED=false" ^
+      "-DPROJECT_BUILD_DIR=D:\\Programs\\GitRepos\\DIMA\\node_modules\\expo-modules-core\\android\\build" ^
+      "-DREACT_ANDROID_DIR=D:\\Programs\\GitRepos\\DIMA\\node_modules\\react-native/ReactAndroid" ^
+      "-DREACT_ANDROID_BUILD_DIR=D:\\Programs\\GitRepos\\DIMA\\node_modules\\react-native/ReactAndroid/build" ^
+      "-DUNIT_TEST=false"
+  from D:\Programs\GitRepos\DIMA\node_modules\expo-modules-core\android
+CMake Error at C:/Users/carim/AppData/Local/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeDetermineCompilerId.cmake:828 (file):
+  file STRINGS file
+  "D:/Programs/GitRepos/DIMA/node_modules/expo-modules-core/android/.cxx/Debug/1z6p6l57/x86/CMakeFiles/3.22.1-g37088a8-dirty/CompilerIdC/CMakeCCompilerId-df1eb046.o.tmp"
+  cannot be read.
+Call Stack (most recent call first):
+  C:/Users/carim/AppData/Local/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeDetermineCompilerId.cmake:11 (CMAKE_DETERMINE_COMPILER_ID_CHECK)
+  C:/Users/carim/AppData/Local/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeDetermineCompilerId.cmake:59 (__determine_compiler_id_test)
+  C:/Users/carim/AppData/Local/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)
+  CMakeLists.txt:3 (project)
+
+
+CMake Error at C:/Users/carim/AppData/Local/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeDetermineCompilerId.cmake:926 (file):
+  file failed to open for reading (No such file or directory):
+
+    D:/Programs/GitRepos/DIMA/node_modules/expo-modules-core/android/.cxx/Debug/1z6p6l57/x86/CMakeFiles/3.22.1-g37088a8-dirty/CompilerIdC/CMakeCCompilerId-df1eb046.o.tmp
+Call Stack (most recent call first):
+  C:/Users/carim/AppData/Local/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeDetermineCompilerId.cmake:11 (CMAKE_DETERMINE_COMPILER_ID_CHECK)
+  C:/Users/carim/AppData/Local/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeDetermineCompilerId.cmake:59 (__determine_compiler_id_test)
+  C:/Users/carim/AppData/Local/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)
+  CMakeLists.txt:3 (project)
+
+
+CMake Error at C:/Users/carim/AppData/Local/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeDetermineCompilerId.cmake:929 (string):
+  string begin index: 1 is out of range 0 - 0
+Call Stack (most recent call first):
+  C:/Users/carim/AppData/Local/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeDetermineCompilerId.cmake:11 (CMAKE_DETERMINE_COMPILER_ID_CHECK)
+  C:/Users/carim/AppData/Local/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeDetermineCompilerId.cmake:59 (__determine_compiler_id_test)
+  C:/Users/carim/AppData/Local/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)
+  CMakeLists.txt:3 (project)
+
+
+CMake Error at C:/Users/carim/AppData/Local/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeDetermineCompilerId.cmake:937 (math):
+  math cannot parse the expression: " * 16 + ": syntax error, unexpected
+  exp_TIMES (2).
+Call Stack (most recent call first):
+  C:/Users/carim/AppData/Local/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeDetermineCompilerId.cmake:11 (CMAKE_DETERMINE_COMPILER_ID_CHECK)
+  C:/Users/carim/AppData/Local/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeDetermineCompilerId.cmake:59 (__determine_compiler_id_test)
+  C:/Users/carim/AppData/Local/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)
+  CMakeLists.txt:3 (project)
+
+
+CMake Error at C:/Users/carim/AppData/Local/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeDetermineCompilerId.cmake:939 (file):
+  file failed to open for reading (No such file or directory):
+
+    D:/Programs/GitRepos/DIMA/node_modules/expo-modules-core/android/.cxx/Debug/1z6p6l57/x86/CMakeFiles/3.22.1-g37088a8-dirty/CompilerIdC/CMakeCCompilerId-df1eb046.o.tmp
+Call Stack (most recent call first):
+  C:/Users/carim/AppData/Local/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeDetermineCompilerId.cmake:11 (CMAKE_DETERMINE_COMPILER_ID_CHECK)
+  C:/Users/carim/AppData/Local/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeDetermineCompilerId.cmake:59 (__determine_compiler_id_test)
+  C:/Users/carim/AppData/Local/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)
+  CMakeLists.txt:3 (project)
+
+
+CMake Error at C:/Users/carim/AppData/Local/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeDetermineCompilerId.cmake:980 (file):
+  file failed to open for reading (No such file or directory):
+
+    D:/Programs/GitRepos/DIMA/node_modules/expo-modules-core/android/.cxx/Debug/1z6p6l57/x86/CMakeFiles/3.22.1-g37088a8-dirty/CompilerIdC/CMakeCCompilerId-df1eb046.o.tmp
+Call Stack (most recent call first):
+  C:/Users/carim/AppData/Local/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeDetermineCompilerId.cmake:11 (CMAKE_DETERMINE_COMPILER_ID_CHECK)
+  C:/Users/carim/AppData/Local/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeDetermineCompilerId.cmake:59 (__determine_compiler_id_test)
+  C:/Users/carim/AppData/Local/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)
+  CMakeLists.txt:3 (project)
+
+
+CMake Error at C:/Users/carim/AppData/Local/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeTestCCompiler.cmake:69 (message):
+  The C compiler
+
+    "C:/Users/carim/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/bin/clang.exe"
+
+  is not able to compile a simple test program.
+
+  It fails with the following output:
+
+    Change Dir: D:/Programs/GitRepos/DIMA/node_modules/expo-modules-core/android/.cxx/Debug/1z6p6l57/x86/CMakeFiles/CMakeTmp
+    
+    Run Build Command(s):C:\Users\carim\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_163f3 && ninja: error: unknown target 'cmTC_163f3'
+    
+    
+
+  
+
+  CMake will not be able to correctly generate this project.
+Call Stack (most recent call first):
+  CMakeLists.txt:3 (project)
+
+
+CMake Error at C:/Users/carim/AppData/Local/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeTestCCompiler.cmake:69 (message):
+  The C compiler
+
+    "C:/Users/carim/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/bin/clang.exe"
+
+  is not able to compile a simple test program.
+
+  It fails with the following output:
+
+    Change Dir: D:/Programs/GitRepos/DIMA/node_modules/expo-modules-core/android/.cxx/Debug/1z6p6l57/x86/CMakeFiles/CMakeTmp
+    
+    Run Build Command(s):C:\Users\carim\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_b73a4 && ninja: error: loading 'build.ninja': Impossibile trovare il file specificato.
+    
+    
+    
+
+  
+
+  CMake will not be able to correctly generate this project.
+Call Stack (most recent call first):
+  CMakeLists.txt:3 (project)
+[CXX1429] error when building with cmake using D:\Programs\GitRepos\DIMA\node_modules\expo-modules-core\android\CMakeLists.txt: C++ build system [prefab] failed while executing:
+    @echo off
+    "C:\\Program Files\\Java\\jdk-17\\bin\\java" ^
+      --class-path ^
+      "D:\\Programs\\GitRepos\\DIMA\\caches\\modules-2\\files-2.1\\com.google.prefab\\cli\\2.0.0\\f2702b5ca13df54e3ca92f29d6b403fb6285d8df\\cli-2.0.0-all.jar" ^
+      com.google.prefab.cli.AppKt ^
+      --build-system ^
+      cmake ^
+      --platform ^
+      android ^
+      --abi ^
+      x86 ^
+      --os-version ^
+      31 ^
+      --stl ^
+      c++_shared ^
+      --ndk-version ^
+      25 ^
+      --output ^
+      "C:\\Users\\carim\\AppData\\Local\\Temp\\agp-prefab-staging767487622162176229\\staged-cli-output" ^
+      "D:\\Programs\\GitRepos\\DIMA\\caches\\transforms-3\\8960eaa5bb2e6d37c2d5014673948656\\transformed\\jetified-react-android-0.71.0-release\\prefab" ^
+      "D:\\Programs\\GitRepos\\DIMA\\caches\\transforms-3\\71e0695b0bbf230f5f6db9b60ff8901c\\transformed\\jetified-fbjni-0.3.0\\prefab"
+  from D:\Programs\GitRepos\DIMA\node_modules\expo-modules-core\android
+""" non ? riconosciuto come comando interno o esterno,
+ un programma eseguibile o un file batch.
+
+BUILD SUCCESSFUL in 5m 38s
+5 actionable tasks: 5 up-to-date
+2023-01-20T15:06:11.372+0100 [DEBUG] [org.gradle.launcher.daemon.server.exec.ExecuteBuild] The daemon has finished executing the build.
+2023-01-20T15:06:11.397+0100 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] daemon is running. Sleeping until state changes.
+2023-01-20T15:06:11.398+0100 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] Command execution: finished waiting for DaemonCommandExecution[command = Build{id=a082e338-d5f4-44e4-860f-1096447b9093, currentDir=D:\Programs\GitRepos\DIMA\android}, connection = DefaultDaemonConnection: socket connection from /127.0.0.1:63066 to /127.0.0.1:63067]. Result org.gradle.launcher.daemon.server.DaemonStateCoordinator@5905e59d with state Busy
+2023-01-20T15:06:11.398+0100 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] Command execution: completed DaemonCommandExecution[command = Build{id=a082e338-d5f4-44e4-860f-1096447b9093, currentDir=D:\Programs\GitRepos\DIMA\android}, connection = DefaultDaemonConnection: socket connection from /127.0.0.1:63066 to /127.0.0.1:63067]
+2023-01-20T15:06:11.399+0100 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] resetting idle timer
+2023-01-20T15:06:11.399+0100 [INFO] [org.gradle.launcher.daemon.server.DaemonRegistryUpdater] Marking the daemon as idle, address: [d7c56aeb-be83-4cac-8bac-afa66a8135d6 port:63066, addresses:[localhost/127.0.0.1]]
+2023-01-20T15:06:11.399+0100 [DEBUG] [org.gradle.launcher.daemon.registry.PersistentDaemonRegistry] Marking busy by address: [d7c56aeb-be83-4cac-8bac-afa66a8135d6 port:63066, addresses:[localhost/127.0.0.1]]
+2023-01-20T15:06:11.401+0100 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Waiting to acquire exclusive lock on daemon addresses registry.
+2023-01-20T15:06:11.402+0100 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Lock acquired on daemon addresses registry.
+2023-01-20T15:06:11.405+0100 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on daemon addresses registry.
+2023-01-20T15:06:11.406+0100 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] daemon is running. Sleeping until state changes.
+2023-01-20T15:06:11.406+0100 [DEBUG] [org.gradle.launcher.daemon.server.exec.ReturnResult] Daemon is dispatching the build result: Success[value=org.gradle.launcher.exec.BuildActionResult@6548c7b8]
+2023-01-20T15:06:11.407+0100 [DEBUG] [org.gradle.launcher.daemon.server.SynchronizedDispatchConnection] thread 21: dispatching Success[value=org.gradle.launcher.exec.BuildActionResult@6548c7b8]
+2023-01-20T15:06:11.408+0100 [DEBUG] [org.gradle.launcher.daemon.server.SynchronizedDispatchConnection] thread 22: received class org.gradle.launcher.daemon.protocol.Finished
+2023-01-20T15:06:11.409+0100 [DEBUG] [org.gradle.launcher.daemon.server.DefaultDaemonConnection] thread 22: Received non-IO message from client: org.gradle.launcher.daemon.protocol.Finished@4b321f72
+2023-01-20T15:06:11.409+0100 [DEBUG] [org.gradle.launcher.daemon.server.DefaultIncomingConnectionHandler] Finishing executing command: Build{id=a082e338-d5f4-44e4-860f-1096447b9093, currentDir=D:\Programs\GitRepos\DIMA\android}
+2023-01-20T15:06:11.410+0100 [DEBUG] [org.gradle.launcher.daemon.server.DefaultIncomingConnectionHandler] Received finished message: org.gradle.launcher.daemon.protocol.Finished@4b321f72
+2023-01-20T15:06:11.409+0100 [DEBUG] [org.gradle.internal.remote.internal.inet.SocketConnection] Discarding EOFException: java.io.EOFException
+2023-01-20T15:06:11.410+0100 [DEBUG] [org.gradle.launcher.daemon.server.SynchronizedDispatchConnection] thread 22: received null
+2023-01-20T15:06:11.410+0100 [DEBUG] [org.gradle.launcher.daemon.server.SynchronizedDispatchConnection] thread 21: stopping connection
+2023-01-20T15:06:11.410+0100 [DEBUG] [org.gradle.launcher.daemon.server.DefaultDaemonConnection] thread 22: Received end-of-input from client.
+2023-01-20T15:06:11.412+0100 [DEBUG] [org.gradle.launcher.daemon.server.SynchronizedDispatchConnection] thread 21: stopping connection
+2023-01-20T15:06:14.191+0100 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Waiting to acquire shared lock on daemon addresses registry.
+2023-01-20T15:06:14.191+0100 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Lock acquired on daemon addresses registry.
+2023-01-20T15:06:14.193+0100 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on daemon addresses registry.
+2023-01-20T15:06:14.196+0100 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Waiting to acquire shared lock on daemon addresses registry.
+2023-01-20T15:06:14.197+0100 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Lock acquired on daemon addresses registry.
+2023-01-20T15:06:14.198+0100 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on daemon addresses registry.
+2023-01-20T15:06:14.511+0100 [DEBUG] [org.gradle.process.internal.health.memory.DefaultMemoryManager] 1604007936 memory requested, 987901952 free
+2023-01-20T15:06:14.511+0100 [DEBUG] [org.gradle.workers.internal.WorkerDaemonExpiration] Will attempt to release 1529 of memory
+2023-01-20T15:06:14.512+0100 [DEBUG] [org.gradle.process.internal.health.memory.DefaultMemoryManager] 1604007936 memory requested, 0 released, 987901952 free
+2023-01-20T15:06:19.513+0100 [DEBUG] [org.gradle.process.internal.health.memory.DefaultMemoryManager] 1604007936 memory requested, 950595584 free
+2023-01-20T15:06:19.513+0100 [DEBUG] [org.gradle.workers.internal.WorkerDaemonExpiration] Will attempt to release 1529 of memory
+2023-01-20T15:06:19.513+0100 [DEBUG] [org.gradle.process.internal.health.memory.DefaultMemoryManager] 1604007936 memory requested, 0 released, 950595584 free
+2023-01-20T15:06:24.061+0100 [DEBUG] [org.gradle.cache.internal.LockOnDemandCrossProcessCacheAccess] Lock on journal cache (D:\Programs\GitRepos\DIMA\caches\journal-1) requested by another process - releasing lock.
+2023-01-20T15:06:24.062+0100 [DEBUG] [org.gradle.cache.internal.LockOnDemandCrossProcessCacheAccess] Releasing file lock for journal cache (D:\Programs\GitRepos\DIMA\caches\journal-1)
+2023-01-20T15:06:24.062+0100 [DEBUG] [org.gradle.cache.internal.btree.BTreePersistentIndexedCache] Closing cache file-access.bin (D:\Programs\GitRepos\DIMA\caches\journal-1\file-access.bin)
+2023-01-20T15:06:24.063+0100 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on journal cache (D:\Programs\GitRepos\DIMA\caches\journal-1).
+2023-01-20T15:06:24.063+0100 [DEBUG] [org.gradle.cache.internal.locklistener.FileLockCommunicator] Confirming lock release to Gradle process at port 54995 for lock with id 7162089474086889247.
+2023-01-20T15:06:24.063+0100 [DEBUG] [org.gradle.cache.internal.locklistener.FileLockCommunicator] Confirming lock release to Gradle process at port 54995 for lock with id 7162089474086889247.
+2023-01-20T15:06:24.204+0100 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Waiting to acquire shared lock on daemon addresses registry.
+2023-01-20T15:06:24.205+0100 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Lock acquired on daemon addresses registry.
+2023-01-20T15:06:24.207+0100 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on daemon addresses registry.
+2023-01-20T15:06:24.209+0100 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Waiting to acquire shared lock on daemon addresses registry.
+2023-01-20T15:06:24.210+0100 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Lock acquired on daemon addresses registry.
+2023-01-20T15:06:24.211+0100 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on daemon addresses registry.
+2023-01-20T15:06:24.213+0100 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Waiting to acquire shared lock on daemon addresses registry.
+2023-01-20T15:06:24.213+0100 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Lock acquired on daemon addresses registry.
+2023-01-20T15:06:24.215+0100 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on daemon addresses registry.
+2023-01-20T15:06:24.215+0100 [DEBUG] [org.gradle.launcher.daemon.server.health.LowMemoryDaemonExpirationStrategy] Nearing low memory threshold - OS memory {Total: 16040079360, Free: 950595584}
+2023-01-20T15:06:24.217+0100 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Waiting to acquire shared lock on daemon addresses registry.
+2023-01-20T15:06:24.217+0100 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Lock acquired on daemon addresses registry.
+2023-01-20T15:06:24.219+0100 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on daemon addresses registry.
+2023-01-20T15:06:24.219+0100 [DEBUG] [org.gradle.launcher.daemon.server.DaemonRegistryUpdater] Storing daemon stop event: other compatible daemons were started and after being idle for 0 minutes and not recently used
+2023-01-20T15:06:24.220+0100 [DEBUG] [org.gradle.launcher.daemon.registry.PersistentDaemonRegistry] Storing daemon stop event with timestamp 1674223584213
+2023-01-20T15:06:24.221+0100 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Waiting to acquire exclusive lock on daemon addresses registry.
+2023-01-20T15:06:24.222+0100 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Lock acquired on daemon addresses registry.
+2023-01-20T15:06:24.225+0100 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on daemon addresses registry.
+2023-01-20T15:06:24.226+0100 [LIFECYCLE] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] Daemon will be stopped at the end of the build other compatible daemons were started and after being idle for 0 minutes and not recently used
+2023-01-20T15:06:24.226+0100 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] Marking daemon stopped due to other compatible daemons were started and after being idle for 0 minutes and not recently used. The daemon is running a build: false
+2023-01-20T15:06:24.227+0100 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] daemon has stopped.
+2023-01-20T15:06:24.227+0100 [DEBUG] [org.gradle.launcher.daemon.server.Daemon] stop() called on daemon
+2023-01-20T15:06:24.227+0100 [INFO] [org.gradle.launcher.daemon.server.Daemon] Stop requested. Daemon is removing its presence from the registry...
+2023-01-20T15:06:24.228+0100 [DEBUG] [org.gradle.launcher.daemon.server.DaemonRegistryUpdater] Removing our presence to clients, eg. removing this address from the registry: [d7c56aeb-be83-4cac-8bac-afa66a8135d6 port:63066, addresses:[localhost/127.0.0.1]]
+2023-01-20T15:06:24.228+0100 [DEBUG] [org.gradle.launcher.daemon.registry.PersistentDaemonRegistry] Removing daemon address: [d7c56aeb-be83-4cac-8bac-afa66a8135d6 port:63066, addresses:[localhost/127.0.0.1]]
+2023-01-20T15:06:24.239+0100 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Waiting to acquire exclusive lock on daemon addresses registry.
+2023-01-20T15:06:24.240+0100 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Lock acquired on daemon addresses registry.
+2023-01-20T15:06:24.242+0100 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on daemon addresses registry.
+2023-01-20T15:06:24.243+0100 [DEBUG] [org.gradle.launcher.daemon.server.DaemonRegistryUpdater] Address removed from registry.
+2023-01-20T15:06:24.245+0100 [DEBUG] [org.gradle.cache.internal.LockOnDemandCrossProcessCacheAccess] Releasing file lock for jars (D:\Programs\GitRepos\DIMA\caches\jars-9)
+2023-01-20T15:06:24.246+0100 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on jars (D:\Programs\GitRepos\DIMA\caches\jars-9).
+2023-01-20T15:06:24.246+0100 [DEBUG] [org.gradle.cache.internal.DefaultPersistentDirectoryStore] jars (D:\Programs\GitRepos\DIMA\caches\jars-9) has last been fully cleaned up 0 hours ago
+2023-01-20T15:06:24.246+0100 [DEBUG] [org.gradle.cache.internal.DefaultCacheAccess] Cache jars (D:\Programs\GitRepos\DIMA\caches\jars-9) was closed 52 times.
+2023-01-20T15:06:24.247+0100 [DEBUG] [org.gradle.cache.internal.LockOnDemandCrossProcessCacheAccess] Releasing file lock for Artifact transforms cache (D:\Programs\GitRepos\DIMA\caches\transforms-3)
+2023-01-20T15:06:24.247+0100 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on Artifact transforms cache (D:\Programs\GitRepos\DIMA\caches\transforms-3).
+2023-01-20T15:06:24.248+0100 [DEBUG] [org.gradle.cache.internal.DefaultPersistentDirectoryStore] Artifact transforms cache (D:\Programs\GitRepos\DIMA\caches\transforms-3) has last been fully cleaned up 0 hours ago
+2023-01-20T15:06:24.248+0100 [DEBUG] [org.gradle.cache.internal.DefaultCacheAccess] Cache Artifact transforms cache (D:\Programs\GitRepos\DIMA\caches\transforms-3) was closed 35 times.
+2023-01-20T15:06:24.249+0100 [DEBUG] [org.gradle.cache.internal.LockOnDemandCrossProcessCacheAccess] Releasing file lock for kotlin-dsl (D:\Programs\GitRepos\DIMA\caches\7.5.1\kotlin-dsl)
+2023-01-20T15:06:24.249+0100 [DEBUG] [org.gradle.cache.internal.btree.BTreePersistentIndexedCache] Closing cache executionHistory.bin (D:\Programs\GitRepos\DIMA\caches\7.5.1\kotlin-dsl\executionHistory.bin)
+2023-01-20T15:06:24.250+0100 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on kotlin-dsl (D:\Programs\GitRepos\DIMA\caches\7.5.1\kotlin-dsl).
+2023-01-20T15:06:24.251+0100 [DEBUG] [org.gradle.cache.internal.DefaultPersistentDirectoryStore] kotlin-dsl (D:\Programs\GitRepos\DIMA\caches\7.5.1\kotlin-dsl) has last been fully cleaned up 0 hours ago
+2023-01-20T15:06:24.251+0100 [DEBUG] [org.gradle.cache.internal.DefaultCacheAccess] Cache kotlin-dsl (D:\Programs\GitRepos\DIMA\caches\7.5.1\kotlin-dsl) was closed 5 times.
+2023-01-20T15:06:24.276+0100 [DEBUG] [org.gradle.cache.internal.LockOnDemandCrossProcessCacheAccess] Releasing file lock for file content cache (D:\Programs\GitRepos\DIMA\caches\7.5.1\fileContent)
+2023-01-20T15:06:24.277+0100 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on file content cache (D:\Programs\GitRepos\DIMA\caches\7.5.1\fileContent).
+2023-01-20T15:06:24.277+0100 [DEBUG] [org.gradle.cache.internal.DefaultCacheAccess] Cache file content cache (D:\Programs\GitRepos\DIMA\caches\7.5.1\fileContent) was closed 2 times.
+2023-01-20T15:06:24.278+0100 [DEBUG] [org.gradle.internal.watch.vfs.impl.WatchingVirtualFileSystem] Closing VFS, dropping state
+2023-01-20T15:06:24.279+0100 [DEBUG] [org.gradle.cache.internal.LockOnDemandCrossProcessCacheAccess] Releasing file lock for Generated Gradle JARs cache (D:\Programs\GitRepos\DIMA\caches\7.5.1\generated-gradle-jars)
+2023-01-20T15:06:24.280+0100 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on Generated Gradle JARs cache (D:\Programs\GitRepos\DIMA\caches\7.5.1\generated-gradle-jars).
+2023-01-20T15:06:24.280+0100 [DEBUG] [org.gradle.internal.watch.registry.impl.DefaultFileWatcherRegistry] Finished listening to file system change events
+2023-01-20T15:06:24.281+0100 [DEBUG] [org.gradle.cache.internal.DefaultCacheAccess] Cache Generated Gradle JARs cache (D:\Programs\GitRepos\DIMA\caches\7.5.1\generated-gradle-jars) was closed 2 times.
+2023-01-20T15:06:24.281+0100 [DEBUG] [org.gradle.cache.internal.LockOnDemandCrossProcessCacheAccess] Releasing file lock for artifact cache (D:\Programs\GitRepos\DIMA\caches\modules-2)
+2023-01-20T15:06:24.282+0100 [DEBUG] [org.gradle.cache.internal.btree.BTreePersistentIndexedCache] Closing cache module-metadata.bin (D:\Programs\GitRepos\DIMA\caches\modules-2\metadata-2.99\module-metadata.bin)
+2023-01-20T15:06:24.282+0100 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on artifact cache (D:\Programs\GitRepos\DIMA\caches\modules-2).
+2023-01-20T15:06:24.283+0100 [DEBUG] [org.gradle.cache.internal.DefaultPersistentDirectoryStore] artifact cache (D:\Programs\GitRepos\DIMA\caches\modules-2) has last been fully cleaned up 26 hours ago
+2023-01-20T15:06:24.302+0100 [INFO] [org.gradle.cache.internal.AbstractCacheCleanup] artifact cache (D:\Programs\GitRepos\DIMA\caches\modules-2) cleanup deleted 0 files/directories.
+2023-01-20T15:06:24.305+0100 [INFO] [org.gradle.cache.internal.AbstractCacheCleanup] artifact cache (D:\Programs\GitRepos\DIMA\caches\modules-2) [subdir: D:\Programs\GitRepos\DIMA\caches\modules-2\resources-2.1] cleanup deleted 0 files/directories.
+2023-01-20T15:06:24.305+0100 [INFO] [org.gradle.cache.internal.LeastRecentlyUsedCacheCleanup] artifact cache (D:\Programs\GitRepos\DIMA\caches\modules-2) [subdir: D:\Programs\GitRepos\DIMA\caches\modules-2\resources-2.1] removing files not accessed on or after Wed Dec 21 15:02:26 CET 2022.
+2023-01-20T15:06:24.308+0100 [DEBUG] [org.gradle.cache.internal.LockOnDemandCrossProcessCacheAccess] Acquiring file lock for journal cache (D:\Programs\GitRepos\DIMA\caches\journal-1)
+2023-01-20T15:06:24.319+0100 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Waiting to acquire exclusive lock on journal cache (D:\Programs\GitRepos\DIMA\caches\journal-1).
+2023-01-20T15:06:24.319+0100 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] The file lock for journal cache (D:\Programs\GitRepos\DIMA\caches\journal-1) is held by a different Gradle process (pid: 12160, lockId: 6910937051188723997). Pinged owner at port 54995
+2023-01-20T15:06:24.319+0100 [DEBUG] [org.gradle.cache.internal.locklistener.DefaultFileLockContentionHandler] Gradle process at port 54995 confirmed unlock request for lock with id 6910937051188723997.
+2023-01-20T15:06:24.320+0100 [DEBUG] [org.gradle.cache.internal.locklistener.DefaultFileLockContentionHandler] Gradle process at port 54995 confirmed unlock request for lock with id 6910937051188723997.
+2023-01-20T15:06:24.508+0100 [DEBUG] [org.gradle.process.internal.health.memory.DefaultMemoryManager] 1604007936 memory requested, 1068503040 free
+2023-01-20T15:06:24.509+0100 [DEBUG] [org.gradle.process.internal.health.memory.DefaultMemoryManager] 1604007936 memory requested, 0 released, 1068503040 free
+2023-01-20T15:06:24.554+0100 [DEBUG] [org.gradle.cache.internal.locklistener.DefaultFileLockContentionHandler] Gradle process at port 54995 confirmed lock release for lock with id 6910937051188723997.
+2023-01-20T15:06:24.554+0100 [DEBUG] [org.gradle.cache.internal.locklistener.DefaultFileLockContentionHandler] Triggering lock release signal for lock with id 6910937051188723997.
+2023-01-20T15:06:24.555+0100 [DEBUG] [org.gradle.cache.internal.locklistener.DefaultFileLockContentionHandler] Gradle process at port 54995 confirmed lock release for lock with id 6910937051188723997.
+2023-01-20T15:06:24.555+0100 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Lock acquired on journal cache (D:\Programs\GitRepos\DIMA\caches\journal-1).
+2023-01-20T15:06:24.555+0100 [DEBUG] [org.gradle.cache.internal.locklistener.DefaultFileLockContentionHandler] Triggering lock release signal for lock with id 6910937051188723997.
+2023-01-20T15:06:24.555+0100 [INFO] [org.gradle.cache.internal.InMemoryDecoratedCache] Invalidating in-memory cache of D:\Programs\GitRepos\DIMA\caches\journal-1\file-access.bin
+2023-01-20T15:06:24.557+0100 [DEBUG] [org.gradle.cache.internal.btree.BTreePersistentIndexedCache] Opening cache file-access.bin (D:\Programs\GitRepos\DIMA\caches\journal-1\file-access.bin)
+2023-01-20T15:06:24.559+0100 [INFO] [org.gradle.cache.internal.AbstractCacheCleanup] artifact cache (D:\Programs\GitRepos\DIMA\caches\modules-2) [subdir: D:\Programs\GitRepos\DIMA\caches\modules-2\resources-2.1] cleanup deleted 0 files/directories.
+2023-01-20T15:06:24.561+0100 [INFO] [org.gradle.cache.internal.AbstractCacheCleanup] artifact cache (D:\Programs\GitRepos\DIMA\caches\modules-2) [subdir: D:\Programs\GitRepos\DIMA\caches\modules-2\files-2.1] cleanup deleted 0 files/directories.
+2023-01-20T15:06:24.561+0100 [INFO] [org.gradle.cache.internal.LeastRecentlyUsedCacheCleanup] artifact cache (D:\Programs\GitRepos\DIMA\caches\modules-2) [subdir: D:\Programs\GitRepos\DIMA\caches\modules-2\files-2.1] removing files not accessed on or after Wed Dec 21 15:02:26 CET 2022.
+2023-01-20T15:06:24.843+0100 [INFO] [org.gradle.cache.internal.AbstractCacheCleanup] artifact cache (D:\Programs\GitRepos\DIMA\caches\modules-2) [subdir: D:\Programs\GitRepos\DIMA\caches\modules-2\files-2.1] cleanup deleted 0 files/directories.
+2023-01-20T15:06:24.845+0100 [INFO] [org.gradle.cache.internal.AbstractCacheCleanup] artifact cache (D:\Programs\GitRepos\DIMA\caches\modules-2) [subdir: D:\Programs\GitRepos\DIMA\caches\modules-2\metadata-2.99] cleanup deleted 0 files/directories.
+2023-01-20T15:06:24.846+0100 [INFO] [org.gradle.cache.internal.DefaultPersistentDirectoryStore] artifact cache (D:\Programs\GitRepos\DIMA\caches\modules-2) cleaned up in 0.561 secs.
+2023-01-20T15:06:24.846+0100 [DEBUG] [org.gradle.cache.internal.DefaultCacheAccess] Cache artifact cache (D:\Programs\GitRepos\DIMA\caches\modules-2) was closed 135 times.
+2023-01-20T15:06:24.846+0100 [DEBUG] [org.gradle.cache.internal.LockOnDemandCrossProcessCacheAccess] Releasing file lock for journal cache (D:\Programs\GitRepos\DIMA\caches\journal-1)
+2023-01-20T15:06:24.847+0100 [DEBUG] [org.gradle.cache.internal.btree.BTreePersistentIndexedCache] Closing cache file-access.bin (D:\Programs\GitRepos\DIMA\caches\journal-1\file-access.bin)
+2023-01-20T15:06:24.847+0100 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on journal cache (D:\Programs\GitRepos\DIMA\caches\journal-1).
+2023-01-20T15:06:24.847+0100 [DEBUG] [org.gradle.cache.internal.DefaultCacheAccess] Cache journal cache (D:\Programs\GitRepos\DIMA\caches\journal-1) was closed 103 times.
+2023-01-20T15:06:24.848+0100 [DEBUG] [org.gradle.cache.internal.LockOnDemandCrossProcessCacheAccess] Releasing file lock for file hash cache (D:\Programs\GitRepos\DIMA\caches\7.5.1\fileHashes)
+2023-01-20T15:06:24.848+0100 [DEBUG] [org.gradle.cache.internal.btree.BTreePersistentIndexedCache] Closing cache fileHashes.bin (D:\Programs\GitRepos\DIMA\caches\7.5.1\fileHashes\fileHashes.bin)
+2023-01-20T15:06:24.848+0100 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on file hash cache (D:\Programs\GitRepos\DIMA\caches\7.5.1\fileHashes).
+2023-01-20T15:06:24.849+0100 [DEBUG] [org.gradle.cache.internal.DefaultCacheAccess] Cache file hash cache (D:\Programs\GitRepos\DIMA\caches\7.5.1\fileHashes) was closed 94 times.
+2023-01-20T15:06:24.849+0100 [DEBUG] [org.gradle.cache.internal.LockOnDemandCrossProcessCacheAccess] Releasing file lock for execution history cache (D:\Programs\GitRepos\DIMA\caches\7.5.1\executionHistory)
+2023-01-20T15:06:24.850+0100 [DEBUG] [org.gradle.cache.internal.btree.BTreePersistentIndexedCache] Closing cache executionHistory.bin (D:\Programs\GitRepos\DIMA\caches\7.5.1\executionHistory\executionHistory.bin)
+2023-01-20T15:06:24.850+0100 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on execution history cache (D:\Programs\GitRepos\DIMA\caches\7.5.1\executionHistory).
+2023-01-20T15:06:24.851+0100 [DEBUG] [org.gradle.cache.internal.DefaultCacheAccess] Cache execution history cache (D:\Programs\GitRepos\DIMA\caches\7.5.1\executionHistory) was closed 36 times.
+Daemon vm is shutting down... The daemon has exited normally or was terminated in response to a user interrupt.
+2023-01-20T15:06:24.853+0100 [DEBUG] [org.gradle.launcher.daemon.registry.PersistentDaemonRegistry] Removing daemon address: [d7c56aeb-be83-4cac-8bac-afa66a8135d6 port:63066, addresses:[localhost/127.0.0.1]]
+2023-01-20T15:06:24.861+0100 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Waiting to acquire exclusive lock on daemon addresses registry.
+2023-01-20T15:06:24.861+0100 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Lock acquired on daemon addresses registry.
+2023-01-20T15:06:24.863+0100 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on daemon addresses registry.
