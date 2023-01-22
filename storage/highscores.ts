@@ -1,5 +1,7 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { GameMode } from "../components/game/enums";
+import { NativeModules } from 'react-native'
+const SharedStorage = NativeModules.SharedStorage;
 
 export type Highscores = number[];
 const numberOfHighscores = 5;
@@ -24,6 +26,9 @@ export const saveHighscore = async (mode: GameMode, score: number) => {
 			highscores.sort((a, b) => b - a);
 			highscores.splice(numberOfHighscores);
 			await AsyncStorage.setItem(mode, JSON.stringify(highscores));
+			/* var tempMode = mode.toString();
+			var tempScore = score.toString(); */
+			SharedStorage.set(mode.toString(), score.toString());
 			return fillEmptyScores(highscores);
 		}
 	} catch (e) {

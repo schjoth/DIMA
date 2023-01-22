@@ -1,18 +1,18 @@
 package com.widgetapp;
 
-import com.facebook.react.bridge.NativeModule;
+//import com.facebook.react.bridge.NativeModule;
 import com.facebook.react.bridge.ReactApplicationContext;
-import com.facebook.react.bridge.ReactContext;
+//import com.facebook.react.bridge.ReactContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
 
-import android.app.Activity;
+//import android.app.Activity;
 import android.appwidget.AppWidgetManager;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.util.Log;
+//import android.util.Log;
 
 import androidx.annotation.NonNull;
 
@@ -34,9 +34,46 @@ public class SharedStorage extends ReactContextBaseJavaModule {
     }
 
     @ReactMethod
-    public void set(String type, String value) {
+    public void set(String mode, String score) {
+        SharedPreferences sharedPref = context.getSharedPreferences("DATA", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = context.getSharedPreferences("DATA", Context.MODE_PRIVATE).edit();
-        editor.putString(type, value);
+        int intScore = Integer.parseInt(score);
+        int i = 1, pos = 0;
+        String savedScore = "", savedMode;
+
+        // pos saves the position where the score has to be saved
+        Map<String, ?> test = sharedPref.getAll();
+        for (Map.Entry<String,?> entry : test.entrySet()) {
+            if (Objects.equals(entry.getKey(), "top" + i + "_score")){
+                if (intScore > Integer.parseInt(entry.getValue().toString())){
+                    pos = i;
+                    savedScore = entry.getValue().toString();
+                    break;
+                }
+                i++;
+            }
+        }
+
+        // if pos == 0, then it means that the score is lower than the previously saved scores, so return.
+        if (pos == 0) return;
+
+        // new value gets inserted into the correct position and the previous mode is saved
+        savedMode = (String) test.get("top" + pos + "_mode");
+        editor.putString("top" + pos + "_mode", mode);
+        editor.putString("top" + pos + "_score", score);
+        pos++;
+
+        // for switches all the values downwards
+        String tempMode, tempScore;
+        for (int j = pos; j < 4; j++) {
+            tempMode = (String) test.get("top" + j + "_mode");
+            tempScore = (String) test.get("top" + j + "_score");
+            editor.putString("top" + j + "_mode", savedMode);
+            editor.putString("top" + j + "_score", savedScore);
+            savedMode = tempMode;
+            savedScore = tempScore;
+        }
+
         editor.apply();
     }
 
@@ -57,12 +94,12 @@ public class SharedStorage extends ReactContextBaseJavaModule {
         for (Map.Entry<String,?> entry : test.entrySet()) {
             editor.remove(entry.getKey());
         }
-        editor.putString("top1_mode", "top1_mode");
-        editor.putString("top1_score", "top1_score");
-        editor.putString("top2_mode", "top2_mode");
-        editor.putString("top2_score", "top2_score");
-        editor.putString("top3_mode", "top3_mode");
-        editor.putString("top3_score", "top3_score");
+        editor.putString("top1_mode", "No mode");
+        editor.putString("top1_score", "0");
+        editor.putString("top2_mode", "No mode");
+        editor.putString("top2_score", "0");
+        editor.putString("top3_mode", "No mode");
+        editor.putString("top3_score", "0");
         editor.apply();
     }
 
