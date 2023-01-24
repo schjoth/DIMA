@@ -1,6 +1,6 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { GameMode } from "../components/game/enums";
-import { NativeModules } from 'react-native'
+import { NativeModules } from 'react-native';
 const SharedStorage = NativeModules.SharedStorage;
 
 export type Highscores = number[];

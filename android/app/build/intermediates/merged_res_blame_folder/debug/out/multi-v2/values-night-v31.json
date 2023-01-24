@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.widgetapp-mergeDebugResources-23:/values-night-v31/values-night-v31.xml",
+            "outputFile": "com.widgetapp-mergeDebugResources-34:/values-night-v31/values-night-v31.xml",
             "map": [
                 {
-                    "source": "D:\\Programs\\GitRepos\\WidgetApp\\WidgetApp\\android\\app\\src\\main\\res\\values-night-v31\\themes.xml",
+                    "source": "D:\\Programs\\GitRepos\\DIMA\\android\\app\\src\\main\\res\\values-night-v31\\themes.xml",
                     "from": {
                         "startLines": "5",
                         "startColumns": "4",

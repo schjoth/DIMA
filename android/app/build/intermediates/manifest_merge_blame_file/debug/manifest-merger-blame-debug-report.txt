@@ -5,121 +5,175 @@
 5    android:versionName="1.0" >
 6
 7    <uses-sdk
-8        android:minSdkVersion="31"
-9        android:targetSdkVersion="33" />
+8        android:minSdkVersion="21"
+9        android:targetSdkVersion="31" />
 10
 11    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
-11-->D:\Programs\GitRepos\WidgetApp\WidgetApp\android\app\src\debug\AndroidManifest.xml:5:5-77
-11-->D:\Programs\GitRepos\WidgetApp\WidgetApp\android\app\src\debug\AndroidManifest.xml:5:22-75
+11-->D:\Programs\GitRepos\DIMA\android\app\src\debug\AndroidManifest.xml:5:5-77
+11-->D:\Programs\GitRepos\DIMA\android\app\src\debug\AndroidManifest.xml:5:22-75
 12    <uses-permission android:name="android.permission.INTERNET" />
-12-->D:\Programs\GitRepos\WidgetApp\WidgetApp\android\app\src\main\AndroidManifest.xml:5:5-67
-12-->D:\Programs\GitRepos\WidgetApp\WidgetApp\android\app\src\main\AndroidManifest.xml:5:22-64
+12-->D:\Programs\GitRepos\DIMA\android\app\src\main\AndroidManifest.xml:5:5-67
+12-->D:\Programs\GitRepos\DIMA\android\app\src\main\AndroidManifest.xml:5:22-64
 13    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-13-->[com.facebook.flipper:flipper:0.176.1] C:\Users\carim\.gradle\caches\transforms-3\d204c908888db81daeb78cb3f028732c\transformed\jetified-flipper-0.176.1\AndroidManifest.xml:16:5-76
-13-->[com.facebook.flipper:flipper:0.176.1] C:\Users\carim\.gradle\caches\transforms-3\d204c908888db81daeb78cb3f028732c\transformed\jetified-flipper-0.176.1\AndroidManifest.xml:16:22-73
-14
-15    <application
-15-->D:\Programs\GitRepos\WidgetApp\WidgetApp\android\app\src\main\AndroidManifest.xml:7:5-42:19
-16        android:name="com.widgetapp.MainApplication"
-16-->D:\Programs\GitRepos\WidgetApp\WidgetApp\android\app\src\main\AndroidManifest.xml:8:9-40
-17        android:allowBackup="false"
-17-->D:\Programs\GitRepos\WidgetApp\WidgetApp\android\app\src\main\AndroidManifest.xml:9:9-36
-18        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-18-->[androidx.core:core:1.7.0] C:\Users\carim\.gradle\caches\transforms-3\e5f205371712802ac7429e95cd380534\transformed\core-1.7.0\AndroidManifest.xml:24:18-86
-19        android:debuggable="true"
-20        android:extractNativeLibs="false"
-21        android:icon="@mipmap/ic_launcher"
-21-->D:\Programs\GitRepos\WidgetApp\WidgetApp\android\app\src\main\AndroidManifest.xml:10:9-43
-22        android:label="@string/app_name"
-22-->D:\Programs\GitRepos\WidgetApp\WidgetApp\android\app\src\main\AndroidManifest.xml:11:9-41
-23        android:roundIcon="@mipmap/ic_launcher_round"
-23-->D:\Programs\GitRepos\WidgetApp\WidgetApp\android\app\src\main\AndroidManifest.xml:12:9-54
-24        android:theme="@style/AppTheme"
-24-->D:\Programs\GitRepos\WidgetApp\WidgetApp\android\app\src\main\AndroidManifest.xml:13:9-40
-25        android:usesCleartextTraffic="true" >
-25-->D:\Programs\GitRepos\WidgetApp\WidgetApp\android\app\src\debug\AndroidManifest.xml:8:9-44
-26        <activity
-26-->D:\Programs\GitRepos\WidgetApp\WidgetApp\android\app\src\debug\AndroidManifest.xml:11:9-111
-27            android:name="com.facebook.react.devsupport.DevSettingsActivity"
-27-->D:\Programs\GitRepos\WidgetApp\WidgetApp\android\app\src\debug\AndroidManifest.xml:11:19-83
-28            android:exported="false" />
-28-->D:\Programs\GitRepos\WidgetApp\WidgetApp\android\app\src\debug\AndroidManifest.xml:11:84-108
+13-->[com.facebook.flipper:flipper:0.177.0] C:\Users\carim\.gradle\caches\transforms-3\26407b6fede520797ec056daa62448bb\transformed\jetified-flipper-0.177.0\AndroidManifest.xml:16:5-76
+13-->[com.facebook.flipper:flipper:0.177.0] C:\Users\carim\.gradle\caches\transforms-3\26407b6fede520797ec056daa62448bb\transformed\jetified-flipper-0.177.0\AndroidManifest.xml:16:22-73
+14    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+14-->[:expo-file-system] D:\Programs\GitRepos\DIMA\node_modules\expo-file-system\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:11:5-81
+14-->[:expo-file-system] D:\Programs\GitRepos\DIMA\node_modules\expo-file-system\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:11:22-78
+15    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+15-->[:expo-file-system] D:\Programs\GitRepos\DIMA\node_modules\expo-file-system\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:12:5-80
+15-->[:expo-file-system] D:\Programs\GitRepos\DIMA\node_modules\expo-file-system\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:12:22-77
+16
+17    <queries>
+17-->[:expo-file-system] D:\Programs\GitRepos\DIMA\node_modules\expo-file-system\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:14:5-20:15
+18
+19        <!-- Query open documents -->
+20        <intent>
+20-->[:expo-file-system] D:\Programs\GitRepos\DIMA\node_modules\expo-file-system\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:17:9-19:18
+21            <action android:name="android.intent.action.OPEN_DOCUMENT_TREE" />
+21-->[:expo-file-system] D:\Programs\GitRepos\DIMA\node_modules\expo-file-system\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:18:13-79
+21-->[:expo-file-system] D:\Programs\GitRepos\DIMA\node_modules\expo-file-system\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:18:21-76
+22        </intent>
+23        <intent>
+23-->[:expo-web-browser] D:\Programs\GitRepos\DIMA\node_modules\expo-web-browser\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:10:9-14:18
+24
+25            <!-- Required for opening tabs if targeting API 30 -->
+26            <action android:name="android.support.customtabs.action.CustomTabsService" />
+26-->[:expo-web-browser] D:\Programs\GitRepos\DIMA\node_modules\expo-web-browser\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:13:13-90
+26-->[:expo-web-browser] D:\Programs\GitRepos\DIMA\node_modules\expo-web-browser\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:13:21-87
+27        </intent>
+28    </queries>
 29
-30        <receiver
-30-->D:\Programs\GitRepos\WidgetApp\WidgetApp\android\app\src\main\AndroidManifest.xml:14:9-24:20
-31            android:name="com.widgetapp.MyWidget"
-31-->D:\Programs\GitRepos\WidgetApp\WidgetApp\android\app\src\main\AndroidManifest.xml:15:13-37
-32            android:exported="false" >
-32-->D:\Programs\GitRepos\WidgetApp\WidgetApp\android\app\src\main\AndroidManifest.xml:16:13-37
-33            <intent-filter>
-33-->D:\Programs\GitRepos\WidgetApp\WidgetApp\android\app\src\main\AndroidManifest.xml:17:13-19:29
-34                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
-34-->D:\Programs\GitRepos\WidgetApp\WidgetApp\android\app\src\main\AndroidManifest.xml:18:17-84
-34-->D:\Programs\GitRepos\WidgetApp\WidgetApp\android\app\src\main\AndroidManifest.xml:18:25-81
-35            </intent-filter>
-36
-37            <meta-data
-37-->D:\Programs\GitRepos\WidgetApp\WidgetApp\android\app\src\main\AndroidManifest.xml:21:13-23:58
-38                android:name="android.appwidget.provider"
-38-->D:\Programs\GitRepos\WidgetApp\WidgetApp\android\app\src\main\AndroidManifest.xml:22:17-58
-39                android:resource="@xml/my_widget_info" />
-39-->D:\Programs\GitRepos\WidgetApp\WidgetApp\android\app\src\main\AndroidManifest.xml:23:17-55
-40        </receiver>
-41
+30    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" />
+30-->[com.android.installreferrer:installreferrer:1.0] C:\Users\carim\.gradle\caches\transforms-3\7cea268ccd478009ca37a600ec380da0\transformed\jetified-installreferrer-1.0\AndroidManifest.xml:9:5-110
+30-->[com.android.installreferrer:installreferrer:1.0] C:\Users\carim\.gradle\caches\transforms-3\7cea268ccd478009ca37a600ec380da0\transformed\jetified-installreferrer-1.0\AndroidManifest.xml:9:22-107
+31
+32    <application
+32-->D:\Programs\GitRepos\DIMA\android\app\src\main\AndroidManifest.xml:7:5-42:19
+33        android:name="com.widgetapp.MainApplication"
+33-->D:\Programs\GitRepos\DIMA\android\app\src\main\AndroidManifest.xml:8:9-40
+34        android:allowBackup="false"
+34-->D:\Programs\GitRepos\DIMA\android\app\src\main\AndroidManifest.xml:9:9-36
+35        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+35-->[androidx.core:core:1.7.0] C:\Users\carim\.gradle\caches\transforms-3\63a3df243d2d102452600006144a86df\transformed\core-1.7.0\AndroidManifest.xml:24:18-86
+36        android:debuggable="true"
+37        android:icon="@mipmap/ic_launcher"
+37-->D:\Programs\GitRepos\DIMA\android\app\src\main\AndroidManifest.xml:10:9-43
+38        android:label="@string/app_name"
+38-->D:\Programs\GitRepos\DIMA\android\app\src\main\AndroidManifest.xml:11:9-41
+39        android:roundIcon="@mipmap/ic_launcher_round"
+39-->D:\Programs\GitRepos\DIMA\android\app\src\main\AndroidManifest.xml:12:9-54
+40        android:theme="@style/AppTheme"
+40-->D:\Programs\GitRepos\DIMA\android\app\src\main\AndroidManifest.xml:13:9-40
+41        android:usesCleartextTraffic="true" >
+41-->D:\Programs\GitRepos\DIMA\android\app\src\debug\AndroidManifest.xml:8:9-44
 42        <activity
-42-->D:\Programs\GitRepos\WidgetApp\WidgetApp\android\app\src\main\AndroidManifest.xml:26:9-38:20
-43            android:name="com.widgetapp.MainActivity"
-43-->D:\Programs\GitRepos\WidgetApp\WidgetApp\android\app\src\main\AndroidManifest.xml:27:13-41
-44            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode"
-44-->D:\Programs\GitRepos\WidgetApp\WidgetApp\android\app\src\main\AndroidManifest.xml:28:13-122
-45            android:exported="true"
-45-->D:\Programs\GitRepos\WidgetApp\WidgetApp\android\app\src\main\AndroidManifest.xml:29:13-36
-46            android:label="@string/app_name"
-46-->D:\Programs\GitRepos\WidgetApp\WidgetApp\android\app\src\main\AndroidManifest.xml:30:13-45
-47            android:launchMode="singleTask"
-47-->D:\Programs\GitRepos\WidgetApp\WidgetApp\android\app\src\main\AndroidManifest.xml:31:13-44
-48            android:windowSoftInputMode="adjustResize" >
-48-->D:\Programs\GitRepos\WidgetApp\WidgetApp\android\app\src\main\AndroidManifest.xml:32:13-55
+42-->D:\Programs\GitRepos\DIMA\android\app\src\debug\AndroidManifest.xml:11:9-111
+43            android:name="com.facebook.react.devsupport.DevSettingsActivity"
+43-->D:\Programs\GitRepos\DIMA\android\app\src\debug\AndroidManifest.xml:11:19-83
+44            android:exported="false" />
+44-->D:\Programs\GitRepos\DIMA\android\app\src\debug\AndroidManifest.xml:11:84-108
+45
+46        <receiver
+46-->D:\Programs\GitRepos\DIMA\android\app\src\main\AndroidManifest.xml:14:9-24:20
+47            android:name="com.widgetapp.MyWidget"
+47-->D:\Programs\GitRepos\DIMA\android\app\src\main\AndroidManifest.xml:15:13-37
+48            android:exported="false" >
+48-->D:\Programs\GitRepos\DIMA\android\app\src\main\AndroidManifest.xml:16:13-37
 49            <intent-filter>
-49-->D:\Programs\GitRepos\WidgetApp\WidgetApp\android\app\src\main\AndroidManifest.xml:33:13-37:29
-50                <action android:name="android.intent.action.MAIN" />
-50-->D:\Programs\GitRepos\WidgetApp\WidgetApp\android\app\src\main\AndroidManifest.xml:34:17-69
-50-->D:\Programs\GitRepos\WidgetApp\WidgetApp\android\app\src\main\AndroidManifest.xml:34:25-66
-51
-52                <category android:name="android.intent.category.LAUNCHER" />
-52-->D:\Programs\GitRepos\WidgetApp\WidgetApp\android\app\src\main\AndroidManifest.xml:36:17-77
-52-->D:\Programs\GitRepos\WidgetApp\WidgetApp\android\app\src\main\AndroidManifest.xml:36:27-74
-53            </intent-filter>
-54        </activity>
-55
-56        <meta-data
-56-->D:\Programs\GitRepos\WidgetApp\WidgetApp\android\app\src\main\AndroidManifest.xml:39:9-41:57
-57            android:name="preloaded_fonts"
-57-->D:\Programs\GitRepos\WidgetApp\WidgetApp\android\app\src\main\AndroidManifest.xml:40:13-43
-58            android:resource="@array/preloaded_fonts" />
-58-->D:\Programs\GitRepos\WidgetApp\WidgetApp\android\app\src\main\AndroidManifest.xml:41:13-54
-59
-60        <provider
-60-->[androidx.emoji2:emoji2:1.0.0] C:\Users\carim\.gradle\caches\transforms-3\2b78af2157d144f01f3ccf5e35fbcfb1\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:26:9-34:20
-61            android:name="androidx.startup.InitializationProvider"
-61-->[androidx.emoji2:emoji2:1.0.0] C:\Users\carim\.gradle\caches\transforms-3\2b78af2157d144f01f3ccf5e35fbcfb1\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:27:13-67
-62            android:authorities="com.widgetapp.androidx-startup"
-62-->[androidx.emoji2:emoji2:1.0.0] C:\Users\carim\.gradle\caches\transforms-3\2b78af2157d144f01f3ccf5e35fbcfb1\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:28:13-68
-63            android:exported="false" >
-63-->[androidx.emoji2:emoji2:1.0.0] C:\Users\carim\.gradle\caches\transforms-3\2b78af2157d144f01f3ccf5e35fbcfb1\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:29:13-37
-64            <meta-data
-64-->[androidx.emoji2:emoji2:1.0.0] C:\Users\carim\.gradle\caches\transforms-3\2b78af2157d144f01f3ccf5e35fbcfb1\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:31:13-33:52
-65                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-65-->[androidx.emoji2:emoji2:1.0.0] C:\Users\carim\.gradle\caches\transforms-3\2b78af2157d144f01f3ccf5e35fbcfb1\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:32:17-75
-66                android:value="androidx.startup" />
-66-->[androidx.emoji2:emoji2:1.0.0] C:\Users\carim\.gradle\caches\transforms-3\2b78af2157d144f01f3ccf5e35fbcfb1\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:33:17-49
-67            <meta-data
-67-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\carim\.gradle\caches\transforms-3\364ced9379cf596e14f7c400abae0735\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:31:13-33:52
-68                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-68-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\carim\.gradle\caches\transforms-3\364ced9379cf596e14f7c400abae0735\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:32:17-78
-69                android:value="androidx.startup" />
-69-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\carim\.gradle\caches\transforms-3\364ced9379cf596e14f7c400abae0735\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:33:17-49
-70        </provider>
-71    </application>
-72
-73</manifest>
+49-->D:\Programs\GitRepos\DIMA\android\app\src\main\AndroidManifest.xml:17:13-19:29
+50                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+50-->D:\Programs\GitRepos\DIMA\android\app\src\main\AndroidManifest.xml:18:17-84
+50-->D:\Programs\GitRepos\DIMA\android\app\src\main\AndroidManifest.xml:18:25-81
+51            </intent-filter>
+52
+53            <meta-data
+53-->D:\Programs\GitRepos\DIMA\android\app\src\main\AndroidManifest.xml:21:13-23:58
+54                android:name="android.appwidget.provider"
+54-->D:\Programs\GitRepos\DIMA\android\app\src\main\AndroidManifest.xml:22:17-58
+55                android:resource="@xml/my_widget_info" />
+55-->D:\Programs\GitRepos\DIMA\android\app\src\main\AndroidManifest.xml:23:17-55
+56        </receiver>
+57
+58        <activity
+58-->D:\Programs\GitRepos\DIMA\android\app\src\main\AndroidManifest.xml:26:9-38:20
+59            android:name="com.widgetapp.MainActivity"
+59-->D:\Programs\GitRepos\DIMA\android\app\src\main\AndroidManifest.xml:27:13-41
+60            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode"
+60-->D:\Programs\GitRepos\DIMA\android\app\src\main\AndroidManifest.xml:28:13-122
+61            android:exported="true"
+61-->D:\Programs\GitRepos\DIMA\android\app\src\main\AndroidManifest.xml:29:13-36
+62            android:label="@string/app_name"
+62-->D:\Programs\GitRepos\DIMA\android\app\src\main\AndroidManifest.xml:30:13-45
+63            android:launchMode="singleTask"
+63-->D:\Programs\GitRepos\DIMA\android\app\src\main\AndroidManifest.xml:31:13-44
+64            android:windowSoftInputMode="adjustResize" >
+64-->D:\Programs\GitRepos\DIMA\android\app\src\main\AndroidManifest.xml:32:13-55
+65            <intent-filter>
+65-->D:\Programs\GitRepos\DIMA\android\app\src\main\AndroidManifest.xml:33:13-37:29
+66                <action android:name="android.intent.action.MAIN" />
+66-->D:\Programs\GitRepos\DIMA\android\app\src\main\AndroidManifest.xml:34:17-69
+66-->D:\Programs\GitRepos\DIMA\android\app\src\main\AndroidManifest.xml:34:25-66
+67
+68                <category android:name="android.intent.category.LAUNCHER" />
+68-->D:\Programs\GitRepos\DIMA\android\app\src\main\AndroidManifest.xml:36:17-77
+68-->D:\Programs\GitRepos\DIMA\android\app\src\main\AndroidManifest.xml:36:27-74
+69            </intent-filter>
+70        </activity>
+71
+72        <meta-data
+72-->D:\Programs\GitRepos\DIMA\android\app\src\main\AndroidManifest.xml:39:9-41:57
+73            android:name="preloaded_fonts"
+73-->D:\Programs\GitRepos\DIMA\android\app\src\main\AndroidManifest.xml:40:13-43
+74            android:resource="@array/preloaded_fonts" />
+74-->D:\Programs\GitRepos\DIMA\android\app\src\main\AndroidManifest.xml:41:13-54
+75
+76        <provider
+76-->[:expo-file-system] D:\Programs\GitRepos\DIMA\node_modules\expo-file-system\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:23:9-32:20
+77            android:name="expo.modules.filesystem.FileSystemFileProvider"
+77-->[:expo-file-system] D:\Programs\GitRepos\DIMA\node_modules\expo-file-system\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:24:13-74
+78            android:authorities="com.widgetapp.FileSystemFileProvider"
+78-->[:expo-file-system] D:\Programs\GitRepos\DIMA\node_modules\expo-file-system\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:25:13-74
+79            android:exported="false"
+79-->[:expo-file-system] D:\Programs\GitRepos\DIMA\node_modules\expo-file-system\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:26:13-37
+80            android:grantUriPermissions="true" >
+80-->[:expo-file-system] D:\Programs\GitRepos\DIMA\node_modules\expo-file-system\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:27:13-47
+81            <meta-data
+81-->[:expo-file-system] D:\Programs\GitRepos\DIMA\node_modules\expo-file-system\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:29:13-31:70
+82                android:name="android.support.FILE_PROVIDER_PATHS"
+82-->[:expo-file-system] D:\Programs\GitRepos\DIMA\node_modules\expo-file-system\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:30:17-67
+83                android:resource="@xml/file_system_provider_paths" />
+83-->[:expo-file-system] D:\Programs\GitRepos\DIMA\node_modules\expo-file-system\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:31:17-67
+84        </provider>
+85
+86        <meta-data
+86-->[:expo-modules-core] D:\Programs\GitRepos\DIMA\node_modules\expo-modules-core\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:10:9-12:89
+87            android:name="org.unimodules.core.AppLoader#react-native-headless"
+87-->[:expo-modules-core] D:\Programs\GitRepos\DIMA\node_modules\expo-modules-core\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-79
+88            android:value="expo.modules.adapters.react.apploader.RNHeadlessAppLoader" />
+88-->[:expo-modules-core] D:\Programs\GitRepos\DIMA\node_modules\expo-modules-core\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:12:13-86
+89
+90        <provider
+90-->[androidx.emoji2:emoji2:1.0.0] C:\Users\carim\.gradle\caches\transforms-3\b6fe4da57007a43d86a66ba4c66459bd\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:26:9-34:20
+91            android:name="androidx.startup.InitializationProvider"
+91-->[androidx.emoji2:emoji2:1.0.0] C:\Users\carim\.gradle\caches\transforms-3\b6fe4da57007a43d86a66ba4c66459bd\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:27:13-67
+92            android:authorities="com.widgetapp.androidx-startup"
+92-->[androidx.emoji2:emoji2:1.0.0] C:\Users\carim\.gradle\caches\transforms-3\b6fe4da57007a43d86a66ba4c66459bd\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:28:13-68
+93            android:exported="false" >
+93-->[androidx.emoji2:emoji2:1.0.0] C:\Users\carim\.gradle\caches\transforms-3\b6fe4da57007a43d86a66ba4c66459bd\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:29:13-37
+94            <meta-data
+94-->[androidx.emoji2:emoji2:1.0.0] C:\Users\carim\.gradle\caches\transforms-3\b6fe4da57007a43d86a66ba4c66459bd\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:31:13-33:52
+95                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+95-->[androidx.emoji2:emoji2:1.0.0] C:\Users\carim\.gradle\caches\transforms-3\b6fe4da57007a43d86a66ba4c66459bd\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:32:17-75
+96                android:value="androidx.startup" />
+96-->[androidx.emoji2:emoji2:1.0.0] C:\Users\carim\.gradle\caches\transforms-3\b6fe4da57007a43d86a66ba4c66459bd\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:33:17-49
+97            <meta-data
+97-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\carim\.gradle\caches\transforms-3\bc74a39e1ea23fea00bfcf2682a93948\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:31:13-33:52
+98                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+98-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\carim\.gradle\caches\transforms-3\bc74a39e1ea23fea00bfcf2682a93948\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:32:17-78
+99                android:value="androidx.startup" />
+99-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\carim\.gradle\caches\transforms-3\bc74a39e1ea23fea00bfcf2682a93948\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:33:17-49
+100        </provider>
+101    </application>
+102
+103</manifest>

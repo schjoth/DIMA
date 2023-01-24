@@ -20,7 +20,7 @@ function App() {
 				<NavigationContainer>
 					<Stack.Navigator>
 						<Stack.Screen name="Home" component={HomeScreen} />
-						<Stack.Screen
+						<Stack.Screen // why not first on the stack?
 							name="Login"
 							component={LoginScreen}
 							options={{

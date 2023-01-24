@@ -1,0 +1,161 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/top_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#00000000"
+    android:theme="@style/AppTheme.AppWidgetContainer">
+
+    <RelativeLayout
+        style="@style/MyWidgetTheme"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/AppName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:fontFamily="@font/inter"
+                    android:text="@string/app_name"
+                    android:textAlignment="viewStart"
+                    android:textAllCaps="false"
+                    android:textColor="@color/SpotifyGreen"
+                    android:textSize="40sp"
+                    android:textStyle="bold"
+                    tools:text="SpotiQuiz" />
+
+                <ImageButton
+                    android:id="@+id/PlayButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/radius"
+                    android:contentDescription="@string/play_button"
+                    android:scaleType="fitCenter"
+                    android:src="@mipmap/spotify_button_background" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:baselineAligned="false"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    style="@style/MyWidgetInnerTheme"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/top1_mode"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="@string/top1_mode"
+                        android:fontFamily="@font/inter"
+                        android:text="@string/top1_mode"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/backGround"
+                        android:textSize="24sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/top1_score"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="@string/top1_score"
+                        android:fontFamily="@font/inter"
+                        android:text="@string/top1_score"
+                        android:gravity="end"
+                        android:textColor="@color/backGround"
+                        android:textSize="24sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/MyWidgetInnerTheme"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/top2_mode"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="@string/top2_mode"
+                        android:fontFamily="@font/inter"
+                        android:text="@string/top2_mode"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/backGround"
+                        android:textSize="24sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/top2_score"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="@string/top2_score"
+                        android:fontFamily="@font/inter"
+                        android:text="@string/top2_score"
+                        android:gravity="end"
+                        android:textColor="@color/backGround"
+                        android:textSize="24sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/MyWidgetInnerTheme"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/top3_mode"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="@string/top3_mode"
+                        android:fontFamily="@font/inter"
+                        android:text="@string/top3_mode"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/backGround"
+                        android:textSize="24sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/top3_score"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="@string/top3_score"
+                        android:fontFamily="@font/inter"
+                        android:text="@string/top3_score"
+                        android:gravity="end"
+                        android:textColor="@color/backGround"
+                        android:textSize="24sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>
