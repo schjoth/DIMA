@@ -23,6 +23,7 @@ const GameScreen: React.FC<RootStackScreenProps<"Game">> = ({
 }) => {
 	const [questions, setQuestions] = useState<Questions>([]);
 	const [questionIndex, setQuestionIndex] = useState<number>(0);
+	const [infiniteIndex, setInfiniteIndex] = useState<number>(0);
 	const currentQuestion: QuestionData | undefined = useMemo(
 		() => questions[questionIndex],
 		[questions, questionIndex]
@@ -40,8 +41,8 @@ const GameScreen: React.FC<RootStackScreenProps<"Game">> = ({
 	}, []);
 
 	const isFinalQuestion = useMemo(
-		() => questionIndex === questions.length - 1 && mode !== GameMode.Rush,
-		[questionIndex, questions.length, mode]
+		() => questionIndex === questions.length - 1,
+		[questionIndex, questions.length]
 	);
 
 	const gameOver = useCallback(() => {
@@ -62,11 +63,19 @@ const GameScreen: React.FC<RootStackScreenProps<"Game">> = ({
 	);
 
 	const nextQuestion = useCallback(() => {
-		if (isFinalQuestion) {
+		if (isFinalQuestion && mode !== GameMode.Rush && mode !== GameMode.InstantDeath) {
 			return gameOver();
 		}
+		else if (isFinalQuestion && (mode === GameMode.Rush || mode === GameMode.InstantDeath)) {
+			fetchQuestions({ clientToken, userToken }).then((questions) => {
+				setQuestions(questions);
+			});
+			setInfiniteIndex((infiniteIndex) => infiniteIndex + 1);
+			return setQuestionIndex((questionIndex) => questionIndex = 0);
+		}
+		setInfiniteIndex((index) => index + 1);
 		return setQuestionIndex((index) => index + 1);
-	}, [questionIndex, questions.length, gameOver, isFinalQuestion]);
+	}, [questionIndex, infiniteIndex, questions.length, gameOver, isFinalQuestion]);
 
 	//Reduce timer for rush mode
 	useEffect(() => {
@@ -93,15 +102,20 @@ const GameScreen: React.FC<RootStackScreenProps<"Game">> = ({
 		return <Text>Loading...</Text>;
 	}
 
+	const renderIndex = (() =>{
+		if (mode === GameMode.Rush) {
+			return remainingTime;
+		}
+		else if (mode === GameMode.Classic) {
+			return "Question: " + (infiniteIndex + 1) + "/" + questions.length;
+		}
+		else return "Question: " + (infiniteIndex + 1);
+	});
+
 	return (
 		<View style={{ backgroundColor: black }}>
 			<Text style={[styles.title, { textAlign: "center" }]}>
-				{mode === GameMode.Rush
-					? remainingTime
-					: "Question: " +
-					  (questionIndex + 1) +
-					  "/" +
-					  questions.length}
+				{ renderIndex() }
 			</Text>
 			<Question
 				key={questionIndex}
