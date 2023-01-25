@@ -13,6 +13,7 @@ import { RootStackScreenProps } from "../types";
 import { AuthContext } from "../components/AuthContext";
 import { Text } from "../components/Themed";
 import { View } from "react-native";
+import CustomButton from "../components/CustomButton";
 import styles, { black } from "../styles/styles";
 
 const GameScreen: React.FC<RootStackScreenProps<"Game">> = ({
@@ -70,8 +71,8 @@ const GameScreen: React.FC<RootStackScreenProps<"Game">> = ({
 			//fetch more questions
 			fetchQuestions({ clientToken, userToken }).then((questions) => {
 				setQuestions(questions);
-				setQuestionIndex((questionIndex) => questionIndex = 0);
 			});
+			setQuestionIndex((questionIndex) => questionIndex = 0);
 			return setInfiniteIndex((infiniteIndex) => infiniteIndex + 1);
 		}
 		setInfiniteIndex((index) => index + 1);
@@ -125,6 +126,7 @@ const GameScreen: React.FC<RootStackScreenProps<"Game">> = ({
 				nextQuestion={nextQuestion}
 				onAnswer={onAnswer}
 				isFinalQuestion={isFinalQuestion}
+				mode={mode}
 			/>
 		</View>
 	);

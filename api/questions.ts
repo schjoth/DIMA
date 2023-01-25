@@ -55,7 +55,7 @@ export const fetchQuestions = async ({
 		type: "tracks",
 	});
 
-	const songs = pickRandomSongs(10, usersTopSongs);
+	const songs = pickRandomSongs(20, usersTopSongs);
 
 	const getWrongAnswers = (song: Song) => {
 		let wrongAnswers: string[] = [];

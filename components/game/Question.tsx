@@ -3,7 +3,7 @@ import { View, Text, StyleSheet } from "react-native";
 import { black, green } from "../../styles/styles";
 import CustomButton from "../CustomButton";
 import Answer from "./Answer";
-import { AnswerStatus } from "./enums";
+import { AnswerStatus, GameMode } from "./enums";
 import { QuestionData } from "./types";
 
 interface QuestionProps {
@@ -12,6 +12,7 @@ interface QuestionProps {
 	onAnswer: (answer: AnswerStatus) => void;
 	isFinalQuestion?: boolean;
 	index: number;
+	mode: GameMode;
 }
 
 const Question: FC<QuestionProps> = ({
@@ -20,6 +21,7 @@ const Question: FC<QuestionProps> = ({
 	onAnswer,
 	isFinalQuestion = false,
 	index,
+	mode,
 }) => {
 	const { question, hint, answers, correctAnswer } = data;
 
@@ -41,6 +43,13 @@ const Question: FC<QuestionProps> = ({
 
 	const [result, setResult] = useState<AnswerStatus>();
 
+	const renderButtonText = (() =>{
+		if (mode === GameMode.Classic) {
+			return isFinalQuestion ? "Finish" : "Next question";
+		}
+		else return "Next question";
+	});
+
 	return (
 		<View style={styles.container}>
 			<View style={styles.questionContainer}>
@@ -60,7 +69,7 @@ const Question: FC<QuestionProps> = ({
 			</View>
 
 			<CustomButton
-				title={isFinalQuestion ? "Finish" : "Next question"}
+				title={ renderButtonText() }
 				onPress={nextQuestion}
 				disabled={!result}
 			/>
