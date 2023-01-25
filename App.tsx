@@ -10,6 +10,8 @@ import { RootStackParamList } from "./types";
 import LoginScreen from "./screens/LoginScreen";
 import ResultScreen from "./screens/ResultScreen";
 import SelectGameModeScreen from "./screens/SelectGameModeScreen";
+/* import { NativeModules } from 'react-native';
+const SharedStorage = NativeModules.SharedStorage; */
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
@@ -45,3 +47,4 @@ function App() {
 }
 
 export default App;
+//export { SharedStorage };

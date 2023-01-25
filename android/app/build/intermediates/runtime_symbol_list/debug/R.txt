@@ -1441,10 +1441,11 @@ int drawable redbox_top_border_background 0x7f080090
 int drawable rn_edit_text_material 0x7f080091
 int drawable splashscreen 0x7f080092
 int drawable splashscreen_image 0x7f080093
-int drawable test_custom_background 0x7f080094
-int drawable test_level_drawable 0x7f080095
-int drawable tooltip_frame_dark 0x7f080096
-int drawable tooltip_frame_light 0x7f080097
+int drawable spotiquiz_widget_preview 0x7f080094
+int drawable test_custom_background 0x7f080095
+int drawable test_level_drawable 0x7f080096
+int drawable tooltip_frame_dark 0x7f080097
+int drawable tooltip_frame_light 0x7f080098
 int font inter 0x7f090000
 int id ALT 0x7f0a0000
 int id AppName 0x7f0a0001

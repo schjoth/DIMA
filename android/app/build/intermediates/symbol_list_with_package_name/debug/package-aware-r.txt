@@ -1442,6 +1442,7 @@ drawable redbox_top_border_background
 drawable rn_edit_text_material
 drawable splashscreen
 drawable splashscreen_image
+drawable spotiquiz_widget_preview
 drawable test_custom_background
 drawable test_level_drawable
 drawable tooltip_frame_dark

@@ -7,7 +7,8 @@ const client_id = "d760e0ff5af14deab0c1384a48669a74",
 	//redirect_uri = "http://localhost:19006/login",
 	// Use this if testing on mobile
 	//redirect_uri = "exp://127.0.0.1:19000",
-	redirect_uri = "localhost:8081",
+	//redirect_uri = "exp://192.168.1.140:19000",
+	redirect_uri = "http://192.168.1.140:8081",
 	scope = [
 		"user-read-private",
 		"user-read-email",

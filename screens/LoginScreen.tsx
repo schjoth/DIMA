@@ -4,8 +4,9 @@ import { Linking, StyleSheet } from "react-native";
 import { AuthContext } from "../components/AuthContext";
 import SpotifyLogin from "../components/SpotifyLogin";
 import { View, Text } from "../components/Themed";
-import { NativeModules } from "react-native";
-const SharedStorage = NativeModules.SharedStorage;
+/* import { NativeModules } from "react-native";
+const SharedStorage = NativeModules.SharedStorage; */
+//import { SharedStorage } from "../App";
 
 const LoginScreen = ({ navigation }: RootStackScreenProps<"Login">) => {
 	const { userToken, setUserToken } = useContext(AuthContext);
@@ -26,9 +27,9 @@ const LoginScreen = ({ navigation }: RootStackScreenProps<"Login">) => {
 		});
 
 		return () => {
+			//SharedStorage.initStorage();
 			listener.remove();
 			clearTimeout(timeout);
-			SharedStorage.initStorage();
 		};
 	};
 

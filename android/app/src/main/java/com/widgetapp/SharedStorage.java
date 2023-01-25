@@ -75,6 +75,7 @@ public class SharedStorage extends ReactContextBaseJavaModule {
         }
 
         editor.apply();
+        updateWidget();
     }
 
     @ReactMethod

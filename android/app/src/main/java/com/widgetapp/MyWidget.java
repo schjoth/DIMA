@@ -33,6 +33,7 @@ public class MyWidget extends AppWidgetProvider {
             int resID = getResId(entry.getKey(), R.id.class);
             views.setTextViewText(resID, entry.getValue().toString());
         }
+
         Log.v(TAG, "Text set");
 
         Intent intent = new Intent(context, MainActivity.class);
@@ -87,25 +88,44 @@ public class MyWidget extends AppWidgetProvider {
     public void onAppWidgetOptionsChanged(Context context, AppWidgetManager appWidgetManager,
                                           int appWidgetId, Bundle bundle) {
         int minWidth = bundle.getInt(AppWidgetManager.OPTION_APPWIDGET_MIN_WIDTH);
-        int maxWidth = bundle.getInt(AppWidgetManager.OPTION_APPWIDGET_MAX_WIDTH);
+        //int maxWidth = bundle.getInt(AppWidgetManager.OPTION_APPWIDGET_MAX_WIDTH);
         int minHeight = bundle.getInt(AppWidgetManager.OPTION_APPWIDGET_MIN_HEIGHT);
-        int maxHeight = bundle.getInt(AppWidgetManager.OPTION_APPWIDGET_MAX_HEIGHT);
+        //int maxHeight = bundle.getInt(AppWidgetManager.OPTION_APPWIDGET_MAX_HEIGHT);
 
-        if(minWidth == 209 && maxWidth == 398 && minHeight == 115 && maxHeight == 212){
+        // First find out rows and columns based on width provided.
+        int rows = getCellsForSize(minHeight);
+        int columns = getCellsForSize(minWidth);
+        Log.d(TAG, "rows = " + rows + ", columns = " + columns);
+
+        //if(minWidth == 209 && maxWidth == 398 && minHeight == 115 && maxHeight == 212){
+        if (columns == 3 && rows == 2) {
             current_layout = R.layout.my_widget3x2;
         }
-        else if (((minWidth == 360 && maxWidth == 674) || (minWidth == 285 && maxWidth == 536))
-                && minHeight == 115 && maxHeight == 212){
+        //else if (((minWidth == 360 && maxWidth == 674) || (minWidth == 285 && maxWidth == 536))
+        //        && minHeight == 115 && maxHeight == 212){
+        else if ((columns == 5 || columns == 4) && rows == 2) {
             current_layout = R.layout.my_widget5x2;
         }
-        else if (minWidth == 209 && maxWidth == 398 && minHeight == 181 && maxHeight == 326){
+        //else if (minWidth == 209 && maxWidth == 398 && minHeight == 181 && maxHeight == 326){
+        else if (columns == 3 && rows == 3) {
             current_layout = R.layout.my_widget3x3;
         }
         else current_layout = R.layout.my_widget;
-        //...
-        //Set some stuff in your layout here
-        //...
         updateAppWidget(context, appWidgetManager, appWidgetId);
+    }
+
+    /**
+     * Returns number of cells needed for given size of the widget.
+     *
+     * @param size Widget size in dp.
+     * @return Size in number of cells.
+     */
+    private static int getCellsForSize(int size) {
+        int n = 2;
+        while (70 * n - 30 < size) {
+            ++n;
+        }
+        return n - 1;
     }
 
     /*@Override
