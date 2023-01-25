@@ -67,11 +67,12 @@ const GameScreen: React.FC<RootStackScreenProps<"Game">> = ({
 			return gameOver();
 		}
 		else if (isFinalQuestion && (mode === GameMode.Rush || mode === GameMode.InstantDeath)) {
+			//fetch more questions
 			fetchQuestions({ clientToken, userToken }).then((questions) => {
 				setQuestions(questions);
+				setQuestionIndex((questionIndex) => questionIndex = 0);
 			});
-			setInfiniteIndex((infiniteIndex) => infiniteIndex + 1);
-			return setQuestionIndex((questionIndex) => questionIndex = 0);
+			return setInfiniteIndex((infiniteIndex) => infiniteIndex + 1);
 		}
 		setInfiniteIndex((index) => index + 1);
 		return setQuestionIndex((index) => index + 1);
