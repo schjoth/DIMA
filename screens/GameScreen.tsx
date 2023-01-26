@@ -12,8 +12,7 @@ import { QuestionData, Questions } from "../components/game/types";
 import { RootStackScreenProps } from "../types";
 import { AuthContext } from "../components/AuthContext";
 import { Text } from "../components/Themed";
-import { View } from "react-native";
-import CustomButton from "../components/CustomButton";
+import { SafeAreaView, View } from "react-native";
 import styles, { black } from "../styles/styles";
 
 const GameScreen: React.FC<RootStackScreenProps<"Game">> = ({
@@ -36,7 +35,7 @@ const GameScreen: React.FC<RootStackScreenProps<"Game">> = ({
 
 	const { clientToken, userToken } = useContext(AuthContext);
 	useEffect(() => {
-		fetchQuestions({ clientToken, userToken }).then((questions) => {
+		fetchQuestions({ clientToken, userToken, mode }).then((questions) => {
 			setQuestions(questions);
 		});
 	}, []);
@@ -69,11 +68,11 @@ const GameScreen: React.FC<RootStackScreenProps<"Game">> = ({
 		}
 		else if (isFinalQuestion && (mode === GameMode.Rush || mode === GameMode.InstantDeath)) {
 			//fetch more questions
-			fetchQuestions({ clientToken, userToken }).then((questions) => {
+			fetchQuestions({ clientToken, userToken, mode }).then((questions) => {
 				setQuestions(questions);
 			});
-			setQuestionIndex((questionIndex) => questionIndex = 0);
-			return setInfiniteIndex((infiniteIndex) => infiniteIndex + 1);
+			setInfiniteIndex((infiniteIndex) => infiniteIndex + 1);
+			return setQuestionIndex((questionIndex) => questionIndex = 0);
 		}
 		setInfiniteIndex((index) => index + 1);
 		return setQuestionIndex((index) => index + 1);
@@ -101,7 +100,13 @@ const GameScreen: React.FC<RootStackScreenProps<"Game">> = ({
 	}, [remainingTime]);
 
 	if (currentQuestion === undefined) {
-		return <Text>Loading...</Text>;
+		return (
+			<SafeAreaView style={styles.container}>
+				<View style={styles.container}>
+					<Text style={styles.title}>Loading...</Text>
+				</View>
+			</SafeAreaView>
+		);
 	}
 
 	const renderIndex = (() =>{
@@ -115,8 +120,10 @@ const GameScreen: React.FC<RootStackScreenProps<"Game">> = ({
 	});
 
 	return (
-		<View style={{ backgroundColor: black }}>
-			<Text style={[styles.title, { textAlign: "center" }]}>
+		<View style={{ 
+			backgroundColor: black,
+			paddingTop:20 }}>
+			<Text style={[styles.index, { textAlign: "center" }]}>
 				{ renderIndex() }
 			</Text>
 			<Question

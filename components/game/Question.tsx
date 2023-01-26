@@ -85,7 +85,8 @@ const styles = StyleSheet.create({
 		display: "flex",
 		alignItems: "center",
 		justifyContent: "space-around",
-		padding: 50,
+		paddingTop: 130,
+		paddingBottom: 130,
 	},
 	questionContainer: {
 		width: "100%",
@@ -94,9 +95,11 @@ const styles = StyleSheet.create({
 		justifyContent: "center",
 	},
 	question: {
+		fontSize: 25,
 		color: green,
 	},
 	hint: {
+		fontSize: 20,
 		paddingTop: 20,
 		color: "#fff",
 	},

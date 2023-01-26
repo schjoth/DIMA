@@ -1,4 +1,4 @@
-import { QuestionTypes } from "../components/game/enums";
+import { GameMode, QuestionTypes } from "../components/game/enums";
 import { Questions } from "../components/game/types";
 import { convertToSong, Song } from "./data";
 import { pickRandomSongs } from "./utils";
@@ -6,6 +6,7 @@ import { pickRandomSongs } from "./utils";
 type Credentials = {
 	clientToken: string;
 	userToken: string;
+	mode: GameMode
 };
 
 type UserFavoritesParams = {
@@ -49,35 +50,39 @@ const getUserFavorites = async ({
 export const fetchQuestions = async ({
 	clientToken,
 	userToken,
+	mode,
 }: Credentials): Promise<Questions> => {
-	const usersTopSongs = await getUserFavorites({
-		userToken,
-		type: "tracks",
-	});
+	if (mode === GameMode.Classic || mode === GameMode.Rush || mode === GameMode.InstantDeath) {
+		const usersTopSongs = await getUserFavorites({
+			userToken,
+			type: "tracks",
+		});
 
-	const songs = pickRandomSongs(20, usersTopSongs);
+		const songs = pickRandomSongs(10, usersTopSongs);
 
-	const getWrongAnswers = (song: Song) => {
-		let wrongAnswers: string[] = [];
-		while (wrongAnswers.length < 3) {
-			let randomSong = pickRandomSongs(1, usersTopSongs)[0];
-			let randomArtist = randomSong.artists[0];
-			if (
-				randomArtist !== song.artists[0] &&
-				!wrongAnswers.includes(randomArtist)
-			) {
-				wrongAnswers.push(randomArtist);
+		const getWrongAnswers = (song: Song) => {
+			let wrongAnswers: string[] = [];
+			while (wrongAnswers.length < 3) {
+				let randomSong = pickRandomSongs(1, usersTopSongs)[0];
+				let randomArtist = randomSong.artists[0];
+				if (
+					randomArtist !== song.artists[0] &&
+					!wrongAnswers.includes(randomArtist)
+				) {
+					wrongAnswers.push(randomArtist);
+				}
 			}
-		}
-		return wrongAnswers;
-	};
+			return wrongAnswers;
+		};
 
-	const questions: Questions = songs.map((song) => ({
-		question: QuestionTypes.WhoMadeThisSong,
-		hint: song.track,
-		answers: getWrongAnswers(song),
-		correctAnswer: song.artists[0],
-	}));
+		const questions: Questions = songs.map((song) => ({
+			question: QuestionTypes.WhoMadeThisSong,
+			hint: song.track,
+			answers: getWrongAnswers(song),
+			correctAnswer: song.artists[0],
+		}));
 
-	return Promise.resolve(questions);
+		return Promise.resolve(questions);
+	}
+	return Promise.resolve([]);
 };
