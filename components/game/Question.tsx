@@ -43,12 +43,12 @@ const Question: FC<QuestionProps> = ({
 
 	const [result, setResult] = useState<AnswerStatus>();
 
-	const renderButtonText = (() =>{
-		if (mode === GameMode.Classic || mode === GameMode.OddOneOut) {
+	const navigationText = useMemo(() =>{
+		if ([GameMode.Classic, GameMode.OddOneOut, GameMode.Preview].includes(mode)) {
 			return isFinalQuestion ? "Finish" : "Next question";
 		}
-		else return "Next question";
-	});
+		else return "Next question"
+	}, [mode, isFinalQuestion]);
 
 	return (
 		<View style={styles.container}>
@@ -69,7 +69,7 @@ const Question: FC<QuestionProps> = ({
 			</View>
 
 			<CustomButton
-				title={ renderButtonText() }
+				title={ navigationText }
 				onPress={nextQuestion}
 				disabled={!result}
 			/>

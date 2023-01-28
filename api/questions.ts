@@ -12,7 +12,7 @@ type Credentials = {
 type UserFavoritesParams = {
 	userToken: string;
 	type?: "tracks";
-	artistName?: string;
+	artistId?: string;
 	//type: "artists" | "tracks";
 	timeRange?: "long_term" | "medium_term" | "short_term";
 	limit?: number;
@@ -22,7 +22,7 @@ type UserFavoritesParams = {
 //currently only implemented for tracks
 const getUserFavorites = async ({
 	userToken,
-	artistName,
+	artistId,
 	type,
 	timeRange = "long_term",
 	limit = 50,
@@ -38,7 +38,7 @@ const getUserFavorites = async ({
 			settings
 		);
 		const rawData = await response.json();
-		//console.log("Raw data: ", rawData);
+		//console.log("Artists: ", rawData.items[0].artists);
 
 		if (rawData) {
 			// this only supports track and not for artists
@@ -52,7 +52,7 @@ const getUserFavorites = async ({
 
 const getArtistsSongs = async ({
 	userToken,
-	artistName,
+	artistId,
 	type,
 	timeRange = "long_term",
 	limit = 10,
@@ -63,16 +63,16 @@ const getArtistsSongs = async ({
 	};
 
 	try {
-		const temp = await fetch(
-			`https://api.spotify.com/v1/search?q=${artistName}&type=artist`,
+		/* const temp = await fetch(
+			`https://api.spotify.com/v1/search?q=${artistId}&type=artist`,
 			settings
 		);
 		//console.log("Fetching artist songs: ", response);
 		const tempData = await temp.json();
-		console.log("Artist Name: ", artistName);
+		console.log("Artist Name: ", artistId);
 		console.log("Temp data: ", tempData.artists.items[0].id);
-		const artistId = tempData.artists.items[0].id;
-
+		//const artistId = tempData.artists.items[0].id; */
+		console.log("Artist ID: ", artistId);
 		const response = await fetch(
 			`https://api.spotify.com/v1/artists/${artistId}/top-tracks?country=IT`,
 			settings
@@ -95,43 +95,13 @@ export const fetchQuestions = async ({
 	userToken,
 	mode,
 }: Credentials): Promise<Questions> => {
-	if (mode === GameMode.Classic || mode === GameMode.Rush || mode === GameMode.InstantDeath) {
-		const usersTopSongs = await getUserFavorites({
-			userToken,
-			type: "tracks",
-		});
+	
+	const usersTopSongs = await getUserFavorites({
+		userToken,
+		type: "tracks",
+	});
 
-		const songs = pickRandomSongs(10, usersTopSongs);
-
-		const getWrongAnswers = (song: Song) => {
-			let wrongAnswers: string[] = [];
-			while (wrongAnswers.length < 3) {
-				let randomSong = pickRandomSongs(1, usersTopSongs)[0];
-				let randomArtist = randomSong.artists[0];
-				if (
-					randomArtist !== song.artists[0] &&
-					!wrongAnswers.includes(randomArtist)
-				) {
-					wrongAnswers.push(randomArtist);
-				}
-			}
-			return wrongAnswers;
-		};
-
-		const questions: Questions = songs.map((song) => ({
-			question: QuestionTypes.WhoMadeThisSong,
-			hint: song.track,
-			answers: getWrongAnswers(song),
-			correctAnswer: song.artists[0],
-		}));
-
-		return Promise.resolve(questions);
-	}
-	else if (mode === GameMode.OddOneOut) {
-		const usersTopSongs = await getUserFavorites({
-			userToken,
-			type: "tracks",
-		});
+	if (mode === GameMode.OddOneOut) {
 
 		const songs = pickRandomSongs(5, usersTopSongs);
 		const allWrongAnswers: string[] = [];
@@ -139,7 +109,7 @@ export const fetchQuestions = async ({
 		for (let i = 0; i < songs.length; i++) {
 			let artistSongs = await getArtistsSongs({
 				userToken,
-				artistName: songs[i].artists[0],
+				artistId: songs[i].artistsIds[0],
 			});
 			let randomSongs = pickRandomSongs(3, artistSongs);
 			//let randomSongs = ifDistinct(temp, artistSongs);
@@ -158,12 +128,14 @@ export const fetchQuestions = async ({
 			let wrongAnswers: string[] = [];
 			let i = 0;
 
+			// The for loop saves the index of the current song in the array
 			for (i = 0; i < songs.length; i++) {
 				if (song.track === songs[i].track) {
 					break;
 				}
 			}
 
+			// Then uses it to get the correct 3 wrong answers from the wrong answers array
 			for (let j = 0; j < 3; j++) {
 				wrongAnswers.push(allWrongAnswers[i * 3 + j]);
 			}
@@ -201,5 +173,32 @@ export const fetchQuestions = async ({
 		//implement gamemode preview
 		return Promise.resolve([]);
 	}
-	else return Promise.resolve([]);
+	else {
+
+		const songs = pickRandomSongs(10, usersTopSongs);
+
+		const getWrongAnswers = (song: Song) => {
+			let wrongAnswers: string[] = [];
+			while (wrongAnswers.length < 3) {
+				let randomSong = pickRandomSongs(1, usersTopSongs)[0];
+				let randomArtist = randomSong.artists[0];
+				if (
+					randomArtist !== song.artists[0] &&
+					!wrongAnswers.includes(randomArtist)
+				) {
+					wrongAnswers.push(randomArtist);
+				}
+			}
+			return wrongAnswers;
+		};
+
+		const questions: Questions = songs.map((song) => ({
+			question: QuestionTypes.WhoMadeThisSong,
+			hint: song.track,
+			answers: getWrongAnswers(song),
+			correctAnswer: song.artists[0],
+		}));
+
+		return Promise.resolve(questions);
+	}
 };
