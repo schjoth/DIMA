@@ -38,7 +38,6 @@ const getUserFavorites = async ({
 			settings
 		);
 		const rawData = await response.json();
-		//console.log("Artists: ", rawData.items[0].artists);
 
 		if (rawData) {
 			// this only supports track and not for artists
@@ -63,22 +62,12 @@ const getArtistsSongs = async ({
 	};
 
 	try {
-		/* const temp = await fetch(
-			`https://api.spotify.com/v1/search?q=${artistId}&type=artist`,
-			settings
-		);
-		//console.log("Fetching artist songs: ", response);
-		const tempData = await temp.json();
-		console.log("Artist Name: ", artistId);
-		console.log("Temp data: ", tempData.artists.items[0].id);
-		//const artistId = tempData.artists.items[0].id; */
 		console.log("Artist ID: ", artistId);
 		const response = await fetch(
 			`https://api.spotify.com/v1/artists/${artistId}/top-tracks?country=IT`,
 			settings
 		);
 		const rawData = await response.json();
-		//console.log("Raw data: ", rawData);
 		
 		if (rawData) {
 			// this only supports track and not for artists
@@ -112,7 +101,6 @@ export const fetchQuestions = async ({
 				artistId: songs[i].artistsIds[0],
 			});
 			let randomSongs = pickRandomSongs(3, artistSongs);
-			//let randomSongs = ifDistinct(temp, artistSongs);
 			console.log("Random songs: ", randomSongs);
 			for (let j = 0; j < randomSongs.length; j++) {
 				console.log("j = ", j);
