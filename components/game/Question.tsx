@@ -44,7 +44,7 @@ const Question: FC<QuestionProps> = ({
 	const [result, setResult] = useState<AnswerStatus>();
 
 	const renderButtonText = (() =>{
-		if (mode === GameMode.Classic) {
+		if (mode === GameMode.Classic || mode === GameMode.OddOneOut) {
 			return isFinalQuestion ? "Finish" : "Next question";
 		}
 		else return "Next question";
@@ -53,7 +53,7 @@ const Question: FC<QuestionProps> = ({
 	return (
 		<View style={styles.container}>
 			<View style={styles.questionContainer}>
-				<Text style={styles.question}>{question}</Text>
+				<Text style={[styles.question, { paddingStart: 40, paddingEnd: 40 }]}>{question}</Text>
 				<Text style={styles.hint}>{hint}</Text>
 			</View>
 
@@ -96,6 +96,7 @@ const styles = StyleSheet.create({
 	},
 	question: {
 		fontSize: 25,
+		textAlign: "center",
 		color: green,
 	},
 	hint: {

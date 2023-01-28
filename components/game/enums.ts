@@ -15,6 +15,6 @@ export enum GameMode {
 export enum QuestionTypes {
 	WhoMadeThisSong = "Who made this song?",
 	WhoMadeThisAlbum = "Who made this album?",
-	WhichSongNotWritten = "Which song is not written by this artist?",
+	WhichSongNotWrittenByArtist = "Which song was not made by this artist?",
 	WhichSongIsNotInThisAlbum = "Which song is not in this album?",
 }

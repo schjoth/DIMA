@@ -63,16 +63,18 @@ const GameScreen: React.FC<RootStackScreenProps<"Game">> = ({
 	);
 
 	const nextQuestion = useCallback(() => {
-		if (isFinalQuestion && mode !== GameMode.Rush && mode !== GameMode.InstantDeath) {
+		if (isFinalQuestion && (mode === GameMode.Classic || mode === GameMode.OddOneOut)) {
 			return gameOver();
 		}
 		else if (isFinalQuestion && (mode === GameMode.Rush || mode === GameMode.InstantDeath)) {
 			//fetch more questions
 			fetchQuestions({ clientToken, userToken, mode }).then((questions) => {
 				setQuestions(questions);
+				//questions.push(...questions);
 			});
 			setInfiniteIndex((infiniteIndex) => infiniteIndex + 1);
 			return setQuestionIndex((questionIndex) => questionIndex = 0);
+			//return setQuestionIndex((questionIndex) => questionIndex + 1);
 		}
 		setInfiniteIndex((index) => index + 1);
 		return setQuestionIndex((index) => index + 1);
@@ -113,7 +115,7 @@ const GameScreen: React.FC<RootStackScreenProps<"Game">> = ({
 		if (mode === GameMode.Rush) {
 			return remainingTime;
 		}
-		else if (mode === GameMode.Classic) {
+		else if (mode === GameMode.Classic || mode === GameMode.OddOneOut) {
 			return "Question: " + (infiniteIndex + 1) + "/" + questions.length;
 		}
 		else return "Question: " + (infiniteIndex + 1);
