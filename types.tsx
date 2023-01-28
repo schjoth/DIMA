@@ -17,7 +17,6 @@ export type RootStackParamList = {
 	Login: undefined;
 	SelectGameMode: {
 		redirectTo: keyof Pick<RootStackParamList, "Game" | "Scoreboard">;
-		text: string;
 	};
 	Game: { mode: GameMode };
 	Scoreboard: { mode: GameMode };

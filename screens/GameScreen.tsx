@@ -12,7 +12,7 @@ import { QuestionData, Questions } from "../components/game/types";
 import { RootStackScreenProps } from "../types";
 import { AuthContext } from "../components/AuthContext";
 import { Text } from "../components/Themed";
-import { SafeAreaView, View } from "react-native";
+import { View } from "react-native";
 import styles, { black } from "../styles/styles";
 
 const GameScreen: React.FC<RootStackScreenProps<"Game">> = ({
@@ -23,7 +23,6 @@ const GameScreen: React.FC<RootStackScreenProps<"Game">> = ({
 }) => {
 	const [questions, setQuestions] = useState<Questions>([]);
 	const [questionIndex, setQuestionIndex] = useState<number>(0);
-	const [infiniteIndex, setInfiniteIndex] = useState<number>(0);
 	const currentQuestion: QuestionData | undefined = useMemo(
 		() => questions[questionIndex],
 		[questions, questionIndex]
@@ -35,14 +34,14 @@ const GameScreen: React.FC<RootStackScreenProps<"Game">> = ({
 
 	const { clientToken, userToken } = useContext(AuthContext);
 	useEffect(() => {
-		fetchQuestions({ clientToken, userToken, mode }).then((questions) => {
+		fetchQuestions({ clientToken, userToken }).then((questions) => {
 			setQuestions(questions);
 		});
 	}, []);
 
 	const isFinalQuestion = useMemo(
-		() => questionIndex === questions.length - 1,
-		[questionIndex, questions.length]
+		() => questionIndex === questions.length - 1 && mode !== GameMode.Rush,
+		[questionIndex, questions.length, mode]
 	);
 
 	const gameOver = useCallback(() => {
@@ -63,22 +62,11 @@ const GameScreen: React.FC<RootStackScreenProps<"Game">> = ({
 	);
 
 	const nextQuestion = useCallback(() => {
-		if (isFinalQuestion && (mode === GameMode.Classic || mode === GameMode.OddOneOut)) {
+		if (isFinalQuestion) {
 			return gameOver();
 		}
-		else if (isFinalQuestion && (mode === GameMode.Rush || mode === GameMode.InstantDeath)) {
-			//fetch more questions
-			fetchQuestions({ clientToken, userToken, mode }).then((questions) => {
-				setQuestions(questions);
-				//questions.push(...questions);
-			});
-			setInfiniteIndex((infiniteIndex) => infiniteIndex + 1);
-			return setQuestionIndex((questionIndex) => questionIndex = 0);
-			//return setQuestionIndex((questionIndex) => questionIndex + 1);
-		}
-		setInfiniteIndex((index) => index + 1);
 		return setQuestionIndex((index) => index + 1);
-	}, [questionIndex, infiniteIndex, questions.length, gameOver, isFinalQuestion]);
+	}, [questionIndex, questions.length, gameOver, isFinalQuestion]);
 
 	//Reduce timer for rush mode
 	useEffect(() => {
@@ -102,31 +90,18 @@ const GameScreen: React.FC<RootStackScreenProps<"Game">> = ({
 	}, [remainingTime]);
 
 	if (currentQuestion === undefined) {
-		return (
-			<SafeAreaView style={styles.container}>
-				<View style={styles.container}>
-					<Text style={styles.title}>Loading...</Text>
-				</View>
-			</SafeAreaView>
-		);
+		return <Text>Loading...</Text>;
 	}
 
-	const renderIndex = (() =>{
-		if (mode === GameMode.Rush) {
-			return remainingTime;
-		}
-		else if (mode === GameMode.Classic || mode === GameMode.OddOneOut) {
-			return "Question: " + (infiniteIndex + 1) + "/" + questions.length;
-		}
-		else return "Question: " + (infiniteIndex + 1);
-	});
-
 	return (
-		<View style={{ 
-			backgroundColor: black,
-			paddingTop:20 }}>
-			<Text style={[styles.index, { textAlign: "center" }]}>
-				{ renderIndex() }
+		<View style={{ backgroundColor: black }}>
+			<Text style={[styles.title, { textAlign: "center" }]}>
+				{mode === GameMode.Rush
+					? remainingTime
+					: "Question: " +
+					  (questionIndex + 1) +
+					  "/" +
+					  questions.length}
 			</Text>
 			<Question
 				key={questionIndex}
@@ -135,7 +110,6 @@ const GameScreen: React.FC<RootStackScreenProps<"Game">> = ({
 				nextQuestion={nextQuestion}
 				onAnswer={onAnswer}
 				isFinalQuestion={isFinalQuestion}
-				mode={mode}
 			/>
 		</View>
 	);
