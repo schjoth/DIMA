@@ -16,11 +16,11 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
   },
   normal: {
-    fontSize: 20,
+    fontSize: 40,
     color: "#D9D9D9",
   },
   highlight: {
-    fontSize: 26,
+    fontSize: 46,
     color: "#1DB954",
   },
   container: {

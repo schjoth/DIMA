@@ -26,7 +26,7 @@ const HomeScreen = ({ navigation }: Props) => {
 					onPress={() =>
 						navigation.navigate({
 							name: "SelectGameMode",
-							params: { redirectTo: "Game" },
+							params: { redirectTo: "Game", text: "Choose your quiz!" },
 						})
 					}
 				/>
@@ -36,7 +36,7 @@ const HomeScreen = ({ navigation }: Props) => {
 					onPress={() =>
 						navigation.navigate({
 							name: "SelectGameMode",
-							params: { redirectTo: "Scoreboard" },
+							params: { redirectTo: "Scoreboard", text: "Choose game mode" },
 						})
 					}
 				/>

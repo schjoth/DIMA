@@ -1,9 +1,10 @@
 import React, { useContext, useEffect } from "react";
 import { RootStackScreenProps } from "../types";
-import { Linking, StyleSheet } from "react-native";
+import { Linking, SafeAreaView, StyleSheet } from "react-native";
 import { AuthContext } from "../components/AuthContext";
 import SpotifyLogin from "../components/SpotifyLogin";
 import { View, Text } from "../components/Themed";
+import { green } from "../styles/styles";
 
 const LoginScreen = ({ navigation }: RootStackScreenProps<"Login">) => {
 	const { userToken, setUserToken } = useContext(AuthContext);
@@ -51,7 +52,7 @@ const LoginScreen = ({ navigation }: RootStackScreenProps<"Login">) => {
 
 	return (
 		<View style={styles.container}>
-			{userToken ? <Text>Login successful</Text> : <SpotifyLogin />}
+			{userToken ? <Text style={styles.title}>Login successful</Text> : <SpotifyLogin />}
 		</View>
 	);
 };
@@ -62,6 +63,12 @@ const styles = StyleSheet.create({
 		flex: 1,
 		alignItems: "center",
 		justifyContent: "center",
+		backgroundColor: "#000",
+	},
+	title: {
+		fontSize: 35,
+		textAlign: "center",
+		color: green,
 	},
 });
 
