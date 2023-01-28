@@ -7,11 +7,9 @@ export const green = "#1DB954",
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,
-		alignItems: "stretch",
-		justifyContent: "space-around",
+		alignItems: "center",
+		justifyContent: "center",
 		backgroundColor: black,
-		paddingBottom: 70,
-		paddingTop: 70,
 	},
 	board: {
 		alignItems: "center",
@@ -22,15 +20,8 @@ const styles = StyleSheet.create({
 		borderRadius: 25,
 	},
 	title: {
-		fontSize: 35,
-		fontWeight: "bold",
-		textAlign: "center",
-		color: green,
-	},
-	index:{
 		fontSize: 20,
 		fontWeight: "bold",
-		textAlign: "center",
 		color: green,
 	},
 	// separator: {

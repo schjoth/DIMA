@@ -23,35 +23,26 @@ const ScoreboardScreen: FC<RootStackScreenProps<"Scoreboard">> = ({
 
 	if (!highscores) {
 		return (
-			<SafeAreaView style={styles.container}>
-				<View style={styles.container}>
-					<Text style={styles.title}>Loading...</Text>
-					<CustomButton
-						variant="secondary"
-						onPress={() => navigation.navigate("Home")}
-						title="Continue"
-					/>
-				</View>
-			</SafeAreaView>
+			<View style={styles.container}>
+				<Text style={styles.title}>Loading...</Text>
+				<CustomButton
+					variant="secondary"
+					onPress={() => navigation.navigate("Home")}
+					title="Continue"
+				/>
+			</View>
 		);
 	}
 
 	return (
 		<SafeAreaView style={styles.container}>
-			<View style={[styles.container, { paddingTop: 130, paddingBottom: 130 }]}>
-				<Text style={[styles.title, { fontSize: 30, fontWeight: "normal" }]}>Scoreboard</Text>
-				<Text style={styles.title}>{mode}</Text>
-
+			<View>
 				<Scoreboard highscores={highscores} />
 
 				<CustomButton
 					title="Back"
 					variant="secondary"
-					onPress={() => navigation.navigate({
-						name: "SelectGameMode",
-						params: { redirectTo: "Scoreboard", text: "Choose game mode" },
-					})
-					}
+					onPress={() => navigation.navigate("Home")}
 				/>
 			</View>
 		</SafeAreaView>
