@@ -3,7 +3,7 @@ import { View, Text, StyleSheet } from "react-native";
 import { black, green } from "../../styles/styles";
 import CustomButton from "../CustomButton";
 import Answer from "./Answer";
-import { AnswerStatus, GameMode } from "./enums";
+import { AnswerStatus } from "./enums";
 import { QuestionData } from "./types";
 
 interface QuestionProps {
@@ -12,7 +12,6 @@ interface QuestionProps {
 	onAnswer: (answer: AnswerStatus) => void;
 	isFinalQuestion?: boolean;
 	index: number;
-	mode: GameMode;
 }
 
 const Question: FC<QuestionProps> = ({
@@ -21,7 +20,6 @@ const Question: FC<QuestionProps> = ({
 	onAnswer,
 	isFinalQuestion = false,
 	index,
-	mode,
 }) => {
 	const { question, hint, answers, correctAnswer } = data;
 
@@ -49,11 +47,11 @@ const Question: FC<QuestionProps> = ({
 		}
 		else return "Next question"
 	}, [mode, isFinalQuestion]);
-
+  
 	return (
 		<View style={styles.container}>
 			<View style={styles.questionContainer}>
-				<Text style={[styles.question, { paddingStart: 40, paddingEnd: 40 }]}>{question}</Text>
+				<Text style={styles.question}>{question}</Text>
 				<Text style={styles.hint}>{hint}</Text>
 			</View>
 
@@ -85,8 +83,7 @@ const styles = StyleSheet.create({
 		display: "flex",
 		alignItems: "center",
 		justifyContent: "space-around",
-		paddingTop: 130,
-		paddingBottom: 130,
+		padding: 50,
 	},
 	questionContainer: {
 		width: "100%",
@@ -95,12 +92,9 @@ const styles = StyleSheet.create({
 		justifyContent: "center",
 	},
 	question: {
-		fontSize: 25,
-		textAlign: "center",
 		color: green,
 	},
 	hint: {
-		fontSize: 20,
 		paddingTop: 20,
 		color: "#fff",
 	},

@@ -19,6 +19,7 @@ function App() {
 			<AuthProvider>
 				<NavigationContainer>
 					<Stack.Navigator>
+						<Stack.Screen name="Home" component={HomeScreen} />
 						<Stack.Screen
 							name="Login"
 							component={LoginScreen}
@@ -26,7 +27,6 @@ function App() {
 								headerBackVisible: false,
 							}}
 						/>
-						<Stack.Screen name="Home" component={HomeScreen} />
 						<Stack.Screen name="Game" component={GameScreen} />
 						<Stack.Screen
 							name="Scoreboard"
@@ -36,12 +36,7 @@ function App() {
 							name="SelectGameMode"
 							component={SelectGameModeScreen}
 						/>
-						<Stack.Screen 
-							name="Result" 
-							component={ResultScreen}
-							options={{
-								headerBackVisible: false,
-							}} />
+						<Stack.Screen name="Result" component={ResultScreen} />
 					</Stack.Navigator>
 				</NavigationContainer>
 			</AuthProvider>
