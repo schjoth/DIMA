@@ -1,4 +1,4 @@
-import { QuestionTypes } from "../components/game/enums";
+import { GameMode, QuestionTypes } from "../components/game/enums";
 import { Questions } from "../components/game/types";
 import { convertToSong, Song } from "./data";
 import { pickRandomSongs } from "./utils";
@@ -6,6 +6,7 @@ import { pickRandomSongs } from "./utils";
 type Credentials = {
 	clientToken: string;
 	userToken: string;
+	mode: GameMode
 };
 
 type UserFavoritesParams = {
@@ -37,6 +38,7 @@ const getUserFavorites = async ({
 			settings
 		);
 		const rawData = await response.json();
+		//console.log("Artists: ", rawData.items[0].artists);
 
 		if (rawData) {
 			// this only supports track and not for artists
@@ -61,12 +63,22 @@ const getArtistsSongs = async ({
 	};
 
 	try {
+		/* const temp = await fetch(
+			`https://api.spotify.com/v1/search?q=${artistId}&type=artist`,
+			settings
+		);
+		//console.log("Fetching artist songs: ", response);
+		const tempData = await temp.json();
+		console.log("Artist Name: ", artistId);
+		console.log("Temp data: ", tempData.artists.items[0].id);
+		//const artistId = tempData.artists.items[0].id; */
 		console.log("Artist ID: ", artistId);
 		const response = await fetch(
 			`https://api.spotify.com/v1/artists/${artistId}/top-tracks?country=IT`,
 			settings
 		);
 		const rawData = await response.json();
+		//console.log("Raw data: ", rawData);
 		
 		if (rawData) {
 			// this only supports track and not for artists
@@ -81,12 +93,14 @@ const getArtistsSongs = async ({
 export const fetchQuestions = async ({
 	clientToken,
 	userToken,
+	mode,
 }: Credentials): Promise<Questions> => {
+	
 	const usersTopSongs = await getUserFavorites({
 		userToken,
 		type: "tracks",
 	});
-  
+
 	if (mode === GameMode.OddOneOut) {
 
 		const songs = pickRandomSongs(5, usersTopSongs);
@@ -150,9 +164,9 @@ export const fetchQuestions = async ({
 			answers: getWrongAnswers(song),
 			correctAnswer: getCorrectAnswer(song),
 		}));
-    
-    console.log("All questions generated.");
-    
+
+		console.log("All questions generated.");
+
 		return Promise.resolve(questions);
 	}
 	else if (mode === GameMode.Preview) {
