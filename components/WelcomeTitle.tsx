@@ -5,7 +5,7 @@ const WelcomeTitle = () => {
   return (
     <View style={styles.container}>
       <Text style={[styles.base, styles.normal]}>Welcome to</Text>
-      <Text style={[styles.base, styles.highlight]}>SpotiQuiz!</Text>
+      <Text style={[styles.base, styles.highlight, {paddingBottom: 50}]}>SpotiQuiz!</Text>
     </View>
   );
 };

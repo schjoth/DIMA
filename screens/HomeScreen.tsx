@@ -1,4 +1,4 @@
-import { StyleSheet, Alert, SafeAreaView, View } from "react-native";
+import { StyleSheet, Alert, SafeAreaView, View, Text } from "react-native";
 import React, { useEffect } from "react";
 import CustomButton from "../components/CustomButton";
 import WelcomeTitle from "../components/WelcomeTitle";
@@ -31,6 +31,8 @@ const HomeScreen = ({ navigation }: Props) => {
 					}
 				/>
 
+				<Text style={{ padding: 5 }}></Text>
+
 				<CustomButton
 					title="Scoreboard"
 					onPress={() =>
@@ -40,6 +42,9 @@ const HomeScreen = ({ navigation }: Props) => {
 						})
 					}
 				/>
+
+				<Text style={{ padding: 5 }}></Text>
+
 				<CustomButton
 					variant="secondary"
 					title="Log out"

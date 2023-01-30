@@ -57,12 +57,14 @@ const localStyles = StyleSheet.create({
 	rankContainer: {
 		color: offWhite,
 		alignItems: "center",
-		justifyContent: "center",
-		width: 150,
+		justifyContent: "space-around",
+		width: 200,
 		height: 200,
 		left: 1,
 		top: 1,
 		borderRadius: 25,
+		backgroundColor: offWhite,
+		padding: 10,
 	},
 	column: {
 		width: "100%",
@@ -73,6 +75,7 @@ const localStyles = StyleSheet.create({
 		borderRadius: 25,
 		height: 25,
 		paddingHorizontal: 10,
+		backgroundColor: black,
 	},
 	highlight: {
 		backgroundColor: green,

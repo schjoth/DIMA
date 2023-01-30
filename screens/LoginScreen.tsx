@@ -5,6 +5,7 @@ import { AuthContext } from "../components/AuthContext";
 import SpotifyLogin from "../components/SpotifyLogin";
 import { View, Text } from "../components/Themed";
 import { green } from "../styles/styles";
+import WelcomeTitle from "../components/WelcomeTitle";
 
 const LoginScreen = ({ navigation }: RootStackScreenProps<"Login">) => {
 	const { userToken, setUserToken } = useContext(AuthContext);
@@ -52,6 +53,7 @@ const LoginScreen = ({ navigation }: RootStackScreenProps<"Login">) => {
 
 	return (
 		<View style={styles.container}>
+			<WelcomeTitle/>
 			{userToken ? <Text style={styles.title}>Login successful</Text> : <SpotifyLogin />}
 		</View>
 	);
