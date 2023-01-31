@@ -20,11 +20,9 @@ const client_id = "d760e0ff5af14deab0c1384a48669a74",
 	],
 	response_type = "token";
 
-const uri = `https://accounts.spotify.com/authorize?
-	client_id=${client_id}
-	&redirect_uri=${redirect_uri}
-	&response_type=${response_type}
-	&scope=${scope.join("%20")}`;
+const uri = `https://accounts.spotify.com/authorize?client_id=${client_id}&redirect_uri=${redirect_uri}&response_type=${response_type}&scope=${scope.join(
+	"%20"
+)}`;
 
 const SpotifyLogin = () => {
 	const handlePress = useCallback(async () => {
