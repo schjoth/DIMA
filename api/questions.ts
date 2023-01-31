@@ -6,14 +6,13 @@ import { pickRandomSongs } from "./utils";
 type Credentials = {
 	clientToken: string;
 	userToken: string;
-	mode: GameMode
+	mode: GameMode;
 };
 
 type UserFavoritesParams = {
 	userToken: string;
-	type?: "tracks";
-	artistId?: string;
-	//type: "artists" | "tracks";
+	// type: "tracks";
+	type: "artists" | "tracks";
 	timeRange?: "long_term" | "medium_term" | "short_term";
 	limit?: number;
 	offset?: number;
@@ -22,8 +21,7 @@ type UserFavoritesParams = {
 //currently only implemented for tracks
 const getUserFavorites = async ({
 	userToken,
-	artistId,
-	type,
+	type = "tracks",
 	timeRange = "long_term",
 	limit = 50,
 	offset = 0,
@@ -52,25 +50,22 @@ const getUserFavorites = async ({
 const getArtistsSongs = async ({
 	userToken,
 	artistId,
-	type,
-	timeRange = "long_term",
-	limit = 10,
-	offset = 0,
-}: UserFavoritesParams): Promise<Song[]> => {
+}: {
+	userToken: string;
+	artistId: string;
+}): Promise<Song[]> => {
 	const settings = {
 		headers: { Authorization: "Bearer " + userToken },
 	};
 
 	try {
-		console.log("Artist ID: ", artistId);
 		const response = await fetch(
 			`https://api.spotify.com/v1/artists/${artistId}/top-tracks?country=IT`,
 			settings
 		);
 		const rawData = await response.json();
-		
+
 		if (rawData) {
-			// this only supports track and not for artists
 			return rawData.tracks.map((song: any) => convertToSong(song));
 		}
 	} catch (e) {
@@ -84,14 +79,12 @@ export const fetchQuestions = async ({
 	userToken,
 	mode,
 }: Credentials): Promise<Questions> => {
-	
 	const usersTopSongs = await getUserFavorites({
 		userToken,
 		type: "tracks",
 	});
 
 	if (mode === GameMode.OddOneOut) {
-
 		const songs = pickRandomSongs(10, usersTopSongs);
 		const allWrongAnswers: string[] = [];
 
@@ -101,16 +94,10 @@ export const fetchQuestions = async ({
 				artistId: songs[i].artistsIds[0],
 			});
 			let randomSongs = pickRandomSongs(3, artistSongs);
-			console.log("Random songs: ", randomSongs);
 			for (let j = 0; j < randomSongs.length; j++) {
-				console.log("j = ", j);
-				console.log("Random song: ", randomSongs[j].track);
 				allWrongAnswers.push(randomSongs[j].track);
 			}
-			console.log("Calculated wrong answers.");
-		};
-
-		console.log("All wrong answers: ", allWrongAnswers);
+		}
 
 		const getWrongAnswers = (song: Song) => {
 			let wrongAnswers: string[] = [];
@@ -127,22 +114,20 @@ export const fetchQuestions = async ({
 			for (let j = 0; j < 3; j++) {
 				wrongAnswers.push(allWrongAnswers[i * 3 + j]);
 			}
-			console.log("Wrong answers: ", wrongAnswers);
 			return wrongAnswers;
 		};
 
 		const getCorrectAnswer = (song: Song) => {
 			let correctAnswer: string = "";
-			let temp : string = "";
+			let temp: string = "";
 			let currentArtist = song.artists[0];
 			let randomSong;
-			
+
 			do {
 				randomSong = pickRandomSongs(1, usersTopSongs)[0];
 				temp = randomSong.artists[0];
 			} while (temp === currentArtist);
-			correctAnswer = randomSong.track
-			console.log("Correct answer: ", correctAnswer);
+			correctAnswer = randomSong.track;
 			return correctAnswer;
 		};
 
@@ -153,12 +138,8 @@ export const fetchQuestions = async ({
 			correctAnswer: getCorrectAnswer(song),
 		}));
 
-		console.log("All questions generated.");
-
 		return Promise.resolve(questions);
-	}
-	else {
-
+	} else {
 		const songs = pickRandomSongs(10, usersTopSongs);
 
 		const getWrongAnswers = (song: Song) => {
