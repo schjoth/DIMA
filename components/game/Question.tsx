@@ -44,7 +44,7 @@ const Question: FC<QuestionProps> = ({
 	const [result, setResult] = useState<AnswerStatus>();
 
 	const navigationText = useMemo(() =>{
-		if ([GameMode.Classic, GameMode.OddOneOut, GameMode.Preview].includes(mode)) {
+		if ([GameMode.Classic, GameMode.OddOneOut].includes(mode)) {
 			return isFinalQuestion ? "Finish" : "Next question";
 		}
 		else return "Next question"
@@ -85,8 +85,8 @@ const styles = StyleSheet.create({
 		display: "flex",
 		alignItems: "center",
 		justifyContent: "space-around",
-		paddingTop: 130,
-		paddingBottom: 130,
+		paddingTop: 50,
+		//paddingBottom: 130,
 	},
 	questionContainer: {
 		width: "100%",
@@ -101,8 +101,10 @@ const styles = StyleSheet.create({
 	},
 	hint: {
 		fontSize: 20,
-		paddingTop: 20,
+		//paddingTop: 20,
+		padding: 20,
 		color: "#fff",
+		textAlign: "center",
 	},
 	answers: {
 		width: "100%",

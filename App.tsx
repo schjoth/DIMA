@@ -24,24 +24,53 @@ function App() {
 							component={LoginScreen}
 							options={{
 								headerBackVisible: false,
+								headerShown: false,
 							}}
 						/>
-						<Stack.Screen name="Home" component={HomeScreen} />
-						<Stack.Screen name="Game" component={GameScreen} />
+						<Stack.Screen 
+							name="Home" 
+							component={HomeScreen} 
+							options={{
+								headerBackVisible: false,
+								headerShown: false,
+							}}
+						/>
+						<Stack.Screen 
+							name="Game" 
+							component={GameScreen} 
+							options={{
+								headerBackVisible: false,
+								headerShown: false,
+								/* headerTintColor: "white",
+								headerStyle: {
+									backgroundColor: "#000000",
+								}, */
+							}}
+						/>
 						<Stack.Screen
 							name="Scoreboard"
 							component={Scoreboard}
+							options={{
+								headerBackVisible: false,
+								headerShown: false,
+							}}
 						/>
 						<Stack.Screen
 							name="SelectGameMode"
 							component={SelectGameModeScreen}
+							options={{
+								headerBackVisible: false,
+								headerShown: false,
+							}}
 						/>
 						<Stack.Screen 
 							name="Result" 
 							component={ResultScreen}
 							options={{
 								headerBackVisible: false,
-							}} />
+								headerShown: false,
+							}} 
+						/>
 					</Stack.Navigator>
 				</NavigationContainer>
 			</AuthProvider>

@@ -13,7 +13,7 @@ const SelectGameModeScreen: FC<RootStackScreenProps<"SelectGameMode">> = ({
 }) => {
 	return (
 		<SafeAreaView style={styles.container}>
-			<View style={styles.container}>
+			<View style={[styles.container, {paddingBottom: 100, paddingTop:150}]}>
 				<Text style={styles.title}>{text}</Text>
 			
 				<CustomButton

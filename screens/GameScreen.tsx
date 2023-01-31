@@ -14,6 +14,7 @@ import { AuthContext } from "../components/AuthContext";
 import { Text } from "../components/Themed";
 import { SafeAreaView, View } from "react-native";
 import styles, { black } from "../styles/styles";
+import CustomButton from "../components/CustomButton";
 
 const GameScreen: React.FC<RootStackScreenProps<"Game">> = ({
 	navigation,
@@ -122,22 +123,32 @@ const GameScreen: React.FC<RootStackScreenProps<"Game">> = ({
 	});
 
 	return (
-		<View style={{ 
-			backgroundColor: black,
-			paddingTop:20 }}>
-			<Text style={[styles.index, { textAlign: "center" }]}>
-				{ renderIndex() }
-			</Text>
-			<Question
-				key={questionIndex}
-				index={questionIndex}
-				data={currentQuestion}
-				nextQuestion={nextQuestion}
-				onAnswer={onAnswer}
-				isFinalQuestion={isFinalQuestion}
-				mode={mode}
-			/>
-		</View>
+		<SafeAreaView style={styles.container}>
+			<View style={{ 
+				backgroundColor: black,
+				paddingBottom: 100 }}>
+				<Text style={[styles.index, { textAlign: "center" }]}>
+					{ renderIndex() }
+				</Text>
+				<Question
+					key={questionIndex}
+					index={questionIndex}
+					data={currentQuestion}
+					nextQuestion={nextQuestion}
+					onAnswer={onAnswer}
+					isFinalQuestion={isFinalQuestion}
+					mode={mode}
+				/>
+				<CustomButton
+					title="Back"
+					variant="secondary"
+					onPress={() => navigation.navigate({
+						name: "SelectGameMode",
+						params: { redirectTo: "Game", text: "Choose your quiz!" },
+					})}
+				/>
+			</View>
+		</SafeAreaView>
 	);
 };
 
