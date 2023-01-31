@@ -8,7 +8,6 @@ export enum GameMode {
 	Classic = "BEST OF 10",
 	Rush = "TIME LIMIT",
 	InstantDeath = "INSTANT DEATH",
-	Preview = "30S PREVIEW",
 	OddOneOut = "ODD ONE OUT",
 }
 

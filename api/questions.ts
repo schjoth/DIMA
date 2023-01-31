@@ -92,7 +92,7 @@ export const fetchQuestions = async ({
 
 	if (mode === GameMode.OddOneOut) {
 
-		const songs = pickRandomSongs(5, usersTopSongs);
+		const songs = pickRandomSongs(10, usersTopSongs);
 		const allWrongAnswers: string[] = [];
 
 		for (let i = 0; i < songs.length; i++) {
@@ -156,10 +156,6 @@ export const fetchQuestions = async ({
 		console.log("All questions generated.");
 
 		return Promise.resolve(questions);
-	}
-	else if (mode === GameMode.Preview) {
-		//implement gamemode preview
-		return Promise.resolve([]);
 	}
 	else {
 

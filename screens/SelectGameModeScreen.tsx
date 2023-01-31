@@ -45,15 +45,6 @@ const SelectGameModeScreen: FC<RootStackScreenProps<"SelectGameMode">> = ({
 					}
 				/>
 				<CustomButton
-					title="30s preview"
-					onPress={() =>
-						navigation.navigate({
-							name: redirectTo.redirectTo,
-							params: { mode: GameMode.Preview },
-						})
-					}
-				/>
-				<CustomButton
 					title="Odd one out"
 					onPress={() =>
 						navigation.navigate({
