@@ -140,7 +140,7 @@ const GameScreen: React.FC<RootStackScreenProps<"Game">> = ({
 					mode={mode}
 				/>
 				<CustomButton
-					title="Back"
+					title="End Game"
 					variant="secondary"
 					onPress={() => navigation.navigate({
 						name: "SelectGameMode",
