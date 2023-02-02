@@ -24,7 +24,8 @@ const GameScreen: React.FC<RootStackScreenProps<"Game">> = ({
 }) => {
 	const [questions, setQuestions] = useState<Questions>([]);
 	const [questionIndex, setQuestionIndex] = useState<number>(0);
-	const [infiniteIndex, setInfiniteIndex] = useState<number>(0);
+	// const [infiniteIndex, setInfiniteIndex] = useState<number>(0);
+
 	const currentQuestion: QuestionData | undefined = useMemo(
 		() => questions[questionIndex],
 		[questions, questionIndex]
@@ -63,23 +64,31 @@ const GameScreen: React.FC<RootStackScreenProps<"Game">> = ({
 		[gameOver, mode]
 	);
 
+	useEffect(() => {
+		if (
+			questions.length - 2 === questionIndex &&
+			[GameMode.Rush, GameMode.InstantDeath].includes(mode)
+		) {
+			fetchQuestions({ clientToken, userToken, mode }).then(
+				(questions) => {
+					setQuestions((prevQuestions) => [
+						...prevQuestions,
+						...questions,
+					]);
+				}
+			);
+		}
+	}, [questionIndex, questions.length, clientToken, userToken, mode]);
+
 	const nextQuestion = useCallback(() => {
-		if (isFinalQuestion && (mode === GameMode.Classic || mode === GameMode.OddOneOut)) {
+		if (
+			isFinalQuestion &&
+			(mode === GameMode.Classic || mode === GameMode.OddOneOut)
+		) {
 			return gameOver();
 		}
-		else if (isFinalQuestion && (mode === GameMode.Rush || mode === GameMode.InstantDeath)) {
-			//fetch more questions
-			fetchQuestions({ clientToken, userToken, mode }).then((questions) => {
-				setQuestions(questions);
-				//questions.push(...questions);
-			});
-			setInfiniteIndex((infiniteIndex) => infiniteIndex + 1);
-			return setQuestionIndex((questionIndex) => questionIndex = 0);
-			//return setQuestionIndex((questionIndex) => questionIndex + 1);
-		}
-		setInfiniteIndex((index) => index + 1);
 		return setQuestionIndex((index) => index + 1);
-	}, [questionIndex, infiniteIndex, questions.length, gameOver, isFinalQuestion]);
+	}, [questionIndex, questions.length, gameOver, isFinalQuestion]);
 
 	//Reduce timer for rush mode
 	useEffect(() => {
@@ -112,23 +121,24 @@ const GameScreen: React.FC<RootStackScreenProps<"Game">> = ({
 		);
 	}
 
-	const renderIndex = (() =>{
+	const renderIndex = () => {
 		if (mode === GameMode.Rush) {
 			return remainingTime;
-		}
-		else if (mode === GameMode.Classic || mode === GameMode.OddOneOut) {
-			return "Question: " + (infiniteIndex + 1) + "/" + questions.length;
-		}
-		else return "Question: " + (infiniteIndex + 1);
-	});
+		} else if (mode === GameMode.Classic || mode === GameMode.OddOneOut) {
+			return "Question: " + (questionIndex + 1) + "/" + questions.length;
+		} else return "Question: " + (questionIndex + 1);
+	};
 
 	return (
 		<SafeAreaView style={styles.container}>
-			<View style={{ 
-				backgroundColor: black,
-				paddingBottom: 100 }}>
+			<View
+				style={{
+					backgroundColor: black,
+					paddingBottom: 100,
+				}}
+			>
 				<Text style={[styles.index, { textAlign: "center" }]}>
-					{ renderIndex() }
+					{renderIndex()}
 				</Text>
 				<Question
 					key={questionIndex}
@@ -142,10 +152,15 @@ const GameScreen: React.FC<RootStackScreenProps<"Game">> = ({
 				<CustomButton
 					title="End Game"
 					variant="secondary"
-					onPress={() => navigation.navigate({
-						name: "SelectGameMode",
-						params: { redirectTo: "Game", text: "Choose your quiz!" },
-					})}
+					onPress={() =>
+						navigation.navigate({
+							name: "SelectGameMode",
+							params: {
+								redirectTo: "Game",
+								text: "Choose your quiz!",
+							},
+						})
+					}
 				/>
 			</View>
 		</SafeAreaView>
