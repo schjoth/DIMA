@@ -21,14 +21,15 @@ function App() {
 			<AuthProvider>
 				<NavigationContainer>
 					<Stack.Navigator>
-						<Stack.Screen name="Home" component={HomeScreen} />
-						<Stack.Screen // why not first on the stack?
+						<Stack.Screen
 							name="Login"
 							component={LoginScreen}
 							options={{
 								headerBackVisible: false,
+								headerShown: false,
 							}}
 						/>
+						<Stack.Screen name="Home" component={HomeScreen} />
 						<Stack.Screen name="Game" component={GameScreen} />
 						<Stack.Screen
 							name="Scoreboard"
