@@ -34,7 +34,7 @@ const Answer: React.FC<AnswerProps> = ({
 
 	return (
 		<Pressable onPress={() => handleAnswer(answer)} style={style}>
-			<Text>{answer}</Text>
+			<Text numberOfLines={1}>{answer}</Text>
 		</Pressable>
 	);
 };
